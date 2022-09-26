@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="keywords" content="Программирование, сайт, HTML, CSS, JavaScript, бесплатное обучение, курсы программирования, бесплатные курсы по программированию, как создать сайт, Frontend, Frontend разработка, CSS урок, ProgEasy CSS урок 2">
+		<meta name="description" content="Урок №2 CSS от ProgEasy. Свойства текстов. Бесплатное обучение Frontend разработке.">
+		<meta name="format-detection" content="telephone=no">
+		<title>Урок 2 CSS</title>
+		<link rel="shortcut icon" href="../images/iconweb.png" type="image/png">
+		<link href="cssofcsslesson2.css" rel="stylesheet" type="text/css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<!-- Yandex.Metrika counter -->
+		<script type="text/javascript" >
+			(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+			m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+			(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+			ym(84034504, "init", {
+				clickmap:true,
+				trackLinks:true,
+				accurateTrackBounce:true,
+				webvisor:true
+			});
+		</script>
+		<noscript><div><img src="https://mc.yandex.ru/watch/84034504" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+		<!-- /Yandex.Metrika counter -->
+	</head>
+	<body>
+		<div class="wrapper">
+			<!-- header -->
+			<header class="header">
+				<div class="container">
+					<div class="headersectionstyles">
+						<div class="Basenameheader"><a href="../index.html" class="tothemainpage" title="На главную страницу">ProgEasy</a></div>
+						<div class="burger">
+							<span></span>
+						</div>
+						<div class="Baseultexts">
+							<span><a class="Basenav" href="../HTML/htmllesson.html" title="Перейти к HTML">HTML</a></span>
+							<span class="Basenav" title="Вы на этой странице">CSS</span>
+							<span><a class="Basenav" href="../JS/jslesson.html" title="Перейти к JS">JavaScript</a></span>
+							<span><a class="Basenav" href="../Contacts/contacts.html" title="Контакты">Контакты</a></span>
+							<span><a class="Basenav" href="../Aboutus/aboutus.html" title="О нас">О сайте</a></span>
+						</div>
+						<div class="Basenametitle">
+							<p class="headertitle">Понятные объяснения</p>
+						</div>
+					</div>
+				</div>
+			</header>
+			<!-- Закончился header -->
+			<section class="sectionhtml">
+				<div class="container">
+					<div class="Firstbasetextdiv">
+						<h1>Урок 2 CSS</h1>
+					</div>
+					<div class="sectionstyles2">
+						<div class="htmlexplalltextdiv">
+							<h2>Свойства текстов</h2>
+							<br>
+							<h3>Свойство font-family</h3>
+							<p>Свойство font-family позволяет изменить шрифт. Есть куча сайтов посвященные разным шрифтам, например шрифты Google - <a href="https://fonts.google.com/" target="_blank">fonts.google.com</a>. Значение inherit - наследует значение родителя. Свойство наследуется.</p>
+							<p>Шрифты можно подключать через тег link или через CSS правило @import. Мы будем делать при помощи @import. Выберите любой понравившийся шрифт, и скопируйте его import. CSS правило @import используется для импорта содержимого CSS файла в текущую таблицу стилей.</p>
+							<div style="width: 100%;">
+								<img src="../images/import font family.JPG" alt="@import" style="max-width: 100%; max-height: 100%;">
+							</div>
+							<p>Затем вставьте этот import в самый верх CSS файла.</p><br>
+							<p>Чуть ниже вы можете обнаружить само свойство font-family с готовым значением.</p>
+							<div style="width: 100%;">
+								<img src="../images/font-family.JPG" alt="@import" style="max-width: 100%; max-height: 100%;">
+							</div><br>
+							<div class="attention">
+								<br>
+								<p>Если код не виден, вы можете <span style="color: #68d66e;">скролить</span> серый блок с кодом.</p>
+								<br>
+							</div>
+							<p>Теперь можете просто вставлять его в нужные селекторы.</p>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<p>Я обычный шрифт</p>
+	<p id="fonttext">У меня другой шрифт</p>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+#fonttext {
+	font-family: 'Nunito Sans', san-serif;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<p>Я обычный шрифт</p>
+							<p style="font-family: 'Nunito Sans', sans-serif;">У меня другой шрифт</p>
+							<br><br>
+							<h3>Свойство text-transform</h3>
+							<p>Свойство text-transform позволяет изменить регистр символов. Есть значения как: lowercase, uppercase, capitalize, inherit. Свойство наследуется.</p><br>
+							<p>lowercase - каждый символ в нижнем регистре.</p><br>
+							<p>uppercase - каждый символ в верхнем регистре.</p><br>
+							<p>capitalize - каждый первый символ каждого слова в верхнем регистре.</p><br>
+							<p>inherit - наследует значение родителя.</p><br>
+							<span>Например:</span>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<p id="text-transform-1">Я в нижнем регистре</p>
+	<p id="text-transform-2">Я в верхнем регистре</p>
+	<p id="text-transform-3">Ну тут короче сами увидите</p>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+#text-transform-1 {
+	text-transform: lowercase;
+}
+#text-transform-2 {
+	text-transform: uppercase;
+}
+#text-transform-3 {
+	text-transform: capitalize;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<p style="text-transform: lowercase;">Я в нижнем регистре</p>
+							<p style="text-transform: uppercase;">Я в верхнем регистре</p>
+							<p style="text-transform: capitalize;">Ну тут короче сами увидите</p>
+							<br><br>
+							<h3>Свойство word-spacing</h3>
+							<p>Свойство word-spacing позволяет изменить расстояние между словами. Значением же будут пиксели или отрицательные значения пикселей, значение inherit - наследует значение родителя. Свойство наследуется.</p>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<p id="word-spacing-1">Я короче длинный текст живищуй ради примера</p>
+	<p id="word-spacing-2">У меня слова сближены к друг-другу</p>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+#word-spacing-1 {
+	word-spacing: 30px;
+}
+#word-spacing-2 {
+	word-spacing: -10px;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<p style="word-spacing: 30px;">Я короче длинный текст живищуй ради примера</p>
+							<p  style="word-spacing: -10px;">У меня слова сближены к друг-другу</p>
+							<br><br>
+							<h3>Свойство letter-spacing</h3>
+							<p>Свойство letter-spacing позволяет изменить расстояние между символами. Значения же будут пиксели или отрицательные значения пикселей, значение inherit - наследует значение родителя. Свойство наследуется.</p>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<p id="texthello">Привет!</p>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+#texthello {
+	letter-spacing: 10px;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<p style="letter-spacing: 10px;">Привет!</p>
+							<br><br>
+							<h3>Свойство line-height</h3>
+							<p>Свойство line-height позволяет задать расстояния между строками. Значения же будут пиксели или отрицательные значения пикселей, значение inherit - наследует значение родителя. Свойство наследуется.</p>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<p>Привет</p>
+	<p>Мир!</p>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+p {
+	line-height: 30px;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<p style="line-height: 30px">Привет</p>
+							<p style="line-height: 30px">Мир!</p>
+							<br><br>
+							<h3>Свойство text-decoration</h3>
+							<p>Свойство text-decoration делает разное оформление текста такие как перечеркнутость, подчеркнутость и т.д. Так вот, значения: line-through, overline, underline, inherit. Элемент не наследуется.</p><br>
+							<p>line-through - перечеркнутый текст.</p><br>
+							<p>overline - линия проходит над текстом. На некоторых сайтах это значение не работает.</p><br>
+							<p>underline - подчеркнутый текст.</p><br>
+							<p>inherit - наследует значение родителя.</p><br>
+							<span>Например:</span>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<p>Я перечеркнут</p>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+p {
+	text-decoration: line-through;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<p style="text-decoration: line-through;">Я перечеркнут</p>
+							<div class="fromlesson2nextback">
+								<a href="csslesson.html"><div class="btnbackpage"><span>Предыдущее</span></div></a>
+								<a href="csslesson3.html"><div class="btnnextpage"><span>Следующее</span></div></a>
+							</div>
+						</div>
+						<aside>
+							<div class="asidedivfirst">
+								<a href="csslesson.html">
+									<div class="asidenav" title="Перейти к уроку 1">
+										<span>#1 - Что такое CSS | Селектор, свойства, значения | Текст</span>
+									</div>
+								</a>
+								<div style="background: #ebebeb;" class="asidenav" title="Урок 2">
+									<span style="font-weight: 500;">#2 - Свойства текстов</span>
+								</div>
+								<a href="csslesson3.html">
+									<div class="asidenav" title="Перейти к уроку 3">
+										<span>#3 - Ширина, высота, фон</span>
+									</div>
+								</a>
+								<a href="csslesson4.html">
+									<div class="asidenav" title="Перейти к уроку 4">
+										<span>#4 - Стили для блоков</span>
+									</div>
+								</a>
+								<a href="csslesson5.html">
+									<div class="asidenav" title="Перейти к уроку 5">
+										<span>#5 - Стили для блоков 2</span>
+									</div>
+								</a>
+								<a href="csslesson6.html">
+									<div class="asidenav" title="Перейти к уроку 6">
+										<span>#6 - Псевдоклассы, псевдоэлементы</span>
+									</div>
+								</a>
+								<a href="csslesson7.html">
+									<div class="asidenav" title="Перейти к уроку 7">
+										<span>#7 - Flexbox | Флекс элементы</span>
+									</div>
+								</a>
+								<a href="csslesson8.html">
+									<div class="asidenav" title="Перейти к уроку 8">
+										<span>#8 - Префиксы, тени, эффект перехода, состояния элемента</span>
+									</div>
+								</a>
+								<a href="csslesson9.html">
+									<div class="asidenav" title="Перейти к уроку 9">
+										<span>#9 - Ключевые кадры, анимация, доп. материал</span>
+									</div>
+								</a>
+								<a href="csslesson10.html">
+									<div class="asidenav" title="Перейти к уроку 10">
+										<span>#10 - Заключение</span>
+									</div>
+								</a>
+							</div>
+						</aside>
+					</div>
+				</div>
+			</section>
+			<!-- "Подвал" страницы -->
+			<footer class="footer">
+				<div class="container">
+					<div class="footerstyle">
+						<div class="footerfirstcolumn">
+							<a href="../index.html" class="footerbaseword" title="На главную страницу">ProgEasy</a>
+							<span class="footerafterbaseword">Обучение по</span><br><span class="footerafterbaseparagraph">программированию</span>
+						</div>
+						<ul class="footersecondcolumn">
+							<li class="footerlessons"><a href="../Lessons/lessons.html">Уроки</a></li>
+							<li class="footercontacts"><a href="../Contacts/contacts.html">Контакты</a></li>
+							<li class="footerabout"><a href="../Aboutus/aboutus.html">О создателе/сайте</a></li>
+						</ul>
+						<div class="footerthirdcolumn">
+							<div class="footerimages">
+								<div class="footerinstagram" title="Инстаграм" onclick="Insta()">
+									<img src="../images/instagram.png" alt="Instagram">
+								</div>
+								<div class="footervk"  title="Вк" onclick="Vk()">
+									<img src="../images/vk.png" alt="Vk">
+								</div>
+								<div class="footerwhatsapp" title="WhatsApp" onclick="WhatsApp()">
+									<img src="../images/whatsapp.png" alt="WhatsApp">
+								</div>
+							</div>
+							<div class="footeremailnumber">
+								<span class="footeremailnumbertexts">+7 (707) 200 35-83</span><br>
+								<span class="footeremailnumbertexts">Email: anuarzholdybaev2006@gmail.com</span>
+								<div class="footermadeby">
+									<span class="footermadebytext">© Created by Anuar Name ProgEasy, 2021</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<div class="windowfixed"></div>
+		</div>
+		<!-- Закончился wrapper -->
+		<script src="../HTML/jslesson.js"></script>
+	</body>
+</html>

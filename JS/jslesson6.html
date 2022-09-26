@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="keywords" content="Программирование, сайт, HTML, CSS, JavaScript, бесплатное обучение, курсы программирования, бесплатные курсы по программированию, как создать сайт, Frontend, Frontend разработка, JavaScript урок, ProgEasy JavaScript урок 6">
+		<meta name="description" content="Урок №6 JavaScript от ProgEasy. Отслеживание объектов в JS, Формы, Таймеры, Интервалы. Бесплатное обучение Frontend разработке.">
+		<meta name="format-detection" content="telephone=no">
+		<title>Урок 6 JS</title>
+		<link rel="shortcut icon" href="../images/iconweb.png" type="image/png">
+		<link href="cssofjslesson2.css" rel="stylesheet" type="text/css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<!-- Yandex.Metrika counter -->
+		<script type="text/javascript" >
+			(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+			m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+			(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+			ym(84034504, "init", {
+				clickmap:true,
+				trackLinks:true,
+				accurateTrackBounce:true,
+				webvisor:true
+			});
+		</script>
+		<noscript><div><img src="https://mc.yandex.ru/watch/84034504" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+		<!-- /Yandex.Metrika counter -->
+	</head>
+	<body>
+		<div class="wrapper">
+			<!-- header -->
+			<header class="header">
+				<div class="container">
+					<div class="headersectionstyles">
+						<div class="Basenameheader"><a href="../index.html" class="tothemainpage" title="На главную страницу">ProgEasy</a></div>
+						<div class="burger">
+							<span></span>
+						</div>
+						<div class="Baseultexts">
+							<span><a class="Basenav" href="../HTML/htmllesson.html" title="Перейти к HTML">HTML</a></span>
+							<span><a class="Basenav" href="../CSS/csslesson.html" title="Перейти к CSS">CSS</a></span>
+							<span class="Basenav" title="Вы на этой странице">JavaScript</span>
+							<span><a class="Basenav" href="../Contacts/contacts.html" title="Контакты">Контакты</a></span>
+							<span><a class="Basenav" href="../Aboutus/aboutus.html" title="О нас">О сайте</a></span>
+						</div>
+						<div class="Basenametitle">
+							<p class="headertitle">Понятные объяснения</p>
+						</div>
+					</div>
+				</div>
+			</header>
+			<!-- Закончился header -->
+			<section class="sectionhtml">
+				<div class="container">
+					<div class="Firstbasetextdiv">
+						<h1>Урок 6 JavaScript</h1>
+					</div>
+					<div class="sectionstyles2">
+						<div class="htmlexplalltextdiv">
+							<h2>Отслеживание объектов в JS, формы, таймеры, интервалы</h2>
+							<br>
+							<h3>Отслеживать JS атрибуты не в HTML</h3>
+							<p>Мы использовали JavaScript атрибуты по типу onclick, oninput и т.д. Но есть более удобный метод это способ как отслеживать объекты HTML, это метод  <strong style="color: #002340;">addEventListener()</strong>. Этот метод позволяет добавлять обработчики событии и их значения не трогая при этом сам HTML документ.</p><br>
+							<p>Метод addEventListener как и все остальные методы прописывается сразу после выбора объекта если у нас только одно действие, или после переменной.</p><br>
+							<p>В ней пишут два параметра: первое - атрибут, второе - значение атрибута(функция). Атрибут пишется в кавычках и без приставки on или разных других.</p>
+							<div class="attention">
+								<br>
+								<p>Если код не виден, вы можете <span style="color: #68d66e;">скролить</span> серый блок с кодом.</p>
+								<br>
+							</div>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<button id="buttonclick"></button>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>JS код:</span>
+								<div class="jsgreyfone">
+									<xmp>
+document.querySelector("#buttonclick").addEventListener("click", buttonClick);
+
+function buttonClick() {
+	...
+}
+// Или
+let button = document.querySelector("#buttonclick");
+button.addEventListener("click", buttonClick);
+
+function buttonClick() {
+	...
+}
+									</xmp>
+								</div>
+							</div><br>
+							<p>Но можно не писать название функции как второе значение а сразу писать функцию там:</p>
+							<div class="jsgreyfone">
+								<xmp>
+document.querySelector("#buttonclick").addEventListener("click", function() {
+	...
+});
+								</xmp>
+							</div>
+							<br><br>
+							<p><span style="font-weight: 600; color: red;">Внимание! </span>При написании метода addEventListener, у вас может появится ошибка <span style="font-weight: 600; color: red;">Uncaught TypeError: Cannot read property 'addEventListener' of null</span>. Можете поискать эту ошибку в интернете. У всех причина возникновения может быть разной. Но чаще всего решением оказывается просто перетащить сам код скрипта внутри HTML документа перед закрывающем тегом body.</p>
+							<br><br>
+							<h3>Работа с формой</h3>
+							<p>Помните мы говорили на уроке HTML что мы поработаем над кнопкой submit? Так вот, эта кнопка отправляет данные на сервер. Но так как это JavaScript, и мы не сможем здесь работать с сервером, мы просто сделаем аналогию отправки данных. Никакой отправки данных здесь не будет.</p><br>
+							<p>input и button с типами submit, нету разницы. Можно использовать и то и другое.</p><br>
+							<p>Давайте создадим простую форму:</p>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<form method="post" id="formsubmit">
+		<label for="name">Введите ваше имя</label>
+		<input type="text" placeholder="Имя" name="name" id="name"><br><br>
+		<label for="password">Пароль</label>
+		<input type="password"placeholder="Пароль"  name="password" id="password"><br><br>
+		<label for="repassword">Повтор пароля</label>
+		<input type="password" placeholder="Повтор пароля" name="repassword" id="repassword"><br><br>
+		<div id="mistakes"></div>
+		<button type="submit">Готово</button>
+	</form>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>JS код:</span>
+								<div class="jsgreyfone">
+									<xmp>
+document.querySelector("#forsubmit").addEventListener("submit", buttonSubmit);
+function buttonSubmit() {
+
+}
+									</xmp>
+								</div>
+							</div><br>
+							<p>Когда мы нажимаем на кнопку с типом submit, у нас отправляются данные на сервер и перезагружается страница. Чтобы отключить перезагрузку страницы при нажатии на эту кнопку, делаем вот что: Если мы вместо addEventListener добавляем обработчик события onsubmit в тег form, то чтобы отключить перезагрузку страницы, используем оператор return.</p><br>
+							<p>return false; - не перезагружается страница. Можете представлять это как что false = перезагрузка. То есть мы вытащили этот false из функции, и страница не перезагрузилась.</p>
+							<p>return true; - перезагружается страница. Можете представлять это как что true = не перезагрузка. То есть мы вытащили этот true из функции, и страница перезагрузилась.</p><br>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<form method="post" id="formsubmit" onsubmit="exmpSubmit(this)">
+		<label for="name">Введите ваше имя</label>
+		<input type="text" placeholder="Имя" name="name" id="name"><br><br>
+		<label for="password">Пароль</label>
+		<input type="password" placeholder="Пароль" name="password" id="password"><br><br>
+		<label for="repassword">Повтор пароля</label>
+		<input type="password" placeholder="Повтор пароля" name="repassword" id="repassword"><br><br>
+		<div id="mistakes"></div>
+		<button type="submit">Готово</button>
+	</form>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>JS код:</span>
+								<div class="jsgreyfone">
+									<xmp>
+// Если бы мы использовали обработчик события
+
+let objform = document.querySelector("#formsubmit");
+function exmpSubmit() {
+
+	return false;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<p>Если мы протестируем это, ты видим что страница все таки перезагружается. Почему? Дело в том что если эта запись с return не связана с обработчиком событии. В мысли сразу приходит идея сделать подобным образом:</p>
+							<div class="jsgreyfone">
+								<xmp>
+// Если бы мы использовали обработчик события
+
+let objform = document.querySelector("#formsubmit");
+function exmpSubmit(el) {
+
+	el.return false;
+}
+								</xmp>
+							</div><br>
+							<p>Но к сожалению эта конструкция не работает. Чтобы сделать это, мы должны в значении обработчика событии тоже добавить оператор return:</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<body>
+	<form method="post" id="formsubmit" onsubmit="return exmpSubmit(this)">
+		<label for="name">Введите ваше имя</label>
+		<input type="text" placeholder="Имя" name="name" id="name"><br><br>
+		<label for="password">Пароль</label>
+		<input type="password" placeholder="Пароль" name="password" id="password"><br><br>
+		<label for="repassword">Повтор пароля</label>
+		<input type="password" placeholder="Повтор пароля" name="repassword" id="repassword"><br><br>
+		<div id="mistakes"></div>
+		<button type="submit">Готово</button>
+	</form>
+</body>
+								</xmp>
+							</div>
+							<p>Теперь форма будет принимать результат значения функции и будет не перезагружать страницу.</p>
+							<br><br><br>
+							<p>Чтобы отключить перезагрузку страницы если мы используем вместо обработчиков события, addEventListener, то мы обращаемся к параметру функции обращенной к тегу form, и добавляем такой метод как <strong style="color: #002340;">preventDefault()</strong>. return уже не прописываем ибо не прописан атрибут события в теге form.</p>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<form method="post" id="formsubmit">
+		<label for="name">Введите ваше имя</label>
+		<input type="text" placeholder="Имя" name="name" id="name"><br><br>
+		<label for="password">Пароль</label>
+		<input type="password" placeholder="Пароль" name="password" id="password"><br><br>
+		<label for="repassword">Повтор пароля</label>
+		<input type="password" placeholder="Повтор пароля" name="repassword" id="repassword"><br><br>
+		<div id="mistakes"></div>
+		<button type="submit">Готово</button>
+	</form>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>JS код:</span>
+								<div class="jsgreyfone">
+									<xmp>
+document.querySelector("#formsubmit").addEventListener("submit", buttonSubmit);
+let mistakes = document.querySelector("#mistakes");
+mistakes.style.cssText = "color: red;";
+
+function buttonSubmit(event) {
+	let objform = document.querySelector("#formsubmit"); // Находится тег form
+
+	event.preventDefault();
+}
+									</xmp>
+								</div>
+							</div>
+							<br><br>
+							<p>Перезагрузку мы отключили. Теперь давайте теперь будем отслеживать значения input'ов. Для этого будем обращаться к ним через атрибуты:</p>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<form method="post" id="formsubmit">
+		<label for="name">Введите ваше имя</label>
+		<input type="text" placeholder="Имя" name="name" id="name"><br><br>
+		<label for="password">Пароль</label>
+		<input type="password" placeholder="Пароль" name="password" id="password"><br><br>
+		<label for="repassword">Повтор пароля</label>
+		<input type="password" placeholder="Повтор пароля" name="repassword" id="repassword"><br><br>
+		<div id="mistakes"></div>
+		<button type="submit">Готово</button>
+	</form>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>JS код:</span>
+								<div class="jsgreyfone">
+									<xmp>
+document.querySelector("#formsubmit").addEventListener("submit", buttonSubmit);
+let mistakes = document.querySelector("#mistakes");
+mistakes.style.cssText = "color: red;";
+
+function buttonSubmit(event) {
+	let objform = document.querySelector("#formsubmit");
+
+	let name = objform.name.value;
+	let password = objform.password.value;
+	let repassword = objform.repassword.value;
+
+	event.preventDefault();
+}
+									</xmp>
+								</div>
+							</div><br>
+							<p>Пропишем пару условии:</p>
+							<div class="jsgreyfone">
+								<xmp>
+document.querySelector("#formsubmit").addEventListener("submit", buttonSubmit);
+let mistakes = document.querySelector("#mistakes");
+mistakes.style.cssText = "color: red;";
+
+function buttonSubmit(event) {
+	let objform = document.querySelector("#formsubmit");
+
+	let name = objform.name.value;
+	let password = objform.password.value;
+	let repassword = objform.repassword.value;
+
+	if(name === "" || password === "" || repassword === "") {
+		mistakes.innerHTML = "Заполните все поля";
+	} else if(password != repassword) {
+		mistakes.innerHTML = "Пароли должны совпадать";
+	} else {
+		mistakes.innerHTML = "";
+		alert("Данные успешно отправлены");
+	}
+
+	event.preventDefault();
+}
+								</xmp>
+							</div><br>
+							<form method="post" id="formsubmit">
+								<label for="name">Введите ваше имя</label>
+								<input type="text" placeholder="Имя" name="name" id="name"><br><br>
+								<label for="password">Пароль</label>
+								<input type="password" placeholder="Пароль" name="password" id="password"><br><br>
+								<label for="repassword">Повтор пароля</label>
+								<input type="password"placeholder="Повтор пароля" name="repassword" id="repassword"><br><br>
+								<div id="mistakes"></div>
+								<button type="submit">Готово</button>
+							</form><br>
+							<p>Опять же, никакие данные никуда не отправляются, так как это не серверный язык. Можете свободно писать что-либо.</p>
+							<script>
+								document.querySelector("#formsubmit").addEventListener("submit", buttonSubmit);
+								let mistakes = document.querySelector("#mistakes");
+								mistakes.style.cssText = "color: red;";
+
+								function buttonSubmit(event) {
+									let objform = document.querySelector("#formsubmit");
+
+									let name = objform.name.value;
+									let password = objform.password.value;
+									let repassword = objform.repassword.value;
+
+									if(name === "" || password === "" || repassword === "") {
+										mistakes.innerHTML = "Заполните все поля";
+									} else if(password != repassword) {
+										mistakes.innerHTML = "Пароли должны совпадать";
+									} else {
+										mistakes.innerHTML = "";
+										alert("Данные успешно отправлены");
+									}
+
+									event.preventDefault();
+								}
+							</script>
+							<br><br>
+							<h3>Загрузка DOM, загрузка окна</h3>
+							<p>DOM(Document Object Model) - это весь HTML документ, все объекты, все теги. Когда мы хотим чтобы выполнялась операция JavaScript после загрузки всех объектов HTML, можем прописать такую конструкцию(но внешние ресурсы, например картины, еще могут быть не загружены):</p>
+							<div class="jsgreyfone">
+								<xmp>
+document.addEventListener("DOMContentLoaded", function() {
+	// Код
+});
+								</xmp>
+							</div><br>
+							<p>Также есть такой глобальный объект который называется <strong style="color: #002340;">window</strong>. Оно позволяет обращаться к окну браузера.</p>
+							<p>Если мы хотим чтобы операция JavaScript выполнялась после загрузки всего окна, даже внешних ресурсов по типу картинок, то можем использовать такую конструкцию:</p>
+							<div class="jsgreyfone">
+								<xmp>
+window.onload = function() {
+	// Код
+}
+								</xmp>
+							</div>
+							<br><br>
+							<h3>Интервалы</h3>
+							<p>Интервалы - позволяют выполнять код через определенные промежутки времени постоянно. Структура:</p>
+							<div class="jsgreyfone">
+								<xmp>
+setInterval(название функции, время);
+function название функции() {
+	...
+}
+								</xmp>
+							</div><br>
+							<p>Или такая структура:</p>
+							<div class="jsgreyfone">
+								<xmp>
+setInterval(function() {
+	...
+}, время);
+								</xmp>
+							</div><br>
+							<p>Время надо писать в миллисекундах только без ключевого слова ms. 1 секунда = 1000 миллисекундам.</p>
+							<span>Например:</span>
+							<div class="jsgreyfone">
+								<xmp>
+let count = 0;
+setInterval(function() {
+	count++;
+	console.log(count);
+}, 1500);
+								</xmp>
+							</div><br>
+							<p>Чтобы остановить интервал, используют функцию clearInterval(). Но для начала давайте отметим наш интервал поместив его в переменную:</p>
+							<div class="jsgreyfone">
+								<xmp>
+let count = 0;
+let int = setInterval(intcount, 1000);
+function intcount() {
+	count++;
+
+	if(count >= 15)
+		clearInterval(int); // Передаем интервал
+
+	console.log(count);
+}
+								</xmp>
+							</div>
+							<br><br>
+							<h3>Таймеры</h3>
+							<p>Таймеры - позволяет сработать коду только один раз через определенный промежуток времени. Структура точно такая же как у интервалов:</p>
+							<div class="jsgreyfone">
+								<xmp>
+setTimeout(название функции, время);
+function название функции() {
+	...
+}
+// Или
+setTimeout(function() {
+	...
+}, время);
+								</xmp>
+							</div><br>
+							<span>Пример:</span>
+							<div class="jsgreyfone">
+								<xmp>
+setTimeout(function() {
+	console.log("Я появился через 3 секунды")
+}, 3000);
+								</xmp>
+							</div>
+							<div class="fromlesson2nextback">
+								<a href="jslesson5.html"><div class="btnbackpage"><span>Предыдущее</span></div></a>
+								<a href="jslesson7.html"><div class="btnnextpage"><span>Следующее</span></div></a>
+							</div>
+						</div>
+						<aside>
+							<div class="asidedivfirst">
+								<a href="jslesson.html">
+									<div class="asidenav" title="Перейти к уроку 1">
+										<span>#1 - Что такое JavaScript | Переменные</span>
+									</div>
+								</a>
+								<a href="jslesson2.html">
+									<div class="asidenav" title="Перейти к уроку 2">
+										<span>#2 - Математические действия, Условные операторы</span>
+									</div>
+								</a>
+								<a href="jslesson3.html">
+									<div class="asidenav" title=" Перейти к уроку 3">
+										<span>#3 - Массивы, Циклы</span>
+									</div>
+								</a>
+								<a href="jslesson4.html">
+									<div class="asidenav" title="Перейти к уроку 4">
+										<span>#4 - Всплывающие окна, Функции</span>
+									</div>
+								</a>
+								<a href="jslesson5.html">
+									<div class="asidenav" title="Перейти к уроку 5">
+										<span>#5 - Обработчики события, this, Выбор объектов, Стили</span>
+									</div>
+								</a>
+								<div style="background: #ebebeb;" class="asidenav" title="Урок 6">
+									<span style="font-weight: 500;">#6 - Отслеживание объектов в JS, Формы, Таймеры, Интервалы</span>
+								</div>
+								<a href="jslesson7.html">
+									<div class="asidenav" title="Перейти к уроку 7">
+										<span>#7 - Скролл страницы, Работа с классами</span>
+									</div>
+								</a>
+								<a href="jslesson8.html">
+									<div class="asidenav" title="Перейти к уроку 8">
+										<span>#8 - Заключение</span>
+									</div>
+								</a>
+							</div>
+						</aside>
+					</div>
+				</div>
+			</section>
+			<!-- "Подвал" страницы -->
+			<footer class="footer">
+				<div class="container">
+					<div class="footerstyle">
+						<div class="footerfirstcolumn">
+							<a href="../index.html" class="footerbaseword" title="На главную страницу">ProgEasy</a>
+							<span class="footerafterbaseword">Обучение по</span><br><span class="footerafterbaseparagraph">программированию</span>
+						</div>
+						<ul class="footersecondcolumn">
+							<li class="footerlessons"><a href="../Lessons/lessons.html">Уроки</a></li>
+							<li class="footercontacts"><a href="../Contacts/contacts.html">Контакты</a></li>
+							<li class="footerabout"><a href="../Aboutus/aboutus.html">О создателе/сайте</a></li>
+						</ul>
+						<div class="footerthirdcolumn">
+							<div class="footerimages">
+								<div class="footerinstagram" title="Инстаграм" onclick="Insta()">
+									<img src="../images/instagram.png" alt="Instagram">
+								</div>
+								<div class="footervk"  title="Вк" onclick="Vk()">
+									<img src="../images/vk.png" alt="Vk">
+								</div>
+								<div class="footerwhatsapp" title="WhatsApp" onclick="WhatsApp()">
+									<img src="../images/whatsapp.png" alt="WhatsApp">
+								</div>
+							</div>
+							<div class="footeremailnumber">
+								<span class="footeremailnumbertexts">+7 (707) 200 35-83</span><br>
+								<span class="footeremailnumbertexts">Email: anuarzholdybaev2006@gmail.com</span>
+								<div class="footermadeby">
+									<span class="footermadebytext">© Created by Anuar Name ProgEasy, 2021</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<div class="windowfixed"></div>
+		</div>
+		<!-- Закончился wrapper -->
+		<script src="../HTML/jslesson.js"></script>
+	</body>
+</html>

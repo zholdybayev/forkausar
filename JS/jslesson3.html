@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="keywords" content="Программирование, сайт, HTML, CSS, JavaScript, бесплатное обучение, курсы программирования, бесплатные курсы по программированию, как создать сайт, Frontend, Frontend разработка, JavaScript урок, ProgEasy JavaScript урок 3">
+		<meta name="description" content="Урок №3 JavaScript от ProgEasy. Массивы, циклы. Бесплатное обучение Frontend разработке.">
+		<meta name="format-detection" content="telephone=no">
+		<title>Урок 3 JS</title>
+		<link rel="shortcut icon" href="../images/iconweb.png" type="image/png">
+		<link href="cssofjslesson2.css" rel="stylesheet" type="text/css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<!-- Yandex.Metrika counter -->
+		<script type="text/javascript" >
+			(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+			m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+			(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+			ym(84034504, "init", {
+				clickmap:true,
+				trackLinks:true,
+				accurateTrackBounce:true,
+				webvisor:true
+			});
+		</script>
+		<noscript><div><img src="https://mc.yandex.ru/watch/84034504" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+		<!-- /Yandex.Metrika counter -->
+	</head>
+	<body>
+		<div class="wrapper">
+			<!-- header -->
+			<header class="header">
+				<div class="container">
+					<div class="headersectionstyles">
+						<div class="Basenameheader"><a href="../index.html" class="tothemainpage" title="На главную страницу">ProgEasy</a></div>
+						<div class="burger">
+							<span></span>
+						</div>
+						<div class="Baseultexts">
+							<span><a class="Basenav" href="../HTML/htmllesson.html" title="Перейти к HTML">HTML</a></span>
+							<span><a class="Basenav" href="../CSS/csslesson.html" title="Перейти к CSS">CSS</a></span>
+							<span class="Basenav" title="Вы на этой странице">JavaScript</span>
+							<span><a class="Basenav" href="../Contacts/contacts.html" title="Контакты">Контакты</a></span>
+							<span><a class="Basenav" href="../Aboutus/aboutus.html" title="О нас">О сайте</a></span>
+						</div>
+						<div class="Basenametitle">
+							<p class="headertitle">Понятные объяснения</p>
+						</div>
+					</div>
+				</div>
+			</header>
+			<!-- Закончился header -->
+			<section class="sectionhtml">
+				<div class="container">
+					<div class="Firstbasetextdiv">
+						<h1>Урок 3 JavaScript</h1>
+					</div>
+					<div class="sectionstyles2">
+						<div class="htmlexplalltextdiv">
+							<h2>Массивы, Циклы</h2>
+							<br>
+							<p>Массив - это упорядоченная коллекция значений. В отличии от переменных, в массивах можно записать несколько информаций и значений. Каждое значение характеризуется ИНДЕКСОМ в числовой позиции. А индексы начинаются не с единицы, а с нуля. Поэтому первый элемент в массиве по индексу будет 0, второй элемент 1 и т.д.</p><br>
+							<p>Массивы создаются так же как и переменные только с одним исключением:</p>
+							<div class="attention">
+								<br>
+								<p>Если код не виден, вы можете <span style="color: #68d66e;">скролить</span> серый блок с кодом.</p>
+								<br>
+							</div>
+							<div class="jsgreyfone">
+								<xmp>
+let array = [...];
+								</xmp>
+							</div><br>
+							<p>Либо же массивы создаются при помощи оператора new. Оператор new - указывает, что функция должна вызываться как конструктор объектов.</p>
+							<div class="jsgreyfone">
+								<xmp>
+let array = new Array(...);
+								</xmp>
+							</div><br>
+							<p>Можно записывать несколько разных значений через запятую:</p>
+							<div class="jsgreyfone">
+								<xmp>
+let array = ["Hello", 13, true, 99, "Name"];
+								</xmp>
+							</div><br>
+							<p>Давайте выведем массив в консоль:</p>
+							<div class="jsgreyfone">
+								<xmp>
+let array = ["Hello", 13, true, 99, "Name"];
+console.log(array);
+								</xmp>
+							</div>
+							<div class="console">
+								<div style="padding-bottom: 5px;"><span>Консоль</span></div>
+								<div style="overflow: auto;">
+									<p>Array(5)</p>
+									<p>0:"Hello"</p>
+									<p>1: 13</p>
+									<p>2: true</p>
+									<p>3: 99</p>
+									<p>4: "Name"</p>
+									<p>length: 5</p>
+									<p>__proto__: Array(0)</p>
+								</div>
+							</div>
+							<p>Здесь мы видим количество значений 5, 4 индекса.</p>
+							<br><br>
+							<p>Чтобы изменить определенное значение у массива:</p>
+							<div class="jsgreyfone">
+								<xmp>
+let array = ["Hello", 13, true, 99, "Name"];
+array[номер индекса] = ...;
+								</xmp>
+							</div>
+							<p>То есть внутрь квадратных скобок вы пишете номер индекса соответствующую индексу элемента, и уже потом пишете новое значение.</p>
+							<br>
+							<p>Давайте выведем ее в консоль:</p>
+							<div class="jsgreyfone">
+								<xmp>
+let array = ["Hello", 13, true, 99, "Name"];
+array[0] = "World;
+console.log(array[0]);
+								</xmp>
+							</div>
+							<div class="console">
+								<div style="padding-bottom: 5px;"><span>Консоль</span></div>
+								<div style="overflow: auto;">
+									<p>World</p>
+								</div>
+							</div>
+							<h3>Многомерные массивы</h3>
+							<p>Многомерные массивы - это массивы в массиве. Структура выглядит вот так:</p>
+							<div class="jsgreyfone">
+								<xmp>
+let array = [
+	[...], [...], [...]
+];
+								</xmp>
+							</div>
+							<br>
+							<p>Давайте запишем какие-то значения:</p>
+							<div class="jsgreyfone">
+								<xmp>
+let array = [
+	[1, false, "word"], [true, "Hello", 9], ["HowAreYou", 566, 76]
+];
+								</xmp>
+							</div><br>
+							<p>Чтобы изменить значение массива в массиве, прописывается вот так:</p>
+							<div class="jsgreyfone">
+								<xmp>
+let array = [
+	[1, false, "word"], [true, "Hello", 9], ["HowAreYou", 566, 76]
+];
+array[индекс одного из трех массивов][индекс значения массива] = ...;
+								</xmp>
+							</div>
+							<p>То есть в первых квадратных скобках вы пишете индекс одного из тех трех массивов, а в следующие квадратные скобки пишете индекс значения этого массива.</p><br>
+							<span>Например:</span>
+							<div class="jsgreyfone">
+								<xmp>
+let array = [
+	[1, false, "word"], [true, "Hello", 9], ["HowAreYou", 566, 76]
+];
+array[2][1] = 100;
+console.log(array[2][1]);
+								</xmp>
+							</div>
+							<div class="console">
+								<div style="padding-bottom: 5px;"><span>Консоль</span></div>
+								<div style="overflow: auto;">
+									<p style="font-weight: 300; color: blue; font-size: 16px;">100</p>
+								</div>
+							</div>
+							<h3>Методы для массивов</h3>
+							<br>
+							<h4>Метод length</h4>
+							<p>Метод length позволяет узнать длину массива, то есть сколько в нем элементов. Например:</p>
+							<div class="jsgreyfone">
+								<xmp>
+let array = [5, true, "programming",];
+console.log(array.length);
+								</xmp>
+							</div>
+							<div class="console">
+								<div style="padding-bottom: 5px;"><span>Консоль</span></div>
+								<div style="overflow: auto;">
+									<p style="font-weight: 300; color: blue; font-size: 16px;">3</p>
+								</div>
+							</div>
+							<br>
+							<h4>Метод/Функция join()</h4>
+							<p>>Метод/Функция join() join позволяет объединить элементы массива в строку. Внутри скобок и качывек мы пишем символ при помощи которого мы объединим элементы массива в строку.</p><br>
+							<span>Например:</span>
+							<div class="jsgreyfone">
+								<xmp>
+let array = [5, true, "programming",];
+let string = array.join(", ");
+console.log(string);
+								</xmp>
+							</div>
+							<div class="console">
+								<div style="padding-bottom: 5px;"><span>Консоль</span></div>
+								<div style="overflow: auto;">
+									<p>5, true, programming</p>
+								</div>
+							</div>
+							<br>
+							<h4>Метод/Функция sort()</h4>
+							<p>Метод/Функция sort() позволяет сортировать элементы массива по возрастанию. В частности применяется если в массиве числа.</p><br>
+							<span>Например:</span>
+							<div class="jsgreyfone">
+								<xmp>
+let array = [7, 4, 6, 1, 9, 5];
+let string = array.sort();
+console.log(string);
+								</xmp>
+							</div>
+							<div class="console">
+								<div style="padding-bottom: 5px;"><span>Консоль</span></div>
+								<div style="overflow: auto;">
+									<p>(6) [1, 4, 5, 6, 7, 9]</p>
+								</div>
+							</div>
+							<br>
+							<h4>Метод/Функция reverse()</h4>
+							<p>Метод/Функция reverse() позволяет сделать элементы массива в обратном порядке. Наверно вы уже слышали это ключевое слово из урока CSS.</p><br>
+							<span>Например:</span>
+							<div class="jsgreyfone">
+								<xmp>
+let array = [7, 4, 6, 1, 9, 5];
+let string = array.reverse();
+console.log(string);
+								</xmp>
+							</div>
+							<div class="console">
+								<div style="padding-bottom: 5px;"><span>Консоль</span></div>
+								<div style="overflow: auto;">
+									<p>(6) [5, 9, 1, 6, 4, 7]</p>
+								</div>
+							</div>
+							<br>
+							<h4>Можно объединять методы:</h4>
+							<div class="jsgreyfone">
+								<xmp>
+let array = [7, 4, 6, 1, 9, 5];
+let string = array.sort().join(", ");
+console.log(string);
+								</xmp>
+							</div>
+							<div class="console">
+								<div style="padding-bottom: 5px;"><span>Консоль</span></div>
+								<div style="overflow: auto;">
+									<p>1, 4, 5, 6, 7, 9</p>
+								</div>
+							</div>
+							<br>
+							<h4>Метод/Функция split()</h4>
+							<p>Метод/Функция split() разбивает строки на массив строк путём разделения строки указанной подстрокой.</p><br>
+							<span>Например:</span>
+							<div class="jsgreyfone">
+								<xmp>
+let array = ["word", 123, "JS"];
+array.reverse().join(", ").split(); // join() - из массива сделал строку, split() - из строки сделал массив 
+console.log(array);
+								</xmp>
+							</div>
+							<div class="console">
+								<div style="padding-bottom: 5px;"><span>Консоль</span></div>
+								<div style="overflow: auto;">
+									<p>(3) ["JS", 123, "word"]</p>
+								</div>
+							</div>
+							<h3>Циклы</h3>
+							<br>
+							<p>Циклы это штука при помощи которой мы можем выполнять определенный код несколько раз подряд. Существует три вида циклов: for, while, do while. Рассмотрим все по порядку.</p>
+							<br>
+							<h4>Цикл for</h4>
+							<p>Цикл for очень часто используется вместе с массивами, ведь при помощи него можно легко перебирать элементы массива. Но сперва давайте посмотрим саму конструкцию цикла for:</p>
+							<div class="jsgreyfone">
+								<xmp>
+for( 1); 2); 3)) {
+	...
+}
+								</xmp>
+							</div>
+							<p>1) Мы создаем переменную в первоначальным значением. Значения не могут быть строки или булевые выражения и другие типы данных, могут быть только числа.</p><br>
+							<p>2) Мы пишем условие до которого будет изменяться наше число в переменной.</p><br>
+							<p>3) Мы пишем как наша переменная будет изменяться.</p><br>
+							<span>Например:</span>
+							<div class="jsgreyfone">
+								<xmp>
+for(let i = 0; i < 10 ; i++) {
+	console.log(i);
+}
+								</xmp>
+							</div>
+							<p>У нас есть переменная i со значением 0, и к ней будет добавлять единица до 10-ти.</p>
+							<div class="console">
+								<div style="padding-bottom: 5px;"><span>Консоль</span></div>
+								<div style="overflow: auto; font-weight: 300; color: blue; font-size: 16px;" >
+									<p>0</p>
+									<p>1</p>
+									<p>2</p>
+									<p>3</p>
+									<p>4</p>
+									<p>5</p>
+									<p>6</p>
+									<p>7</p>
+									<p>8</p>
+									<p>9</p>
+								</div>
+							</div>
+							<p>С массивами при помощи этого цикла мы поработаем в конце уроке.</p>
+							<br><br>
+							<h4>Цикл while</h4>
+							<p>Цикл while почти похож на цикл for, вот только переменная создается за его пределами. Вот структура:</p>
+							<div class="jsgreyfone">
+								<xmp>
+let переменная = число;
+while(условие) {
+	Сюда пишем как переменная будет изменяться
+	...
+}
+								</xmp>
+							</div>
+							<p>Давайте приведем пример:</p>
+							<div class="jsgreyfone">
+								<xmp>
+let x = 100;
+while(x > 5) {
+	x /= 2;
+	console.log(x)
+}
+								</xmp>
+							</div>
+							<div class="console">
+								<div style="padding-bottom: 5px;"><span>Консоль</span></div>
+								<div style="overflow: auto; font-weight: 300; color: blue; font-size: 16px;" >
+									<p>50</p>
+									<p>25</p>
+									<p>12.5</p>
+									<p>6.25</p>
+									<p>3.125</p>
+								</div>
+							</div>
+							<p>Будьте внимательными с циклом while, ибо оно может создать бесконечный цикл что вреден для компьютера. Например если мы булевое выражение true в условии проверяем на значение true, то будет бесконечный цикл. Ведь она будет всегда со значением true и никак не будет изменяться.</p>
+							<br><br>
+							<h4>Цикл do while</h4>
+							<p>Этот цикл почти точно такой же как цикл while но с одним различием. В этом цикле сперва выполняется действие в do, а уже потом проверяется условие в while. Если условие неверное, то у нас do сработает один раз сто процентов и выйдет из цикла, если условие верное, то оно продолжится до достижения этого самого условия. Давайте посмотрим структуру:</p>
+							<div class="jsgreyfone">
+								<xmp>
+let переменная = значение;
+do {
+	...
+	Сюда пишем как переменная будет изменяться
+} while(условие)
+								</xmp>
+							</div>
+							<p>Давайте пример:</p>
+							<div class="jsgreyfone">
+								<xmp>
+let h = 10;
+do {
+	console.log(h)
+	h++;
+} while(h < 5) // Условие заранее неверное
+								</xmp>
+							</div>
+							<div class="console">
+								<div style="padding-bottom: 5px;"><span>Консоль</span></div>
+								<div style="overflow: auto; font-weight: 300; color: blue; font-size: 16px;" >
+									<p>10</p>
+								</div>
+							</div>
+							<p>То есть в верхнем примере у нас выполнилось сто процентов один раз действие в do, потом прочиталось условие, видно что оно не верное, значит вышли из цикла.</p>
+							<br>
+							<p>Если условие верное то как обычно:</p>
+							<div class="jsgreyfone">
+								<xmp>
+let h = 5;
+do {
+	console.log(h);
+	h *= 2;
+} while(h <= 100)
+								</xmp>
+							</div>
+							<div class="console">
+								<div style="padding-bottom: 5px;"><span>Консоль</span></div>
+								<div style="overflow: auto; font-weight: 300; color: blue; font-size: 16px;" >
+									<p>5</p>
+									<p>10</p>
+									<p>20</p>
+									<p>40</p>
+									<p>80</p>
+								</div>
+							</div>
+							<h3>Операторы для циклов</h3>
+							<br>
+							<h4>Оператор break</h4>
+							<p>Оператор break позволяет выйти из цикла учитывая if. То есть внутри цикла мы пишем условие соответствующее циклу. Если мы хотим чтобы цикл учитывал условие и сразу же выходил из цикла после того как условие будет удовлетворено,
+							то прописываем оператор break. Вот так:</p>
+							<div class="jsgreyfone">
+								<xmp>
+for(let i = 0; i < 20 ; i += 3) {
+	if(i >= 15)
+		break
+	console.log(i);
+}
+								</xmp>
+							</div>
+							<div class="console">
+								<div style="padding-bottom: 5px;"><span>Консоль</span></div>
+								<div style="overflow: auto; font-weight: 300; color: blue; font-size: 16px;" >
+									<p>0</p>
+									<p>3</p>
+									<p>6</p>
+									<p>9</p>
+									<p>12</p>
+								</div>
+							</div>
+							<h4>Оператор continue</h4>
+							<p>Оператор continue позволяет выйти из цикла НЕ учитывая if и просто пропустив его. Например:</p>
+							<div class="jsgreyfone">
+								<xmp>
+for(let i = 0; i < 30 ; i += 3) {
+	if(i % 2 === 0)
+		continue;
+	console.log(i);
+}
+								</xmp>
+							</div>
+							<p>Условие: Если у i остаток при делении на 2 будет 0, то мы пропускаем это условие.</p>
+							<div class="console">
+								<div style="padding-bottom: 5px;"><span>Консоль</span></div>
+								<div style="overflow: auto; font-weight: 300; color: blue; font-size: 16px;" >
+									<p>3</p>
+									<p>9</p>
+									<p>15</p>
+									<p>21</p>
+									<p>27</p>
+								</div>
+							</div>
+							<h3>Работа с массивами</h3>
+							<p>При помощи циклов можно легко перебирать элементы массивов. Мы уже знаем как обращаться к элементам массива через квадратные скобки. Так вот при помощи циклов можно обращаться к каждому элементу массива. Например:</p>
+							<div class="jsgreyfone">
+								<xmp>
+let arr = [1, 5, 3, 9];
+for(let i = 0; i < arr.length ; i++) {
+	console.log("Элемент " + (i + 1) + ": " + arr[i]);
+}
+								</xmp>
+							</div>
+							<p>Цикл говорит: Мне будет добавляться единица пока я не буду меньше длины массива. Я начинаю с нуля(как индекс), и заканчиваю числом 3, ведь длина массива 4, а я должен быть ниже чем 4. Вот и получается индексы элементов массива.</p><br>
+							<p>console.log говорит: Нумерация элементов начинается с i + 1, ведь первое значение i равно 0, и чтобы нумерацию сделать адекватной, я добавляю единицу чтобы она начиналась с цифры 1 а не с нуля. А выражение arr[i] означает, что я каждый элемент массива перебираю под индексом i, а i перебрал все элементы массива под их индексы(говорилось в цикле).</p>
+							<div class="console">
+								<div style="padding-bottom: 5px;"><span>Консоль</span></div>
+								<div style="overflow: auto;" >
+									<p>Элемент 1: 1</p>
+									<p>Элемент 2: 5</p>
+									<p>Элемент 3: 3</p>
+									<p>Элемент 4: 9</p>
+								</div>
+							</div>
+							<div class="fromlesson2nextback">
+								<a href="jslesson2.html"><div class="btnbackpage"><span>Предыдущее</span></div></a>
+								<a href="jslesson4.html"><div class="btnnextpage"><span>Следующее</span></div></a>
+							</div>
+						</div>
+						<aside>
+							<div class="asidedivfirst">
+								<a href="jslesson.html">
+									<div class="asidenav" title="Перейти к уроку 1">
+										<span>#1 - Что такое JavaScript | Переменные</span>
+									</div>
+								</a>
+								<a href="jslesson2.html">
+									<div class="asidenav" title="Перейти к уроку 2">
+										<span>#2 - Математические действия, Условные операторы</span>
+									</div>
+								</a>
+								<div style="background: #ebebeb;" class="asidenav" title="Урок 3">
+									<span style="font-weight: 500;">#3 - Массивы, Циклы</span>
+								</div>
+								<a href="jslesson4.html">
+									<div class="asidenav" title="Перейти к уроку 4">
+										<span>#4 - Всплывающие окна, Функции</span>
+									</div>
+								</a>
+								<a href="jslesson5.html">
+									<div class="asidenav" title="Перейти к уроку 5">
+										<span>#5 - Обработчики события, this, Выбор объектов, Стили</span>
+									</div>
+								</a>
+								<a href="jslesson6.html">
+									<div class="asidenav" title="Перейти к уроку 6">
+										<span>#6 - Отслеживание объектов в JS, Формы, Таймеры, Интервалы</span>
+									</div>
+								</a>
+								<a href="jslesson7.html">
+									<div class="asidenav" title="Перейти к уроку 7">
+										<span>#7 - Скролл страницы, Работа с классами</span>
+									</div>
+								</a>
+								<a href="jslesson8.html">
+									<div class="asidenav" title="Перейти к уроку 8">
+										<span>#8 - Заключение</span>
+									</div>
+								</a>
+							</div>
+						</aside>
+					</div>
+				</div>
+			</section>
+			<!-- "Подвал" страницы -->
+			<footer class="footer">
+				<div class="container">
+					<div class="footerstyle">
+						<div class="footerfirstcolumn">
+							<a href="../index.html" class="footerbaseword" title="На главную страницу">ProgEasy</a>
+							<span class="footerafterbaseword">Обучение по</span><br><span class="footerafterbaseparagraph">программированию</span>
+						</div>
+						<ul class="footersecondcolumn">
+							<li class="footerlessons"><a href="../Lessons/lessons.html">Уроки</a></li>
+							<li class="footercontacts"><a href="../Contacts/contacts.html">Контакты</a></li>
+							<li class="footerabout"><a href="../Aboutus/aboutus.html">О создателе/сайте</a></li>
+						</ul>
+						<div class="footerthirdcolumn">
+							<div class="footerimages">
+								<div class="footerinstagram" title="Инстаграм" onclick="Insta()">
+									<img src="../images/instagram.png" alt="Instagram">
+								</div>
+								<div class="footervk"  title="Вк" onclick="Vk()">
+									<img src="../images/vk.png" alt="Vk">
+								</div>
+								<div class="footerwhatsapp" title="WhatsApp" onclick="WhatsApp()">
+									<img src="../images/whatsapp.png" alt="WhatsApp">
+								</div>
+							</div>
+							<div class="footeremailnumber">
+								<span class="footeremailnumbertexts">+7 (707) 200 35-83</span><br>
+								<span class="footeremailnumbertexts">Email: anuarzholdybaev2006@gmail.com</span>
+								<div class="footermadeby">
+									<span class="footermadebytext">© Created by Anuar Name ProgEasy, 2021</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<div class="windowfixed"></div>
+		</div>
+		<!-- Закончился wrapper -->
+		<script src="../HTML/jslesson.js"></script>
+	</body>
+</html>

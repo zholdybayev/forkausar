@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="keywords" content="Программирование, сайт, HTML, CSS, JavaScript, бесплатное обучение, курсы программирования, бесплатные курсы по программированию, как создать сайт, Frontend, Frontend разработка, HTML урок, ProgEasy HTML урок 1">
+		<meta name="description" content="Урок №1 HTML от ProgEasy. Что такое HTML, Теги, атрибуты. Бесплатное обучение Frontend разработке.">
+		<meta name="format-detection" content="telephone=no">
+		<title>Урок 1 HTML</title>
+		<link rel="shortcut icon" href="../images/iconweb.png" type="image/png">
+		<link href="csslesson.css" rel="stylesheet" type="text/css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<!-- Yandex.Metrika counter -->
+		<script type="text/javascript" >
+			(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+			m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+			(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+			ym(84034504, "init", {
+				clickmap:true,
+				trackLinks:true,
+				accurateTrackBounce:true,
+				webvisor:true
+			});
+		</script>
+		<noscript><div><img src="https://mc.yandex.ru/watch/84034504" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+		<!-- /Yandex.Metrika counter -->
+	</head>
+	<body>
+		<div class="wrapper">
+			<!-- header -->
+			<header class="header">
+				<div class="container">
+					<div class="headersectionstyles">
+						<div class="Basenameheader"><a href="../index.html" class="tothemainpage" title="На главную страницу">ProgEasy</a></div>
+						<div class="burger">
+							<span></span>
+						</div>
+						<div class="Baseultexts">
+							<span class="Basenav" title="Вы на этой странице">HTML</span>
+							<span><a class="Basenav" href="../CSS/csslesson.html" title="Перейти к CSS">CSS</a></span>
+							<span><a class="Basenav" href="../JS/jslesson.html" title="Перейти к JS">JavaScript</a></span>
+							<span><a class="Basenav" href="../Contacts/contacts.html" title="Контакты">Контакты</a></span>
+							<span><a class="Basenav" href="../Aboutus/aboutus.html" title="О нас">О сайте</a></span>
+						</div>
+						<div class="Basenametitle">
+							<p class="headertitle">Понятные объяснения</p>
+						</div>
+					</div>
+				</div>
+			</header>
+			<!-- Закончился header -->
+			<section class="sectionhtml">
+				<div class="container">
+					<div class="Firstbasetextdiv">
+						<h1>Урок 1 HTML</h1>
+					</div>
+					<div class="sectionstyles2">
+						<div class="htmlexplalltextdiv">
+							<h2>Что такое HTML?</h2>
+							<br>
+							<h3>Введение в HTML</h3>
+							<p>HTML &mdash; HyperText Markup Language — это язык гипертекстовой разметки страницы. По сути, уникальная вещь позволяющая дать браузеру понять как надо отображать нужные объекты. Под гипертекстом в этом случае понимается ТЕКСТ, связанный с другими текстами указателями-ссылками. То есть HTML работает над текстами, уже сами стили это уже язык CSS. О нем поговорим в другом уроке.</p><br>
+							<p>После того, как мы поняли что такое HTML, давайте посмотрим основной вид HTML документа(Базовая структура HTML кода). Эта структура ОБЪЯЗАТЕЛЬНА. Она одинакова на всех сайтах и её пишут самой первой при написании кода.</p>
+							<div class="attention">
+								<br>
+								<p>Если код не виден, вы можете <span style="color: #68d66e;">скролить</span> серый блок с кодом.</p>
+								<br>
+							</div>
+							<div class="htmlgreyfone">
+								<xmp>
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Здесь будет метаинформация сайта -->
+	</head>
+	<body>
+		<!-- Здесь будет само тело сайта -->
+	</body>
+</html>
+								</xmp>
+							</div><br>
+							<p>Именно вот так выглядит базовая структура HTML кода. Можете просто всегда копировать и вставлять это в свой HTML документ.</p>
+							<p>Внутри тега head мы пишем метаинформацию сайта: подключаем разные документы, указываем кодировку и т.п.</p>
+							<p>Внутри тега body уже будет само тело сайта, сами объекты на экране.</p><br>
+							<p>Теперь давайте поговорим о самих тегах.</p>
+							<br><br>
+							<h4>Теги в HTML</h4>
+							<p>Теги в HTML это своеобразные команды которые говорят браузеру какие объекты надо вставлять а какие нет. Теги бывают двух типов: одинарные и парные: Одинарные записываются следующим образом:
+							</p>
+							<div class="htmlgreyfone">
+								<xmp><Тег></xmp>
+							</div><br>
+							<p>А парные вот так:</p>
+							<div class="htmlgreyfone">
+								<xmp><Тег></Тег></xmp>
+							</div><br>
+							<p>Как вы уже видите, отличие между одинарными тегами это в том что у второго "закрывающего" тега перед самим названием тега стоит "/".</p><br>
+							<p>Обычно если тег парный, то в нём можно записать текст:</p>
+							<div class="htmlgreyfone">
+								<xmp><Тег>Какой-то текст</Тег></xmp>
+							</div><br>
+							<p>Также можно писать теги в тегах:</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<Тег>
+	<Тег></Тег>
+</Тег>
+								</xmp>
+							</div>
+							<p>Или вот так:</p>
+							<div class="htmlgreyfone">
+								<xmp><Тег><Тег></Тег></Тег></xmp>
+							</div><br>
+							<p>Но мы рекомендуем писать первым вариантом, ибо вы в будущем запутаетесь в своем же коде.</p><br><br>
+							<p>Тег который находится внутри другого тега называют дочерним элементом. Тот который снаружи дочернего элемента называют родительным элементом. Так называется структура отношений тегов документа между собой.</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<Родительный тег>
+	<Дочерний тег></Дочерний тег>
+</Родительный тег>
+								</xmp>
+							</div><br>
+							<p>Для тегов можно добавлять еще атрибуты. О них и поговорим ниже.</p>
+							<br><br>
+							<h3>Атрибуты</h3>
+							<p>Атрибутов как и тегов тоже много. Они определяют разные характеристики тегов. Атрибуты пишутся в тегах и в них записывают значения атрибута. Выглядит всё следующим образом:</p>
+							<div class="htmlgreyfone"><xmp><Тег атрибут="значение"></xmp></div><br>
+							<p>Атрибутов вы можете добавлять сколько угодно при помощи пробела:</p>
+							<div class="htmlgreyfone"><xmp><Тег атрибут1="значение" атрибут2="значение" атрибут3="значение"></xmp></div><br><br>
+							<p>Давайте рассмотрим один пример. У нас есть тег "Человек". И мы должны задать ему характеристики пола, веса, роста. Все будет выглядеть следующим образом:</p>
+							<div class="htmlgreyfone"><xmp><Человек пол="мужской" вес="71кг" рост="175см"></xmp></div>
+							<br><br>
+							<h3>Теперь можем остановится на самих реальных тегах и атрибутах.</h3><br>
+							<h3>Атрибуты которые можно вставлять во все теги</h3><br>
+							<h3>Атрибут class</h3>
+							<p>Атрибут class задает стилевой класс, который позволяет связать определенный тег со стилевым оформлением. При помощи class'ов мы можем обращаться к объектам в CSS и JS. Значение у class'а может быть каким угодно только не начиная с цифр или не имея спец. символ.</p>
+							<div class="htmlgreyfone">
+								<xmp><Тег class="box">Я коробка с классом box!</Тег></xmp>
+							</div><br>
+							<p>Значение атрибута class у нескольких элементов может быть одинаковым. А это значит, что в будущем мы сможем обращаться к нескольким объектам одновременно.</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<Тег class="text">У меня класс text :)</Тег>
+<Тег class="text">У меня тоже класс text</Тег>
+<Тег class="text">У меня тоже</Тег>
+								</xmp>
+							</div><br>
+							<p>К любому тегу одновременно можно добавить несколько классов, перечисляя их в атрибуте class через пробел.</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<Тег class="text example">У меня класс text и example!</Тег>
+								</xmp>
+							</div>
+							<br><br>
+							<h3>Атрибут id</h3>
+							<p>Атрибут идентификатор id почти как class, только с некоторыми исключениями. В коде документа каждый идентификатор уникален и должен быть включён лишь один раз. То есть атрибут id с определенным значением должен быть только один в коде. Значение у id может быть каким угодно только не начиная с цифр или не имея спец. символ.</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<Тег id="ident">У меня идентификатор ident и ни у другого тега нету такого id</Тег>
+								</xmp>
+							</div><br>
+							<p>Атрибут id также позволяет связать определенный тег со стилевым оформлением. При помощи id мы можем обращаться только к определенному объекту в CSS и JS.</p><br>
+							<p>Значение атрибута id у нескольких элементов не может быть одинаковым.</p><br>
+							<p>К тегу id нельзя добавить несколько значений через пробел.</p>
+							<div class="divfact">
+								<div style="display: flex;">
+									<div class="factscircle">i</div>
+									<h4 class="factsquestion">Примечание</h4>
+								</div>
+								<p class="factstext">Значения атрибутов id и class(да и вообще любые придуманные значения атрибутов) чувствительны к регистру. Например класс someclass и someClass это два разных класса.</p>
+							</div>
+							<p>По сути, атрибуты class и id безполезны в HTML без CSS. Так что мы подробно остановимся на них в уроке CSS.</p>
+							<br><br>
+							<h3>Атрибут title</h3>
+							<p>Атрибут title позволяет показывать подсказку при наведений на объект.</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<Тег title="Привет! Я подсказка">Наведи на меня</Тег>
+								</xmp>
+							</div><br>
+							<span title="Привет! Я подсказка">Наведи на меня</span>
+							<br><br>
+							<div style="border-top: 1px solid #002340; margin: 20px 0;"></div>
+							<h3>Теги и атрибуты внутри тега head</h3><br>
+							<h3>Тег meta</h3>
+							<p>Тег meta обеспечивает метаданные о HTML документе. Метаданные не отображаются на странице, но интерпретируются браузерами и поисковыми системами. Мета элементы, как правило, используются, чтобы указать описание страницы, ключевые слова, автора документа и другие метаданные. Закрывающий тег не имеется.</p>
+							<div class="htmlgreyfone">
+								<xmp><meta></xmp>
+							</div><br>
+							<p>При каждом написании или изменении кода в редакторе кода, чтобы увидеть измененный результат на странице, надо сохранить измененные действия в редакторе кода и обновить страницу.</p><br>
+							<p>У тега meta есть несколько атрибутов. Основными являются http-equiv, name, content.</p>
+							<div class="htmlgreyfone">
+								<xmp><meta http-equiv="Content-Type" content="text/html" charset="UTF-8"></xmp>
+							</div><br>
+							<p>Атрибут http-equiv указывает на каких основах данных следует обрабатывать основное содержание документа. Рекомендуем в значении писать Content-Type. Значит здесь мы будем указывать что в мета теге будем заниматься с типом содержания Content-Type.</p><br>
+							<p>Атрибут name это информационное имя мета тега. Оно применяется в паре с атрибутом content.</p><br>
+							<p>Атрибут content содержит информационное содержание. То есть здесь мы будем работать с текстом(text/html) с типом содержания Content-Type.</p><br>
+							<p>Атрибут charset указывает кодировку документа. Рекомендуем писать значение UTF-8.</p><br>
+							<p>Рекомендуем просто скопировать и вставить это в свой тег head.</p><br>
+							<div class="smallline"></div>
+							<div class="htmlgreyfone">
+								<xmp>
+<meta name="keywords" content="">
+<meta name="description" content="">
+								</xmp>
+							</div><br>
+							<p>Здесь значение keywords, это ключевые слова веб-страницы соответствующие содержимому страницы сайта, предназначены для поисковых машин. Внутри content надо писать ключевые слова веб-страницы.</p><br>
+							<p>C description тоже самое. Это краткое описание страницы. Данное описание частенько используется поисковыми системами для вывода в результатах поиска, по какому либо запросу, информации о сайте и его назначении. Внутри content надо писать краткое описание страницы, от 100 до 200 символов.</p><br>
+							<p>Вот пример description'а в Google:</p>
+							<div style="width: 100%;">
+								<img src="../images/htmlpagegoogledesc.JPG" style="max-width: 100%;">
+							</div><br>
+							<p>Про другие meta теги вы можете поискать в интернете. В основном самые важные мы уже обсудили. В будущем добавим еще один meta тег связанный с адаптивностью сайта.</p>
+							<br><br>
+							<h3>Тег title</h3>
+							<p>Тег title – это элемент разметки страницы, позволяющий поисковикам выделять суть содержимого страницы. Он является заголовком окна браузера.</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<head>
+	<title>Название веб-страницы</title>
+</head>
+								</xmp>
+							</div><br>
+							<p>Вот заголовок Google:</p>
+							<div style="width: 100%">
+								<img src="../images/htmlpagegoogle.JPG" style="max-width: 100%;">
+							</div><br>
+							<p>Title первое, что видит человек в результатах поисковой выдачи, на вкладке браузера и при перепосте ссылки на страницу в соцсетях. Оно одно из важнейших элементов страницы.</p>
+							<br><br>
+							<h3>Тег link</h3>
+							<p>Тег link определяет отношение между текущим html-документом и внешним ресурсом, на который он ссылается. Чаще всего тег link используется для подключения внешних таблиц стилей, вроде CSS и других. Пока мы не будем подключать таблицы стилей, просто знайте что в будущем это сыграет свою роль. Тег одинарный.</p>
+							<br><br>
+							<div style="border-top: 1px solid #002340; margin: 20px 0;"></div>
+							<h3>Теги и атрибуты в теге body</h3><br>
+							<h3>Комментарий</h3>
+							<p>Давайте быстренько пройдемся по комментариям. Оно используется для написания комментария в коде HTML документа. HTML комментарии призваны улучшить читабельность кода, делать сообщения, уведомления в коде. Их можно писать куда-угодно в HTML документе. В комментариях обычно указывается объяснение участка кода, что упрощает процесс редактирования HTML страницы в дальнейшем. Комментарии в HTML не отображаются на странице в браузере пользователю, они игнорируются браузером при читании кода, однако их можно увидеть в исходном коде веб-страницы.</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<!-- Я комментарий -->
+								</xmp>
+							</div>
+							<br><br>
+							<h3>Тег div</h3>
+							<p>Тег div создает блок. То есть блок занимает целую доступную ширину. Если объект является блоком, то последующие элементы будет перенесены в строчку вниз т.к. объект занимает всю доступную ширину экрана. Если объект не является блоком, то он будет объеденён с другим объектом в одну линию.</p><br>
+							<p>Вот пример с блоком:</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<div>Я блок и я занимаю целую эту строку</div>
+<span>Я был перенесен в строчку вниз</span>
+								</xmp>
+							</div><br>
+							<div>Я блок и я занимаю целую эту строку</div>
+							<span>Я был перенесен в строчку вниз</span>
+							<br><br>
+							<p>Вот пример без блока:</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<span>Я не блок</span>
+<span>Я объединен</span>
+								</xmp>
+							</div><br>
+							<span>Я не блок</span><span>Я объединен</span>
+							<div class="divfact">
+								<div style="display: flex;">
+									<div class="factscircle">?</div>
+									<h3 class="factsquestion">А ты знал?</h3>
+								</div>
+								<p class="factstext">Тег div является самым часто употребляемым тегом в HTML.</p>
+							</div>
+							<h3>Тег span</h3>
+							<p>Тег span он абсолютно ничего не изменяет в тексте. В нём просто можно писать текст. Удобно, не так ведь?</p><br>
+							<p>В основном он используется дабы создать кодовую метку(добавляя атрибут class или id), а затем модифицировать  этот отрезак текста в CSS или JS.</p>
+							<br><br>
+							<h3>Тег p</h3>
+							<p>Тег p делает параграфы. Элемент является блочным, значит его содержимое всегда начинается с новой строки и занимает всю доступную ширину. В них обычно пишут одно или несколько предложений. Например эти предложения находятся в теге p.</p>
+							<br><br>
+							<h3>Тег a</h3>
+							<p>Тег a создает ссылки. Используется для перехода с одной страницы на другую. У тега a есть объязательный атрибут href который указывает на назначение ссылки.</p><br>
+							<p>Давайте сделаем пример с нажатием на текст и переходом в Google в этой же странице:</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<a href="https://www.google.com/">Нажми на меня</a>
+								</xmp>
+							</div><br>
+							<p><a href="https://www.google.com/">Нажми на меня</a></p><br>
+							<p>Чтобы открыть ссылку в новом окне, надо к тегу a добавить атрибут target со значением _blank.</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<a href="https://www.google.com/" target="_blank">Нажми на меня</a>
+								</xmp>
+							</div><br>
+							<p><a href="https://www.google.com/" target="_blank">Нажми на меня</a></p>
+							<a href="htmllesson2.html"><div class="btnnextpage"><span>Следующее</span></div></a>
+						</div>
+						<aside>
+							<div class="asidedivfirst">
+								<div style="background: #ebebeb;" class="asidenav" title="Урок 1">
+									<span style="font-weight: 500;">#1 - Что такое HTML | Теги, атрибуты</span>
+								</div>
+								<a href="htmllesson2.html">
+									<div class="asidenav" title="Перейти к уроку 2">
+										<span>#2 - Теги для текстов | Базовые теги HTML</span>
+									</div>
+								</a>
+								<a href="htmllesson3.html">
+									<div class="asidenav" title="Перейти к уроку 3">
+										<span>#3 - Тег table</span>
+									</div>
+								</a>
+								<a href="htmllesson4.html">
+									<div class="asidenav" title="Перейти к уроку 4">
+										<span>#4 - Поле для ввода | Теги form, input, label, textarea</span>
+									</div>
+								</a>
+								<a href="htmllesson5.html">
+									<div class="asidenav" title="Перейти к уроку 5">
+										<span>#5 - Кнопка | Теги button, audio, video</span>
+									</div>
+								</a>
+								<a href="htmllesson6.html">
+									<div class="asidenav" title="Перейти к уроку 6">
+										<span>#6 - Заключение</span>
+									</div>
+								</a>
+							</div>
+						</aside>
+					</div>
+				</div>
+			</section>
+			<!-- "Подвал" страницы -->
+			<footer class="footer">
+				<div class="container">
+					<div class="footerstyle">
+						<div class="footerfirstcolumn">
+							<a href="../index.html" class="footerbaseword" title="На главную страницу">ProgEasy</a>
+							<span class="footerafterbaseword">Обучение по</span><br><span class="footerafterbaseparagraph">программированию</span>
+						</div>
+						<ul class="footersecondcolumn">
+							<li class="footerlessons"><a href="../Lessons/lessons.html">Уроки</a></li>
+							<li class="footercontacts"><a href="../Contacts/contacts.html">Контакты</a></li>
+							<li class="footerabout"><a href="../Aboutus/aboutus.html">О создателе/сайте</a></li>
+						</ul>
+						<div class="footerthirdcolumn">
+							<div class="footerimages">
+								<div class="footerinstagram" title="Инстаграм" onclick="Insta()">
+									<img src="../images/instagram.png" alt="Instagram">
+								</div>
+								<div class="footervk"  title="Вк" onclick="Vk()">
+									<img src="../images/vk.png" alt="Vk">
+								</div>
+								<div class="footerwhatsapp" title="WhatsApp" onclick="WhatsApp()">
+									<img src="../images/whatsapp.png" alt="WhatsApp">
+								</div>
+							</div>
+							<div class="footeremailnumber">
+								<span class="footeremailnumbertexts">+7 (707) 200 35-83</span><br>
+								<span class="footeremailnumbertexts">Email: anuarzholdybaev2006@gmail.com</span>
+								<div class="footermadeby">
+									<span class="footermadebytext">© Created by Anuar Name ProgEasy, 2021</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<div class="windowfixed"></div>
+		</div>
+		<!-- Закончился wrapper -->
+		<script src="jslesson.js"></script>
+	</body>
+</html>

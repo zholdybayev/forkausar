@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="keywords" content="Программирование, сайт, HTML, CSS, JavaScript, бесплатное обучение, курсы программирования, бесплатные курсы по программированию, как создать сайт, Frontend, Frontend разработка, CSS урок, ProgEasy CSS урок 1">
+		<meta name="description" content="Урок №1 CSS от ProgEasy. Что такое CSS | Селектор, свойства, значения | Текст. Бесплатное обучение Frontend разработке.">
+		<meta name="format-detection" content="telephone=no">
+		<title>Урок 1 CSS</title>
+		<link rel="shortcut icon" href="../images/iconweb.png" type="image/png">
+		<link href="cssofcsslesson.css" rel="stylesheet" type="text/css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<!-- Yandex.Metrika counter -->
+		<script type="text/javascript" >
+			(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+			m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+			(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+			ym(84034504, "init", {
+				clickmap:true,
+				trackLinks:true,
+				accurateTrackBounce:true,
+				webvisor:true
+			});
+		</script>
+		<noscript><div><img src="https://mc.yandex.ru/watch/84034504" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+		<!-- /Yandex.Metrika counter -->
+	</head>
+	<body>
+		<div class="wrapper">
+			<!-- header -->
+			<header class="header">
+				<div class="container">
+					<div class="headersectionstyles">
+						<div class="Basenameheader"><a href="../index.html" class="tothemainpage" title="На главную страницу">ProgEasy</a></div>
+						<div class="burger">
+							<span></span>
+						</div>
+						<div class="Baseultexts">
+							<span><a class="Basenav" href="../HTML/htmllesson.html" title="Перейти к HTML">HTML</a></span>
+							<span class="Basenav" title="Вы на этой странице">CSS</span>
+							<span><a class="Basenav" href="../JS/jslesson.html" title="Перейти к JS">JavaScript</a></span>
+							<span><a class="Basenav" href="../Contacts/contacts.html" title="Контакты">Контакты</a></span>
+							<span><a class="Basenav" href="../Aboutus/aboutus.html" title="О нас">О сайте</a></span>
+						</div>
+						<div class="Basenametitle">
+							<p class="headertitle">Понятные объяснения</p>
+						</div>
+					</div>
+				</div>
+			</header>
+			<!-- Закончился header -->
+			<section class="sectionhtml">
+				<div class="container">
+					<div class="Firstbasetextdiv">
+						<h1>Урок 1 CSS</h1>
+					</div>
+					<div class="sectionstyles2">
+						<div class="htmlexplalltextdiv">
+							<h2>Что такое CSS?</h2>
+							<br>
+							<h3>Введение в CSS</h3>
+							<p>CSS — Cascading Style Sheets — каскадные таблицы стилей. То есть это язык, отвечающий за внешность HTML документа. Практический во всех сайтах используются в парах языки HTML и CSS.</p><br>
+							<p>Что же делает CSS? Всё просто, если HTML позволяет структурировать сам контент на странице, то CSS позволяет модифицировать его, сделав более красивым и привлекательным для пользователя.</p>
+							<br><br>
+							<h3>Как же подключить CSS файл к HTML документу?</h3>
+							<p>Вы уже знаете тег link из урока HTML. Так вот, файлы подключаются при помощи этого тега.</p>
+							<div class="attention">
+								<br>
+								<p>Если код не виден, вы можете <span style="color: #68d66e;">скролить</span> серый блок с кодом.</p>
+								<br>
+							</div>
+							<div class="htmlgreyfone">
+								<xmp>
+<link>
+								</xmp>
+							</div><br>
+							<p>У этого тега есть обязательный атрибут href который задает местонахождения внешнего CSS-файла. Точно такой же принцип как у тега img. Мы указываем путь к CSS файлу.</p><br>
+							<p>Например давайте укажем путь к CSS файлу под названием style.css. Оно находится в той же папке что и HTML документ. Вы конечно же указывайте свой CSS файл.</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<link href="style.css" rel="stylesheet" type="text/css">
+								</xmp>
+							</div><br>
+							<p>Насчет этих других атрибутов, мы не будем зацикливать на них внимание. Просто знайте что они обязательны, можете копировать и вставлять в тег head.</p>
+							<br><br>
+							<h3>Как же выглядит структура CSS кода?</h3>
+							<div class="htmlgreyfone">
+								<xmp>
+Селектор {
+	свойство: значение;
+}
+								</xmp>
+							</div>
+							<span>Или</span>
+							<div class="htmlgreyfone">
+								<xmp>
+Селектор {свойство: значение;}
+								</xmp>
+							</div><br>
+							<p>Именно вот так выглядит структура указания стилей и сама структура CSS кода. Мы рекомендуем писать первым вариантом. После значений обязательно надо ставить точку с запятой.</p><br>
+							<p>Но кроме того стили можно писать прямиком в HTML документе при помощи тега style.</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<body>
+	...
+	<style>
+		...
+	</style>
+</body>
+								</xmp>
+							</div><br>
+							<p>Но скажем честно, мы не рекомендуем писать таким образом. Ибо код станет еще длиннее, неудобнее и запутаннее. Лучше следует создать отдельный CSS файл куда мы будем уже записывать все стили. Но если вы хотите писать таким методом, то записывайте тег style в самом конце перед закрывающим тегом body. Это нужно для того чтобы браузер сперва прочитал все элементы HTML, а уже потом стили к ним.</p><br>
+							<p>Или можно писать атрибут style в самих тегах. Тогда стили будут приминены к этому тегу и не надо будет писать селектор.</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<Тег style="свойство: значение;"></Тег>
+								</xmp>
+							</div><br>
+							<p>Таким способом пишут только в тех случаях, если к элементу надо добавить 1-2 стиля. Но если в будущем в определенных условиях(например при адаптивности под мобильные устройства) вам надо будет изменить стили для элемента, то лучше не следует писать атрибут style в тегах.</p><br><br>
+							<p>Теперь давайте поговорим что такое селектор, свойство и значение.</p><br>
+							<p><u>Селектор</u> - это часть CSS-правила, которая сообщает браузеру, к какому элементу (или элементам) веб-страницы будет применён стиль. Существует несколько основных видов селекторов к которым можно обращаться:</p><br>
+							<p>* - ко всем элементам.</p><br>
+							<p>Тег - ко всем таким тегам.</p><br>
+							<p>#id - при помощи идентификатора.</p><br>
+							<p>.class - при помощи классов.</p><br>
+							<p>Тег[атрибут="значение"] - селекторы на атрибут.</p><br>
+							<p>:Псевдокласс, ::Псевдоэлемент - псевдоэлементы.</p>
+							<div class="divfact">
+								<div style="display: flex;">
+									<div class="factscircle">i</div>
+									<h4 class="factsquestion">Примечание</h4>
+								</div>
+								<p class="factstext">Почему перед названием id и class элементов ставится # и точка?<br><br>Потому что когда мы обращаемся к элементу по id как к селектору, перед самим названием id элемента ставится #.</p>
+								<div class="htmlgreyfone">
+									<xmp>#someid {
+	свойство: значение;
+}</xmp>
+								</div><br>
+								<p>Точно такой же принцип с классом только перед названием класса ставится точка.</p>
+								<div class="htmlgreyfone">
+									<xmp>.someclass {
+	свойство: значение;
+}</xmp>
+								</div>
+							</div>
+							<p>Про остальные виды селекторов мы узнаем по ходу урока.</p>
+							<br><br>
+							<p>Можно обращаться к нескольким селекторам через запятую.</p>
+							<div class="htmlgreyfone">
+								<xmp>
+Селектор, селектор, селектор {
+	свойство: значение;
+}
+								</xmp>
+							</div><br>
+							<p>Можно обращаться к дочерним элементам селекторов через пробел. Например давайте обратимся к тегу span в теге div:</p>
+							<div class="htmlgreyfone">
+								<xmp>
+div span {
+	свойство: значение;
+}
+								</xmp>
+							</div><br><br>
+							<p><u>CSS свойства</u> -  назначают любые визуальные стили, формируя таким образом уникальный внешний вид сайта. CSS свойств очень много. Некоторые свойства применяются только к определенным селекторам.</p><br><br>
+							<p><u>CSS значения</u> - значения самих свойств CSS.</p>
+							<div class="divfact">
+								<div style="display: flex;">
+									<div class="factscircle">i</div>
+									<h4 class="factsquestion">Примечание</h4>
+								</div>
+								<p class="factstext">Свойства для селекторов стоящих ниже других являются <strong style="color: #002340;">приоритетными</strong>. Например для два одиноковых селектора заданы свойства с одинаковыми значениями, и тому селектору который будет стоять ниже другого, выполнятся стили с его значениями.</p>
+							</div>
+							<h3>Комментарий</h3>
+							<p>Вы должны быть уже знакомы с комментариями из урока HTML. Он везде выполняют ту же роль. Комментарий в CSS пишут вот так:</p>
+							<div class="htmlgreyfone">
+								<xmp>
+/* Я комментарий */
+								</xmp>
+							</div>
+							<p>Или в несколько строк:</p>
+							<div class="htmlgreyfone">
+								<xmp>
+/*
+Я
+длинный
+комментарий
+*/
+								</xmp>
+							</div>
+							<div style="border-top: 1px solid #002340; margin: 20px 0;"></div>
+							<h3>Свойства и значения текстов</h3><br>
+							<p>И хочется сказать что некоторые свойства и их значения наследуются от родителя к дочерним элементам. Например если вы пропишите в тег body какие-то свойства, то это свойство распространится всем дочерним элементам тега body.</p>
+							<br><br>
+							<h3>Свойство color</h3>
+							<p>Свойство color задает цвет для текста. В значении можно использовать ключевые слова такие как red, blue, green и т.д., или же HEX коды цветов такие как #000 - черный, #fff - белый, inherit - наследует значение родителя. Свойство наследуется.</p><br>
+							<p>Например давайте обратимся к тегу span по его id и добавим свойство color:</p>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<span id="Hello">Привет!</span>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+#Hello {
+	color: green;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<span style="color: green;">Привет!</span>
+							<br><br>
+							<h3>Свойство text-align</h3>
+							<p>Свойство text-align выравнивает текст по горизонтали относительно родителя. Есть значения как: left, right, center, justify.  Свойство наследуется.</p><br>
+							<p>left - текст прижат слева. Это значение по умолчанию.</p><br>
+							<p>right - текст прижат справа.</p><br>
+							<p>center - текст по середине.</p><br>
+							<p>justify - текст прижат в обе стороны, слева и справа.</p><br>
+							<span>Например:</span>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div>
+		<span>Text center</span>
+	</div>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+div {
+	text-align: center;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<div style="text-align: center";>
+								<span>Text center</span>
+							</div>
+							<br><br>
+							<h3>Свойство font-size</h3>
+							<p>Cвойство font-size позволяет изменять размер шрифта. Есть несколько единиц измерения размера шрифта: px, %, em, rem. Если вы не указывали определенный изначальный размер шрифта, то в браузерах размер шрифта по умолчанию равен 14 пикселям. Значение inherit - наследует значение родителя. Свойство наследуется.</p><br>
+							<h4>px - пиксели.</h4>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<p>У меня размер шрифта 20 пикселей</p>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+p {
+	font-size: 20px;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<p style="font-size: 20px;">У меня размер шрифта 20 пикселей</p>
+							<br><br>
+							<h4>% - проценты относительно изначального размера шрифта.</h4>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<p>У меня шрифт 150% относительно размера шрифта по умолчанию</p>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+p {
+	font-size: 150%;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<p style="font-size: 150%">У меня шрифт 150% относительно размера шрифта по умолчанию</p><br>
+							<p>Если изначальный размер шрифта будет больше или меньше, то указанный процент шрифта тоже будет больше или меньше относительно изначального шрифта.</p>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div>
+		Изначальный размер шрифта 120%
+		<p>Размер шрифта 120% относительно 120%</p>
+	</div>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+div {
+	font-size: 120%;
+}
+div p {
+	font-size: 120%;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<div style="font-size: 120%;">
+								Изначальный размер шрифта 120%
+								<p style="font-size: 120%;">Размер шрифта 120% относительно 120%</p>
+							</div>
+							<br><br>
+							<h4>em - во сколько раз больше или меньше относительно изначального размера шрифта. Практически тоже самое что и проценты.</h4><br>
+							<p>1em = 100%</p>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div>
+		Размер шрифта 16 пикселей
+		<p>Я в полтора раза больше 16-ти пикселей</p>
+	</div>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+div {
+	font-size: 16px;
+}
+div p {
+	font-size: 1.5em;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<div style="font-size: 16px;">
+								Размер шрифта 16 пикселей
+								<p style="font-size: 1.5em;">Я в полтора раза больше 16-ти пикселей</p>
+							</div>
+							<div class="divfact">
+								<div style="display: flex;">
+									<div class="factscircle">i</div>
+									<h4 class="factsquestion">Примечание</h4>
+								</div>
+								<p class="factstext">В языках программирования, если мы хотим написать десятичную дробь, то вместо запятой пишется точка.</p>
+							</div>
+							<br>
+							<p>rem - относительно размера шрифта элемента html.</p>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<p>Половина размера шрифта от шрифта элемента html</p>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+html {
+	font-size: 20px;
+}
+p {
+	font-size: 0.5rem;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<p style="font-size: 10px;">Половина размера шрифта от шрифта элемента html</p>
+							<br><br>
+							<h3>Свойство font-style</h3>
+							<p>Свойство font-style позволяет изменить начертание шрифта на обычное, курсивное или наклонное. Значения: normal - обычное, italic - курсивное, oblique - наклонное, inherit - наследует значение родителя. Свойство наследуется.</p><br>
+							<span>Например:</span>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<p>Наклонный текст</p>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+p {
+	font-style: oblique;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<p style="font-style: oblique;">Наклонный текст</p>
+							<br><br>
+							<h3>Свойство font-weight</h3>
+							<p>Свойство font-weight позволяет изменить жирность шрифта. Значением же надо указывать круглые трехзначные числа такие как 300, 500, 600 и т.п.(соответсвенно начинаются с тонких до жирных шрифтов), или же ключевые слова такие как lighter, normal, bold, bolder. Свойство наследуется.</p><br>
+							<span>Например:</span>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<p>Я жирнющий текст</p>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+p {
+	font-weight: 900;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<p style="font-weight: 900; color: #002340;">Я жирнющий текст</p>
+							<a href="csslesson2.html"><div class="btnnextpage"><span>Следующее</span></div></a>
+						</div>
+						<aside>
+							<div class="asidedivfirst">
+								<div style="background: #ebebeb;" class="asidenav" title="Урок 1">
+									<span style="font-weight: 500;">#1 - Что такое CSS | Селектор, свойства, значения | Текст</span>
+								</div>
+								<a href="csslesson2.html">
+									<div class="asidenav" title="Перейти к уроку 2">
+										<span>#2 - Свойства текстов</span>
+									</div>
+								</a>
+								<a href="csslesson3.html">
+									<div class="asidenav" title="Перейти к уроку 3">
+										<span>#3 - Ширина, высота, фон</span>
+									</div>
+								</a>
+								<a href="csslesson4.html">
+									<div class="asidenav" title="Перейти к уроку 4">
+										<span>#4 - Стили для блоков</span>
+									</div>
+								</a>
+								<a href="csslesson5.html">
+									<div class="asidenav" title="Перейти к уроку 5">
+										<span>#5 - Стили для блоков 2</span>
+									</div>
+								</a>
+								<a href="csslesson6.html">
+									<div class="asidenav" title="Перейти к уроку 6">
+										<span>#6 - Псевдоклассы, псевдоэлементы</span>
+									</div>
+								</a>
+								<a href="csslesson7.html">
+									<div class="asidenav" title="Перейти к уроку 7">
+										<span>#7 - Flexbox | Флекс элементы</span>
+									</div>
+								</a>
+								<a href="csslesson8.html">
+									<div class="asidenav" title="Перейти к уроку 8">
+										<span>#8 - Префиксы, тени, эффект перехода, состояния элемента</span>
+									</div>
+								</a>
+								<a href="csslesson9.html">
+									<div class="asidenav" title="Перейти к уроку 9">
+										<span>#9 - Ключевые кадры, анимация, доп. материал</span>
+									</div>
+								</a>
+								<a href="csslesson10.html">
+									<div class="asidenav" title="Перейти к уроку 10">
+										<span>#10 - Заключение</span>
+									</div>
+								</a>
+							</div>
+					</div>
+				</div>
+			</section>
+			<!-- "Подвал" страницы -->
+			<footer class="footer">
+				<div class="container">
+					<div class="footerstyle">
+						<div class="footerfirstcolumn">
+							<a href="../index.html" class="footerbaseword" title="На главную страницу">ProgEasy</a>
+							<span class="footerafterbaseword">Обучение по</span><br><span class="footerafterbaseparagraph">программированию</span>
+						</div>
+						<ul class="footersecondcolumn">
+							<li class="footerlessons"><a href="../Lessons/lessons.html">Уроки</a></li>
+							<li class="footercontacts"><a href="../Contacts/contacts.html">Контакты</a></li>
+							<li class="footerabout"><a href="../Aboutus/aboutus.html">О создателе/сайте</a></li>
+						</ul>
+						<div class="footerthirdcolumn">
+							<div class="footerimages">
+								<div class="footerinstagram" title="Инстаграм" onclick="Insta()">
+									<img src="../images/instagram.png" alt="Instagram">
+								</div>
+								<div class="footervk"  title="Вк" onclick="Vk()">
+									<img src="../images/vk.png" alt="Vk">
+								</div>
+								<div class="footerwhatsapp" title="WhatsApp" onclick="WhatsApp()">
+									<img src="../images/whatsapp.png" alt="WhatsApp">
+								</div>
+							</div>
+							<div class="footeremailnumber">
+								<span class="footeremailnumbertexts">+7 (707) 200 35-83</span><br>
+								<span class="footeremailnumbertexts">Email: anuarzholdybaev2006@gmail.com</span>
+								<div class="footermadeby">
+									<span class="footermadebytext">© Created by Anuar Name ProgEasy, 2021</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<div class="windowfixed"></div>
+		</div>
+		<!-- Закончился wrapper -->
+		<script src="../HTML/jslesson.js"></script>
+	</body>
+</html>

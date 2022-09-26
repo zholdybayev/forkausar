@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="keywords" content="Программирование, сайт, HTML, CSS, JavaScript, бесплатное обучение, курсы программирования, бесплатные курсы по программированию, как создать сайт, Frontend, Frontend разработка, HTML урок, ProgEasy HTML урок 3">
+		<meta name="description" content="Урок №3 HTML от ProgEasy. Тег table. Бесплатное обучение Frontend разработке.">
+		<meta name="format-detection" content="telephone=no">
+		<title>Урок 3 HTML</title>
+		<link rel="shortcut icon" href="../images/iconweb.png" type="image/png">
+		<link href="csslesson3.css" rel="stylesheet" type="text/css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<!-- Yandex.Metrika counter -->
+		<script type="text/javascript" >
+			(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+			m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+			(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+			ym(84034504, "init", {
+				clickmap:true,
+				trackLinks:true,
+				accurateTrackBounce:true,
+				webvisor:true
+			});
+		</script>
+		<noscript><div><img src="https://mc.yandex.ru/watch/84034504" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+		<!-- /Yandex.Metrika counter -->
+	</head>
+	<body>
+		<div class="wrapper">
+			<!-- header -->
+			<header class="header">
+				<div class="container">
+					<div class="headersectionstyles">
+						<div class="Basenameheader"><a href="../index.html" class="tothemainpage" title="На главную страницу">ProgEasy</a></div>
+						<div class="burger">
+							<span></span>
+						</div>
+						<div class="Baseultexts">
+							<span class="Basenav" title="Вы на этой странице">HTML</span>
+							<span><a class="Basenav" href="../CSS/csslesson.html" title="Перейти к CSS">CSS</a></span>
+							<span><a class="Basenav" href="../JS/jslesson.html" title="Перейти к JS">JavaScript</a></span>
+							<span><a class="Basenav" href="../Contacts/contacts.html" title="Контакты">Контакты</a></span>
+							<span><a class="Basenav" href="../Aboutus/aboutus.html" title="О нас">О сайте</a></span>
+						</div>
+						<div class="Basenametitle">
+							<p class="headertitle">Понятные объяснения</p>
+						</div>
+					</div>
+				</div>
+			</header>
+			<!-- Закончился header -->
+			<section class="sectionhtml">
+				<div class="container">
+					<div class="Firstbasetextdiv">
+						<h1>Урок 3 HTML</h1>
+					</div>
+					<div class="sectionstyles2">
+						<div class="htmlexplalltextdiv">
+							<h3>Тег table</h3>
+							<p>Тег table позволяет создавать таблицы. У него есть объязательные теги tr и td. По желанию можно добавлять тег caption.</p>
+							<p>Тег tr - строки таблицы.</p>
+							<p>Тег td - колонны таблицы.</p>
+							<p>Тег caption - название таблицы.</p>
+							<div class="attention">
+								<br>
+								<p>Если код не виден, вы можете <span style="color: #68d66e;">скролить</span> серый блок с кодом.</p>
+							</div><br>
+							<p>Вот так выглядит сама структура таблицы:</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<table>
+	<caption></caption>
+	<tr>
+		<td>...</td>
+	</tr>
+</table>
+								</xmp>
+							</div><br>
+							<p>Давайте сделаем простенькую таблицу:</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<table>
+	<caption>Таблица</caption>
+	<tr>
+		<td>Заголовок</td>
+	</tr>
+	<tr>
+		<td>Ячейка 1</td>
+		<td>Ячейка 2</td>
+	</tr>
+	<tr>
+		<td>Ячейка 3</td>
+	</tr>
+	<tr>
+</table>
+								</xmp>
+							</div><br>
+							<table>
+								<caption>Таблица</caption>
+								<tr>
+									<td>Заголовок</td>
+								</tr>
+								<tr>
+									<td>Ячейка 1</td>
+									<td>Ячейка 2</td>
+								</tr>
+								<tr>
+									<td>Ячейка 3</td>
+								</tr>
+							</table><br>
+							<p>Как мы видим, мы создали таблицу. Но согласитесь она какая-то странная. Чтобы исправить все недостатки, надо дописать атрибуты.</p><br>
+							<p>В тег <strong>table</strong> можно написать 4 атрибута: border, cellpadding, cellspacing, bgcolor.</p><br>
+							<p>Атрибут border задает количество границ таблицы. Внутри него надо писать числа.</p><br>
+							<p>Атрибут cellpadding задает отступы между границами таблицы и содержимым. Внутри него надо писать числа.</p><br>
+							<p>Атрибут cellspacing задает отступы между границами таблиц. Внутри него надо писать числа.</p><br>
+							<p>Атрибут bgcolor(в теге table) позволяет задать цвет всей таблице. Можно указывать название цветов таких как black, grey, yellow и т.д., или же указывать HEX цвета. Программисты почти везде чаще всего указывают HEX цвета. Пример HEX цветов: #000 - черный цвет, #ccc - серый, #fff - белый.</p><br>
+							<span>Например:</span>
+							<div class="htmlgreyfone">
+								<xmp>
+<table border="1" cellpadding="5" cellspacing="3" bgcolor="#dcdcdc">
+	<caption>Таблица</caption>
+	<tr>
+		<td>Заголовок</td>
+	</tr>
+	<tr>
+		<td>Ячейка 1</td>
+		<td>Ячейка 2</td>
+	</tr>
+	<tr>
+		<td>Ячейка 3</td>
+	</tr>
+</table>
+								</xmp>
+							</div><br>
+							<table border="1" cellspacing="3" bgcolor="#dcdcdc">
+								<caption>Таблица</caption>
+								<tr>
+									<td>Заголовок</td>
+								</tr>
+								<tr>
+									<td>Ячейка 1</td>
+									<td>Ячейка 2</td>
+								</tr>
+								<tr>
+									<td>Ячейка 3</td>
+								</tr>
+							</table><br>
+							<p>Для тега <strong>tr</strong> тоже можно указывать атрибут bgcolor.</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<table border="1" cellpadding="5" cellspacing="3" bgcolor="#dcdcdc">
+	<caption>Таблица</caption>
+	<tr bgcolor="#fff">
+		<td>Заголовок</td>
+	</tr>
+	<tr>
+		<td>Ячейка 1</td>
+		<td>Ячейка 2</td>
+	</tr>
+	<tr>
+		<td>Ячейка 3</td>
+	</tr>
+</table>
+								</xmp>
+							</div><br>
+							<table border="1" cellpadding="5" cellspacing="3" bgcolor="#dcdcdc">
+								<caption>Таблица</caption>
+								<tr bgcolor="#fff">
+									<td>Заголовок</td>
+								</tr>
+								<tr>
+									<td>Ячейка 1</td>
+									<td>Ячейка 2</td>
+								</tr>
+								<tr>
+									<td>Ячейка 3</td>
+								</tr>
+							</table><br><br>
+							<p>В тег <strong>td</strong> можно написать 4 атрибута: colspan, rowspan, valign, bgcolor.</p><br>
+							<p>Атрибут colspan позволяет соединить горизонтальные ячейки. Внутри него надо писать число горизонтальных ячеек которые мы хотим соединить. Например давайте соединим ячейку с текстом "Заголовок" относительно двух нижних ячеек.</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<table border="1" cellpadding="5" cellspacing="3" bgcolor="#dcdcdc">
+	<caption>Таблица</caption>
+	<tr bgcolor="#fff">
+		<td colspan="2">Заголовок</td>
+	</tr>
+	<tr>
+		<td>Ячейка 1</td>
+		<td>Ячейка 2</td>
+	</tr>
+	<tr>
+		<td>Ячейка 3</td>
+	</tr>
+</table>
+								</xmp>
+							</div><br>
+							<table border="1" cellspacing="3" bgcolor="#dcdcdc">
+								<caption>Таблица</caption>
+								<tr bgcolor="#fff">
+									<td colspan="2">Заголовок</td>
+								</tr>
+								<tr>
+									<td>Ячейка 1</td>
+									<td>Ячейка 2</td>
+								</tr>
+								<tr>
+									<td>Ячейка 3</td>
+								</tr>
+							</table><br>
+							<p>Атрибут rowspan позволяет соединить вертикальные ячейки. Внутри него надо писать число вертикальных ячеек которые мы хотим соединить. Например давайте Ячейку 2 соединим относительно боковых Ячеек 1 и 3:</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<table border="1" cellpadding="5" cellspacing="3" bgcolor="#dcdcdc">
+	<caption>Таблица</caption>
+	<tr bgcolor="#fff">
+		<td colspan="2">Заголовок</td>
+	</tr>
+	<tr>
+		<td>Ячейка 1</td>
+		<td rowspan="2">Ячейка 2</td>
+	</tr>
+	<tr>
+		<td>Ячейка 3</td>
+	</tr>
+</table>
+								</xmp>
+							</div><br>
+							<table border="1" cellspacing="3" bgcolor="#dcdcdc">
+								<caption>Таблица</caption>
+								<tr bgcolor="#fff">
+									<td colspan="2">Заголовок</td>
+								</tr>
+								<tr>
+									<td>Ячейка 1</td>
+									<td rowspan="2">Ячейка 2</td>
+								</tr>
+								<tr>
+									<td>Ячейка 3</td>
+								</tr>
+							</table><br>
+							<p>Атрибут valign устанавливает вертикальное выравнивание содержимого ячейки. У него есть значения: middle, top, bottom, baseline.</p><br>
+							<p>middle - выравнивание содержимого по середине. Это значение по умолчанию.</p><br>
+							<p>top - выравнивание содержимого по верхнему краю строки.</p><br>
+							<p>bottom - выравнивание содержимого по нижнему краю строки.</p><br>
+							<p>baseline - выравнивание по базовой линии, при этом происходит привязка содержимого ячейки к одной линии.</p><br>
+							<span>Например:</span>
+							<div class="htmlgreyfone">
+								<xmp>
+<table border="1" cellpadding="5" cellspacing="3" bgcolor="#dcdcdc">
+	<caption>Таблица</caption>
+	<tr bgcolor="#fff">
+		<td colspan="2">Заголовок</td>
+	</tr>
+	<tr>
+		<td>Ячейка 1</td>
+		<td rowspan="2" valign="baseline">Ячейка 2</td>
+	</tr>
+	<tr>
+		<td>Ячейка 3</td>
+	</tr>
+</table>
+								</xmp>
+							</div><br>
+							<table border="1" cellspacing="3" bgcolor="#dcdcdc">
+								<caption>Таблица</caption>
+								<tr bgcolor="#fff">
+									<td colspan="2">Заголовок</td>
+								</tr>
+								<tr>
+									<td>Ячейка 1</td>
+									<td rowspan="2" valign="baseline">Ячейка 2</td>
+								</tr>
+								<tr>
+									<td>Ячейка 3</td>
+								</tr>
+							</table><br>
+							<p>Атрибут bgcolor задает цвет ячейки.</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<table border="1" cellpadding="5" cellspacing="3" bgcolor="#dcdcdc">
+	<caption>Таблица</caption>
+	<tr bgcolor="#fff">
+		<td colspan="2">Заголовок</td>
+	</tr>
+	<tr>
+		<td>Ячейка 1</td>
+		<td rowspan="2" valign="baseline">Ячейка 2</td>
+	</tr>
+	<tr>
+		<td bgcolor="aqua">Ячейка 3</td>
+	</tr>
+</table>
+								</xmp>
+							</div><br>
+							<table border="1" cellpadding="5" cellspacing="3" bgcolor="#dcdcdc">
+								<caption>Таблица</caption>
+								<tr bgcolor="#fff">
+									<td colspan="2">Заголовок</td>
+								</tr>
+								<tr>
+									<td>Ячейка 1</td>
+									<td rowspan="2" valign="baseline">Ячейка 2</td>
+								</tr>
+								<tr>
+									<td bgcolor="aqua">Ячейка 3</td>
+								</tr>
+							</table><br>
+							<p>Честно говоря, эти атрибуты таблицы уже устарели. Поэтому следует задавать стили уже в языке CSS. Но, это всё же вам понадобится.</p>
+							<div class="fromlesson2nextback">
+								<a href="htmllesson2.html"><div class="btnbackpage"><span>Предыдущее</span></div></a>
+								<a href="htmllesson4.html"><div class="btnnextpage"><span>Следующее</span></div></a>
+							</div>
+						</div>
+						<aside>
+							<div class="asidedivfirst">
+								<a href="htmllesson.html">
+									<div class="asidenav" title="Перейти к уроку 1">
+										<span>#1 - Что такое HTML | Теги, атрибуты</span>
+									</div>
+								</a>
+								<a href="htmllesson2.html">
+									<div class="asidenav" title="Перейти к уроку 2">
+										<span>#2 - Теги для текстов | Базовые теги HTML</span>
+									</div>
+								</a>
+								<div style="background: #ebebeb;" class="asidenav" title="Урок 3">
+									<span style="font-weight: 500;">#3 - Тег table</span>
+								</div>
+								<a href="htmllesson4.html">
+									<div class="asidenav" title="Перейти к уроку 4">
+										<span>#4 - Поле для ввода | Теги form, input, label, textarea</span>
+									</div>
+								</a>
+								<a href="htmllesson5.html">
+									<div class="asidenav" title="Перейти к уроку 5">
+										<span>#5 - Кнопка | Теги button, audio, video</span>
+									</div>
+								</a>
+								<a href="htmllesson6.html">
+									<div class="asidenav" title="Перейти к уроку 6">
+										<span>#6 - Заключение</span>
+									</div>
+								</a>
+							</div>
+						</aside>
+					</div>
+				</div>
+			</section>
+			<!-- "Подвал" страницы -->
+			<footer class="footer">
+				<div class="container">
+					<div class="footerstyle">
+						<div class="footerfirstcolumn">
+							<a href="../index.html" class="footerbaseword" title="На главную страницу">ProgEasy</a>
+							<span class="footerafterbaseword">Обучение по</span><br><span class="footerafterbaseparagraph">программированию</span>
+						</div>
+						<ul class="footersecondcolumn">
+							<li class="footerlessons"><a href="../Lessons/lessons.html">Уроки</a></li>
+							<li class="footercontacts"><a href="../Contacts/contacts.html">Контакты</a></li>
+							<li class="footerabout"><a href="../Aboutus/aboutus.html">О создателе/сайте</a></li>
+						</ul>
+						<div class="footerthirdcolumn">
+							<div class="footerimages">
+								<div class="footerinstagram" title="Инстаграм" onclick="Insta()">
+									<img src="../images/instagram.png" alt="Instagram">
+								</div>
+								<div class="footervk" title="Вк" onclick="Vk()">
+									<img src="../images/vk.png" alt="Vk">
+								</div>
+								<div class="footerwhatsapp" title="WhatsApp" onclick="WhatsApp()">
+									<img src="../images/whatsapp.png" alt="WhatsApp">
+								</div>
+							</div>
+							<div class="footeremailnumber">
+								<span class="footeremailnumbertexts">+7 (707) 200 35-83</span><br>
+								<span class="footeremailnumbertexts">Email: anuarzholdybaev2006@gmail.com</span>
+								<div class="footermadeby">
+									<span class="footermadebytext">© Created by Anuar Name ProgEasy, 2021</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<!-- "Подвал" страницы закончился -->
+			<div class="windowfixed"></div>
+		</div>
+		<!-- Закончился wrapper -->
+		<script src="jslesson.js"></script>
+	</body>
+</html>

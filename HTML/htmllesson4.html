@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="keywords" content="Программирование, сайт, HTML, CSS, JavaScript, бесплатное обучение, курсы программирования, бесплатные курсы по программированию, как создать сайт, Frontend, Frontend разработка, HTML урок, ProgEasy HTML урок 4">
+		<meta name="description" content="Урок №4 HTML от ProgEasy. Текстовые поля, поля для ввода. Бесплатное обучение Frontend разработке.">
+		<meta name="format-detection" content="telephone=no">
+		<title>Урок 4 HTML</title>
+		<link rel="shortcut icon" href="../images/iconweb.png" type="image/png">
+		<link href="csslesson4.css" rel="stylesheet" type="text/css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<!-- Yandex.Metrika counter -->
+		<script type="text/javascript" >
+			(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+			m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+			(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+			ym(84034504, "init", {
+				clickmap:true,
+				trackLinks:true,
+				accurateTrackBounce:true,
+				webvisor:true
+			});
+		</script>
+		<noscript><div><img src="https://mc.yandex.ru/watch/84034504" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+		<!-- /Yandex.Metrika counter -->
+	</head>
+	<body>
+		<div class="wrapper">
+			<!-- header -->
+			<header class="header">
+				<div class="container">
+					<div class="headersectionstyles">
+						<div class="Basenameheader"><a href="../index.html" class="tothemainpage" title="На главную страницу">ProgEasy</a></div>
+						<div class="burger">
+							<span></span>
+						</div>
+						<div class="Baseultexts">
+							<span class="Basenav" title="Вы на этой странице">HTML</span>
+							<span><a class="Basenav" href="../CSS/csslesson.html" title="Перейти к CSS">CSS</a></span>
+							<span><a class="Basenav" href="../JS/jslesson.html" title="Перейти к JS">JavaScript</a></span>
+							<span><a class="Basenav" href="../Contacts/contacts.html" title="Контакты">Контакты</a></span>
+							<span><a class="Basenav" href="../Aboutus/aboutus.html" title="О нас">О сайте</a></span>
+						</div>
+						<div class="Basenametitle">
+							<p class="headertitle">Понятные объяснения</p>
+						</div>
+					</div>
+				</div>
+			</header>
+			<!-- Закончился header -->
+			<section class="sectionhtml">
+				<div class="container">
+					<div class="Firstbasetextdiv">
+						<h1>Урок 4 HTML</h1>
+					</div>
+					<div class="sectionstyles2">
+						<div class="htmlexplalltextdiv">
+							<h2>Текстовые поля, поля для ввода</h2>
+							<br>
+							<h3>Тег form</h3>
+							<p>Тег form это обязательный тег для передачи данных или написания какого-либо текста.</p>
+							<p>У тега form есть такие атрибуты как action и method.</p><br>
+							<p>Атрибут action указывает на назначение страницы где будут обработки всех данных которые были в теге form. Так как это другой язык программирования, мы пропускаем этот атрибут.</p><br>
+							<p>Атрибут method позволяет указать метод передачи данных из form. Есть значения как: get, post.</p><br>
+							<p>get - метод передачи данных по умолчанию, данные выписываются внутри URL адреса. Оно используется чаще чем post.</p><br>
+							<p>post - метод передачи данных, не выписывает данные внутри URL адреса.</p><br>
+							<p>Так как это связано с серверными языками, мы пропускаем эту часть, но в будущем если вы будете изучать серверные языки, вам это пригодится.</p>
+							<div class="attention">
+								<br>
+								<p>Если код не виден, вы можете <span style="color: #68d66e;">скролить</span> серый блок с кодом.</p>
+							</div><br>
+							<span>Например:</span>
+							<div class="htmlgreyfone">
+								<xmp>
+<form action="" method="get"></form>
+								</xmp>
+							</div><br>
+							<p>Следующие теги являются дочерними элементами тега form.</p>
+							<br><br>
+							<h3>Тег input</h3>
+							<p>Тег input позволяет создать поле для ввода. Тег одинарный.</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<form action="" method="get">
+	<input>
+</form>
+								</xmp>
+							</div><br>
+							<form action="" method="get">
+								<input>
+							</form><br><br>
+							<h4>У тега input есть не мало атрибутов. Рассмотрим все по очереди.</h4>
+							<p>Атрибут maxlength указывает максимальное количество символов в поле.</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<form action="" method="get">
+	<input maxlength="5">
+</form>
+								</xmp>
+							</div><br>
+							<form action="" method="get">
+								<input maxlength="5">
+							</form><br>
+							<p>Атрибут name указывает имя элемента input. Атрибут name используется для ссылки на элементы в JavaScript или для ссылки на данные формы после отправки формы. Следует прописывать этот атрибут для текстовых полей, таких как input или textarea. Про textarea мы еще поговорим.</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<form action="" method="get">
+	<input name="input1">
+</form>
+								</xmp>
+							</div><br>
+							<p>Атрибут value позволяет сделать уже готовый текст в поле.</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<form action="" method="get">
+	<input value="Hello, World!">
+</form>
+								</xmp>
+							</div><br>
+							<form action="" method="get">
+								<input type="text" value="Hello, World!">
+							</form><br>
+							<p>Атрибут placeholder позволяет сделать невидимый готовый текст в поле.</p>
+							<span>Например:</span>
+							<div class="htmlgreyfone">
+								<xmp>
+<form action="" method="get">
+	<input placeholder="Введите ваше имя">
+</form>
+								</xmp>
+							</div><br>
+							<form action="" method="get">
+								<input type="text" placeholder="Введите ваше имя">
+							</form><br>
+							<p>Атрибут type указывает тип отображаемого элемента input. Есть множество значений:</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<form action="" method="get">
+	<input type="text"> <!-- Текст -->
+	<input type="password"> <!-- Пароль -->
+	<input type="email"> <!-- Почта -->
+	<input type="url"> <!-- Ссылка -->
+	<input type="color"> <!-- Выбор цвета -->
+	<input type="date"> <!-- Выбор даты -->
+	<input type="time"> <!-- Время -->
+	<input type="datetime"> <!-- Дата и время -->
+	<input type="checkbox"> <!-- Галочки -->
+	<input type="radio"> <!-- Галочка как кружочки  -->
+	<input type="file"> <!-- Загрузить файл -->
+	<input type="button" value="Кнопка 1">
+	<input type="submit" value="Кнопка 2">
+	<input type="reset" value="Кнопка 3">
+</form>
+								</xmp>
+							</div><br>
+							<form action="" method="get" id="tagformexample">
+								<div><input type="text"><span>	Текст</span></div><br>
+								<div><input type="password"><span>	Пароль</span></div><br>
+								<div><input type="email"><span>	Почта</span></div><br>
+								<div><input type="url"><span>	Ссылка</span></div><br>
+								<div><input type="color"><span>	Выбор цвета</span></div><br>
+								<div><input type="date"><span>	Выбор даты</span></div><br>
+								<div><input type="time"><span>	Время</span></div><br>
+								<div><input type="datetime"><span>	Дата и время</span></div><br>
+								<div><input type="checkbox"><span>	Галочки</span></div><br>
+								<div><input type="radio"><span>	Галочки как кружочки</span></div><br>
+								<div><input type="file"><span>	Загрузить файл</span></div><br>
+								<div><input type="button" value="Кнопка 1" disabled> <span>	Кнопка без перезагрузки сайта и без отправки данных на сервер</span></div><br>
+								<div><input type="submit" value="Кнопка 2" disabled> <span>	Кнопка с перезагрузкой и с отправкой данных на сервер</span></div><br>
+								<div><input type="reset" value="Кнопка 3" disabled><span>Очищение данных вводенных в полях</span></div>
+							</form><br>
+							<p>Я отключю свойство нажатия на эти три кнопки ибо сайт может багануться. Про тип submit мы поговорим на уроке JavaScript.</p><br>
+							<p>Если вы нажмете на галочку с типом radio, и потом попытаетесь нажать снова, то увидите что галочка не убралась. Такие проблемы случаются когда у нас два input поля с типами radio, и если мы нажмем на них двоих, то они оба будут нажаты.</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<form action="" method="get">
+	<input type="radio">
+	<input type="radio">
+</form>
+								</xmp>
+							</div><br>
+							<form action="" method="get">
+								<input type="radio">
+								<input type="radio">
+							</form><br>
+							<p>Чтобы это исправить, надо обоим input полям с типом radio добавить атрибут name с одинаковыми значениями.</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<form action="" method="get">
+	<input type="radio" name="name">
+	<input type="radio" name="name">
+</form>
+								</xmp>
+							</div><br>
+							<form action="" method="get">
+								<input type="radio" name="name">
+								<input type="radio" name="name">
+							</form><br><br>
+							<p>Также помимо атрибутов, есть еще и логические атрибуты. Это как бы атрибуты только без значений.</p>
+							<p>Логический атрибут hidden делает поле скрытым.</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<form action="" method="get">
+	<input type="text" hidden>
+</form>
+								</xmp>
+							</div><br>
+							<form action="" method="get">
+								<input type="text" hidden>
+							</form><br>
+							<p>Здесь наверху на самом деле есть input поле. Просто оно скрыто засчет логического атрибута hidden.</p><br>
+							<p>Логический атрибут disabled делает поле неактивным и куда мы не можем ничего написать.</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<form action="" method="get">
+	<input type="text" disabled>
+</form>
+								</xmp>
+							</div><br>
+							<form action="" method="get">
+								<input type="text" disabled>
+							</form><br>
+							<p>Логический атрибут readonly может только считывать символы в поле но мы не сможем вводить какой-либо текст. Но для этого, нам надо написать какой-то текст в атрибуте value.</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<form action="" method="get">
+	<input type="text" value="Hello" readonly>
+</form>
+								</xmp>
+							</div><br>
+							<form action="" method="get">
+								<input type="text" value="Hello" readonly>
+							</form><br>
+							<p>Логический атрибут required, если в поле ничего не введено, данные не отправляются, то есть обязательное для заполнения. Для этого состояния нужна кнопка отправки данных.</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<form action="" method="get">
+	<input type="text" required>
+</form>
+								</xmp>
+							</div><br>
+							<form action="" method="get">
+								<input type="text" required>
+							</form>
+							<br><br>
+							<h3>Тег label</h3>
+							<p>Тег label обычно прописывают вместе с тегом input. Тег label служит текстовой меткой для input. Пользователь благодаря ей может выбрать нужное текстовое поле кликом по тексту внутри тега label.</p>
+							<p>Структура выглядит так:</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<form action="" method="get">
+	<label></label><input>
+</form>
+								</xmp>
+							</div><br>
+							<p>Чтобы привязать текст в label в свое текстовое поле, внутри тега label надо прописать атрибут for. Значением же для этого атрибута послужит значение атрибута id в теге input.</p><br>
+							<span>Например:</span>
+							<div class="htmlgreyfone">
+								<xmp>
+<form action="" method="get">
+	<label for="someid">Нажми сюда</label><input id="someid">
+</form>
+								</xmp>
+							</div><br>
+							<form action="" method="get">
+								<label for="someid">Нажми сюда</label><input id="someid">
+							</form>
+							<br><br>
+							<h3>Тег textarea</h3>
+							<p>Тег textarea создает текстовую область как input только в него можно написать несколько строк текста. Следует тоже записывать в теге form.</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<form action="" method="get">
+	<textarea></textarea>
+</form>
+								</xmp>
+							</div><br>
+							<form action="" method="get">
+								<textarea></textarea>
+							</form><br>
+							<p>Если вам надо чтобы textarea находилась вне тега form, вы можете указать на форму, к которой относится текстовая область с помощью атрибута form. Значением же для этого атрибута послужит значение атрибута id в теге form.</p><br>
+							<p>Кроме этого, у него похожие атрибуты как у тега input такие как maxlength, name, placeholder но уже без value. Чтобы написать готовый текст в текстовом поле как это делает атрибут value, необходимо в самом теге написать этот текст.</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<form action="" method="get">
+	<textarea>Hello, World!</textarea>
+</form>
+								</xmp>
+							</div><br>
+							<form action="" method="get">
+								<textarea>Hello, World!</textarea>
+							</form><br><br>
+							<p>Как вы наверно уже заметили, вы можете изменять ширину и высоту текстового поля. Чтобы это исправить надо задать свойство resize в языке CSS. Подробно мы пройдем всё это в языке CSS, но а пока можете просто посмотреть как это будет выглядить.</p><br>
+							<p>Чтобы сделать текстовое поле фиксированной по ширине и высоте, напишите в свойство resize значение none.</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<form action="" method="get">
+	<textarea placeholder="Напишите что-либо"></textarea>
+	<style>
+		textarea {
+			resize: none;
+		}
+	</style>
+</form>
+								</xmp>
+							</div><br>
+							<form action="" method="get">
+								<textarea placeholder="Напишите что-либо" style="resize: none;"></textarea>
+							</form><br>
+							<p>Чтобы сделать текстовое поле фиксированной только по ширине, напишите в свойство resize значение vertical.</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<form action="" method="get">
+	<textarea placeholder="Напишите что-либо"></textarea>
+	<style>
+		textarea {
+			resize: vertical;
+		}
+	</style>
+</form>
+								</xmp>
+							</div><br>
+							<form action="" method="get">
+								<textarea placeholder="Напишите что-либо" style="resize: vertical;"></textarea>
+							</form><br>
+							<p>Чтобы сделать текстовое поле фиксированной только по высоте, напишите в свойство resize значение horizontal.</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<form action="" method="get">
+	<textarea placeholder="Напишите что-либо"></textarea>
+	<style>
+		textarea {
+			resize: horizontal;
+		}
+	</style>
+</form>
+								</xmp>
+							</div><br>
+							<form action="" method="get">
+								<textarea placeholder="Напишите что-либо" style="resize: horizontal;"></textarea>
+							</form><br>
+							<p>После фиксированной текстовой области по ширине и высоте, вы можете добавить уникальные атрибуты как cols и rows.</p><br>
+							<p>cols - определяет ширину текстовой области. Ширина области рассчитывается в пикселях как ширина одного символа умноженная на число в значений.</p><br>
+							<p>rows - определяет высоту текстовой области. В качестве значения необходимо указать количество строк, которые будут видны без прокрутки текстовой области.</p><br>
+							<span>Например:</span>
+							<div class="htmlgreyfone">
+								<xmp>
+<form action="" method="get">
+	<textarea cols="20" rows="5" placeholder="Напишите что-либо"></textarea>
+	<style>
+		textarea {
+			resize: none;
+		}
+	</style>
+</form>
+								</xmp>
+							</div><br>
+							<form action="" method="get">
+								<textarea cols="20" rows="5" placeholder="Напишите что-либо" style="resize: none;"></textarea>
+							</form>
+							<div class="fromlesson2nextback">
+								<a href="htmllesson3.html"><div class="btnbackpage"><span>Предыдущее</span></div></a>
+								<a href="htmllesson5.html"><div class="btnnextpage"><span>Следующее</span></div></a>
+							</div>
+						</div>
+						<aside>
+							<div class="asidedivfirst">
+								<a href="htmllesson.html">
+									<div class="asidenav" title="Перейти к уроку 1">
+										<span>#1 - Что такое HTML | Теги, атрибуты</span>
+									</div>
+								</a>
+								<a href="htmllesson2.html">
+									<div class="asidenav" title="Перейти к уроку 2">
+										<span>#2 - Теги для текстов | Базовые теги HTML</span>
+									</div>
+								</a>
+								<a href="htmllesson3.html">
+									<div class="asidenav" title="Перейти к уроку 3">
+										<span>#3 - Тег table</span>
+									</div>
+								</a>
+								<div style="background: #ebebeb;" class="asidenav" title="Урок 4">
+									<span style="font-weight: 500;">#4 - Поле для ввода | Теги form, input, label, textarea</span>
+								</div>
+								<a href="htmllesson5.html">
+									<div class="asidenav" title="Перейти к уроку 5">
+										<span>#5 - Кнопка | Теги button, audio, video</span>
+									</div>
+								</a>
+								<a href="htmllesson6.html">
+									<div class="asidenav" title="Перейти к уроку 6">
+										<span>#6 - Заключение</span>
+									</div>
+								</a>
+							</div>
+						</aside>
+					</div>
+				</div>
+			</section>
+			<!-- "Подвал" страницы -->
+			<footer class="footer">
+				<div class="container">
+					<div class="footerstyle">
+						<div class="footerfirstcolumn">
+							<a href="../index.html" class="footerbaseword" title="На главную страницу">ProgEasy</a>
+							<span class="footerafterbaseword">Обучение по</span><br><span class="footerafterbaseparagraph">программированию</span>
+						</div>
+						<ul class="footersecondcolumn">
+							<li class="footerlessons"><a href="../Lessons/lessons.html">Уроки</a></li>
+							<li class="footercontacts"><a href="../Contacts/contacts.html">Контакты</a></li>
+							<li class="footerabout"><a href="../Aboutus/aboutus.html">О создателе/сайте</a></li>
+						</ul>
+						<div class="footerthirdcolumn">
+							<div class="footerimages">
+								<div class="footerinstagram" title="Инстаграм" onclick="Insta()">
+									<img src="../images/instagram.png" alt="Instagram">
+								</div>
+								<div class="footervk" title="Вк" onclick="Vk()">
+									<img src="../images/vk.png" alt="Vk">
+								</div>
+								<div class="footerwhatsapp" title="WhatsApp" onclick="WhatsApp()">
+									<img src="../images/whatsapp.png" alt="WhatsApp">
+								</div>
+							</div>
+							<div class="footeremailnumber">
+								<span class="footeremailnumbertexts">+7 (707) 200 35-83</span><br>
+								<span class="footeremailnumbertexts">Email: anuarzholdybaev2006@gmail.com</span>
+								<div class="footermadeby">
+									<span class="footermadebytext">© Created by Anuar Name ProgEasy, 2021</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<!-- "Подвал" страницы закончился -->
+			<div class="windowfixed"></div>
+		</div>
+		<!-- Закончился wrapper -->
+		<script src="jslesson.js"></script>
+	</body>
+</html>

@@ -1,0 +1,684 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="keywords" content="Программирование, сайт, HTML, CSS, JavaScript, бесплатное обучение, курсы программирования, бесплатные курсы по программированию, как создать сайт, Frontend, Frontend разработка, CSS урок, ProgEasy CSS урок 6">
+		<meta name="description" content="Урок №6 CSS от ProgEasy. Псевдоклассы, псевдоэлементы. Бесплатное обучение Frontend разработке.">
+		<meta name="format-detection" content="telephone=no">
+		<title>Урок 6 CSS</title>
+		<link rel="shortcut icon" href="../images/iconweb.png" type="image/png">
+		<link href="cssofcsslesson6.css" rel="stylesheet" type="text/css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<!-- Yandex.Metrika counter -->
+		<script type="text/javascript" >
+			(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+			m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+			(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+			ym(84034504, "init", {
+				clickmap:true,
+				trackLinks:true,
+				accurateTrackBounce:true,
+				webvisor:true
+			});
+		</script>
+		<noscript><div><img src="https://mc.yandex.ru/watch/84034504" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+		<!-- /Yandex.Metrika counter -->
+	</head>
+	<body>
+		<div class="wrapper">
+			<!-- header -->
+			<header class="header">
+				<div class="container">
+					<div class="headersectionstyles">
+						<div class="Basenameheader"><a href="../index.html" class="tothemainpage" title="На главную страницу">ProgEasy</a></div>
+						<div class="burger">
+							<span></span>
+						</div>
+						<div class="Baseultexts">
+							<span><a class="Basenav" href="../HTML/htmllesson.html" title="Перейти к HTML">HTML</a></span>
+							<span class="Basenav" title="Вы на этой странице">CSS</span>
+							<span><a class="Basenav" href="../JS/jslesson.html" title="Перейти к JS">JavaScript</a></span>
+							<span><a class="Basenav" href="../Contacts/contacts.html" title="Контакты">Контакты</a></span>
+							<span><a class="Basenav" href="../Aboutus/aboutus.html" title="О нас">О сайте</a></span>
+						</div>
+						<div class="Basenametitle">
+							<p class="headertitle">Понятные объяснения</p>
+						</div>
+					</div>
+				</div>
+			</header>
+			<!-- Закончился header -->
+			<section class="sectionhtml">
+				<div class="container">
+					<div class="Firstbasetextdiv">
+						<h1>Урок 6 CSS</h1>
+					</div>
+					<div class="sectionstyles2">
+						<div class="htmlexplalltextdiv">
+							<h2>Псевдоклассы</h2>
+							<br>
+							<p>Псевдокласс - ключевое слово которое указывается после селектера через двоеточия ":". Псевдоклассы позволяют изменить стиль элемента при наведении, нажатии и т.д.</p>
+							<div class="attention">
+								<br>
+								<p>Если код не виден, вы можете <span style="color: #68d66e;">скролить</span> серый блок с кодом.</p>
+								<br>
+							</div>
+							<div class="cssgreyfone">
+								<xmp>
+Селектор:псевдокласс {
+	...
+}
+								</xmp>
+							</div><br>
+							<h3>Псевдокласс :hover</h3>
+							<p>Часто используемый псевдокласс который позволяет изменить стиль элемента при наведении.</p><br>
+							<span>Например:</span>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div id="hoverblock"></div>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+#hoverblock {
+	width: 200px;
+	height: 200px;
+	background-color: blue;
+}
+#hoverblock:hover {
+	background-color: red;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<div id="hoverblock"></div>
+							<style>
+								#hoverblock {
+									width: 200px;
+									height: 200px;
+									background-color: blue;
+								}
+								#hoverblock:hover {
+									background-color: red;
+								}
+							</style>
+							<br><br>
+							<h3>Псевдокласс :active</h3>
+							<p>Псевдокласс active позволяет изменить стиль при нажатии.</p><br>
+							<span>Например:</span>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div id="activeblock"></div>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+#activeblock {
+	width: 200px;
+	height: 200px;
+	background-color: blue;
+}
+#activeblock:active {
+	background-color: #313131;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<div id="activeblock"></div>
+							<style>
+								#activeblock {
+									width: 200px;
+									height: 200px;
+									background-color: blue;
+								}
+								#activeblock:active {
+									background-color: #313131;
+								}
+							</style>
+							<br><br>
+							<h3>Псевдокласс :focus</h3>
+							<p>Псевдокласс focus позволяет изменить стиль текстовым полям когда мы нажали на них и вводим что-то.</p><br>
+							<span>Например:</span>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<input type="text" placeholder="Введите что-то">
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+input[type="text"]:focus {
+	border: 3px solid black;
+	color: red;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<input id="input1" type="text" placeholder="Введите что-то">
+							<style>
+								#input1:focus {
+									border: 3px solid black;
+									color: red;
+								}
+							</style>
+							<br><br>
+							<h3>Псевдоклассы логических атрибутов</h3>
+							<p>Вы наверно слышали в уроке HTML на теме текстовых полей про логические атрибуты такие как disabled, enabled, required, readonly, hidden. Так вот их можно писать как псевдоклассы.</p><br>
+							<span>Например:</span>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<input type="text" placeholder="Введите что-то" value="Привет!" disabled>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+input[type="text"]:disabled {
+	background: black;
+	color: white;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<input id="input2" type="text" placeholder="Введите что-то" value="Привет!" disabled>
+							<style>
+								#input2:disabled {
+									background: black;
+									color: white;
+								}
+							</style>
+							<br><br>
+							<h3>Псевдокласс :empty</h3>
+							<p>Псевдокласс empty позволяет изменить стиль элементам которые пустые.</p>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div class="box">Я не пустой</div>
+	<div class="box"></div>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+.box {
+	width: 100px;
+	height: 100px;
+	margin-right: 50px;
+	border: 2px solid black;
+}
+.box:empty {
+	background: grey;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<div class="box">Я не пустой</div>
+							<div class="box"></div>
+							<style>
+								.box {
+									width: 100px;
+									height: 100px;
+									margin-right: 50px;
+									border: 2px solid black;
+								}
+								.box:empty {
+									background: grey;
+								}
+							</style>
+							<br><br>
+							<h3>Псевдокласс :not</h3>
+							<p>Псевдокласс not оно эквивалентно слову "кроме". То есть мы можем изменить стиль элементам кроме таких-то.</p><br>
+							<p>Например давайте в предыдущем примере мы изменим стиль НЕ пустым элементам:</p>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div class="box">Я не пустой</div>
+	<div class="box"></div>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+.box {
+	width: 100px;
+	height: 100px;
+	margin-right: 50px;
+	border: 2px solid black;
+}
+.box:not(:empty) {
+	background: grey;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<div class="box1">Я не пустой</div>
+							<div class="box1"></div>
+							<style>
+								.box1 {
+									width: 100px;
+									height: 100px;
+									margin-right: 50px;
+									border: 2px solid black;
+								}
+								.box1:not(:empty) {
+									background: grey;
+								}
+							</style>
+							<br><br>
+							<h3>Псевдоклассы :first-of-type, :last-of-type</h3>
+							<p>Эти псевдоклассы позволяют изменить стиль первому стоячему элементу или последнему.</p><br>
+							<span>Например:</span>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div>
+		<div class="divclass">Я первый</div>
+		<div class="divclass">Я второй</div>
+		<div class="divclass">Я третий</div>
+		<div class="divclass">Я четвертый</div>
+	</div>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+.divclass {
+	float: left;
+	border: 2px solid grey;
+}
+div .divclass:first-of-type {
+	background-color: blue;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<div>
+								<div class="divclass">Я первый</div>
+								<div class="divclass">Я второй</div>
+								<div class="divclass">Я третий</div>
+								<div class="divclass">Я четвертый</div>
+							</div><br><br>
+							<style>
+								.divclass {
+									float: left;
+									border: 2px solid grey;
+								}
+								div .divclass:first-of-type {
+									background-color: blue;
+								}
+							</style>
+							<div class="divfact">
+								<div style="display: flex;">
+									<div class="factscircle">i</div>
+									<h4 class="factsquestion">Примечание</h4>
+								</div>
+								<p class="factstext">Псевдоклассы first-of-type и last-of-type работают когда мы указываем через родитель на дочерние теги как в верхнем примере. Потому что браузер не понимает сколько именно элементов и не видит их границы начало первого элемента и конца, а так как родитель ограничивает спектр этих элементов, он понимает где начало, первый элемент, и конец, последний элемент.</p>
+							</div>
+							<h3>Псевдокласс :nth-child()</h3>
+							<p>Псевдокласс :nth-child позволяет изменить стиль элементам на основе их нумерации. Есть несколько типов значений:</p><br>
+							<p>odd - все нечетные элементы.</p><br>
+							<p>even - все четные элементы.</p><br>
+							<p>число - определенное число соответствующее нумерации элемента.</p><br>
+							<p>3n-1 - 2, 5, 8 и т.д. элементы. n - натуральные числа.</p><br>
+							<span>Например:</span>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div>
+		<div class="divclass">Я первый</div>
+		<div class="divclass">Я второй</div>
+		<div class="divclass">Я третий</div>
+		<div class="divclass">Я четвертый</div>
+	</div>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+.divclass {
+	float: left;
+	border: 2px solid grey;
+}
+div .divclass:nth-child(3) {
+	background-color: blue;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<div>
+								<div class="divclass2">Я первый</div>
+								<div class="divclass2">Я второй</div>
+								<div class="divclass2">Я третий</div>
+								<div class="divclass2">Я четвертый</div>
+							</div><br><br><br><br>
+							<style>
+								.divclass2 {
+									float: left;
+									border: 2px solid grey;
+								}
+								div .divclass2:nth-child(3) {
+									background-color: blue;
+								}
+							</style>
+							<h2>Псевдоэлементы</h2>
+							<br>
+							<p>Псевдоэлемент - ключевое слово которое указывается после селектора двумя двоеточиями "::". Оно позволяет изменить стиль к определенной части элемента.</p>
+							<br>
+							<h3>Псевдоэлемент ::after</h3>
+							<p>Псевдоэлемент after позволяет добавить невыделяемое содержимое после элемента. Для псевдоэлементов after и before, невыделяемое содержимое пишется в свойстве content внутри кавычек.</p>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<span>Стрелка вправо</span>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+span::after {
+	content: "→";
+}
+									</xmp>
+								</div>
+							</div><br>
+							<span id="spanexample">Стрелка вправо</span>
+							<style>
+								#spanexample::after {
+									content: "→";
+								}
+							</style>
+							<br><br>
+							<h3>Псевдоэлемент ::before</h3>
+							<p>Псевдоэлемент before позволяет добавить невыделяемое содержимое до элемента.</p>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<span>Внимание</span>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+span::before {
+	content: "!";
+	padding: 1px 8px;
+	background: #e8ee44;
+	border-radius: 50%;
+	margin-right: 10px;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<span id="spanexample2">Внимание</span>
+							<style>
+								#spanexample2::before {
+									content: "!";
+									padding: 1px 8px;
+									background: #e8ee44;
+									border-radius: 50%;
+									margin-right: 10px;
+								}
+							</style>
+							<br><br>
+							<h3>Функция attr()</h3>
+							<p>Функция attr() позволяет извлекать значения атрибутов элемента и применять его в стилях. Обычно оно используется для псевдоэлементов after и before и пишется в свойстве content только не в кавычках.</p><br>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<span howareyou="Как дела?">Привет!</span>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+span::after {
+	content: attr(howareyou) "";
+	color: red;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<span howareyou="Как дела?" id="attrfunc">Привет!</span>
+							<style>
+								#attrfunc::after {
+									content: attr(howareyou) "";
+									color: red;
+								}
+							</style>
+							<br><br>
+							<h3>Псевдоэлемент ::first-letter</h3>
+							<p>Псевдоэлемент first-letter, по названию уже понятно, что оно позволяет изменить стиль первому символу в слове. Оно работает только на блочных элементах.</p>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<p>Привет!</p>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+p::first-letter {
+	color: red;
+	font-size: 24px;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<p id="spanexample3">Привет!</p>
+							<style>
+								#spanexample3::first-letter {
+									color: red;
+									font-size: 24px;
+								}
+							</style>
+							<br><br>
+							<h3>Псевдоэлемент ::selection</h3>
+							<p>Псевдоэлемент selection позволяет изменить стиль к части документа, который был выделен пользователем.</p>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<p>Выдели меня и произойдет нечто</p>
+	<p>Выдели меня опять</p>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+::selection { /* Стиль для всех остальных элементов */
+	color: grey;
+	background: #242424;
+}
+p:nth-child(2)::selection {
+	color: white;
+	background: grey;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<p id="examplep">Выдели меня и произойдет нечто</p>
+							<p id="examplep2">Выдели меня опять</p>
+							<style>
+								#examplep::selection {
+									color: grey;
+									background: #242424;
+								}
+								#examplep2::selection {
+									color: white;
+									background: grey;
+								}
+							</style>
+							<div class="fromlesson2nextback">
+								<a href="csslesson5.html"><div class="btnbackpage"><span>Предыдущее</span></div></a>
+								<a href="csslesson7.html"><div class="btnnextpage"><span>Следующее</span></div></a>
+							</div>
+						</div>
+						<aside>
+							<div class="asidedivfirst">
+								<a href="csslesson.html">
+									<div class="asidenav" title="Перейти к уроку 1">
+										<span>#1 - Что такое CSS | Селектор, свойства, значения | Текст</span>
+									</div>
+								</a>
+								<a href="csslesson2.html">
+									<div class="asidenav" title="Перейти к уроку 2">
+										<span>#2 - Свойства текстов</span>
+									</div>
+								</a>
+								<a href="csslesson3.html">
+									<div class="asidenav" title="Перейти к уроку 3">
+										<span>#3 - Ширина, высота, фон</span>
+									</div>
+								</a>
+								<a href="csslesson4.html">
+									<div class="asidenav" title="Перейти к уроку 4">
+										<span>#4 - Стили для блоков</span>
+									</div>
+								</a>
+								<a href="csslesson5.html">
+									<div class="asidenav" title="Перейти к уроку 5">
+										<span>#5 - Стили для блоков 2</span>
+									</div>
+								</a>
+								<div style="background: #ebebeb;" class="asidenav" title="Урок 6">
+									<span style="font-weight: 500;">#6 - Псевдоклассы, псевдоэлементы</span>
+								</div>
+								<a href="csslesson7.html">
+									<div class="asidenav" title="Перейти к уроку 7">
+										<span>#7 - Flexbox | Флекс элементы</span>
+									</div>
+								</a>
+								<a href="csslesson8.html">
+									<div class="asidenav" title="Перейти к уроку 8">
+										<span>#8 - Префиксы, тени, эффект перехода, состояния элемента</span>
+									</div>
+								</a>
+								<a href="csslesson9.html">
+									<div class="asidenav" title="Перейти к уроку 9">
+										<span>#9 - Ключевые кадры, анимация, доп. материал</span>
+									</div>
+								</a>
+								<a href="csslesson10.html">
+									<div class="asidenav" title="Перейти к уроку 10">
+										<span>#10 - Заключение</span>
+									</div>
+								</a>
+							</div>
+						</aside>
+					</div>
+				</div>
+			</section>
+			<!-- "Подвал" страницы -->
+			<footer class="footer">
+				<div class="container">
+					<div class="footerstyle">
+						<div class="footerfirstcolumn">
+							<a href="../index.html" class="footerbaseword" title="На главную страницу">ProgEasy</a>
+							<span class="footerafterbaseword">Обучение по</span><br><span class="footerafterbaseparagraph">программированию</span>
+						</div>
+						<ul class="footersecondcolumn">
+							<li class="footerlessons"><a href="../Lessons/lessons.html">Уроки</a></li>
+							<li class="footercontacts"><a href="../Contacts/contacts.html">Контакты</a></li>
+							<li class="footerabout"><a href="../Aboutus/aboutus.html">О создателе/сайте</a></li>
+						</ul>
+						<div class="footerthirdcolumn">
+							<div class="footerimages">
+								<div class="footerinstagram" title="Инстаграм" onclick="Insta()">
+									<img src="../images/instagram.png" alt="Instagram">
+								</div>
+								<div class="footervk"  title="Вк" onclick="Vk()">
+									<img src="../images/vk.png" alt="Vk">
+								</div>
+								<div class="footerwhatsapp" title="WhatsApp" onclick="WhatsApp()">
+									<img src="../images/whatsapp.png" alt="WhatsApp">
+								</div>
+							</div>
+							<div class="footeremailnumber">
+								<span class="footeremailnumbertexts">+7 (707) 200 35-83</span><br>
+								<span class="footeremailnumbertexts">Email: anuarzholdybaev2006@gmail.com</span>
+								<div class="footermadeby">
+									<span class="footermadebytext">© Created by Anuar Name ProgEasy, 2021</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<div class="windowfixed"></div>
+		</div>
+		<!-- Закончился wrapper -->
+		<script src="../HTML/jslesson.js"></script>
+	</body>
+</html>

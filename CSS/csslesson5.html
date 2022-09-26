@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="keywords" content="Программирование, сайт, HTML, CSS, JavaScript, бесплатное обучение, курсы программирования, бесплатные курсы по программированию, как создать сайт, Frontend, Frontend разработка, CSS урок, ProgEasy CSS урок 5">
+		<meta name="description" content="Урок №5 CSS от ProgEasy. Стили для блоков 2. Бесплатное обучение Frontend разработке.">
+		<meta name="format-detection" content="telephone=no">
+		<title>Урок 5 CSS</title>
+		<link rel="shortcut icon" href="../images/iconweb.png" type="image/png">
+		<link href="cssofcsslesson5.css" rel="stylesheet" type="text/css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<!-- Yandex.Metrika counter -->
+		<script type="text/javascript" >
+			(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+			m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+			(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+			ym(84034504, "init", {
+				clickmap:true,
+				trackLinks:true,
+				accurateTrackBounce:true,
+				webvisor:true
+			});
+		</script>
+		<noscript><div><img src="https://mc.yandex.ru/watch/84034504" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+		<!-- /Yandex.Metrika counter -->
+	</head>
+	<body>
+		<div class="wrapper">
+			<!-- header -->
+			<header class="header">
+				<div class="container">
+					<div class="headersectionstyles">
+						<div class="Basenameheader"><a href="../index.html" class="tothemainpage" title="На главную страницу">ProgEasy</a></div>
+						<div class="burger">
+							<span></span>
+						</div>
+						<div class="Baseultexts">
+							<span><a class="Basenav" href="../HTML/htmllesson.html" title="Перейти к HTML">HTML</a></span>
+							<span class="Basenav" title="Вы на этой странице">CSS</span>
+							<span><a class="Basenav" href="../JS/jslesson.html" title="Перейти к JS">JavaScript</a></span>
+							<span><a class="Basenav" href="../Contacts/contacts.html" title="Контакты">Контакты</a></span>
+							<span><a class="Basenav" href="../Aboutus/aboutus.html" title="О нас">О сайте</a></span>
+						</div>
+						<div class="Basenametitle">
+							<p class="headertitle">Понятные объяснения</p>
+						</div>
+					</div>
+				</div>
+			</header>
+			<!-- Закончился header -->
+			<section class="sectionhtml">
+				<div class="container">
+					<div class="Firstbasetextdiv">
+						<h1>Урок 5 CSS</h1>
+					</div>
+					<div class="sectionstyles2">
+						<div class="htmlexplalltextdiv">
+							<h2>Стили для блоков 2</h2>
+							<br>
+							<h3>Свойство display</h3>
+							<p>Свойство display позволяет изменить параметры элементов на блочный, не блочный и т.п. Свойство не наследуется. Значений очень много, но большинство из них не поддерживаются некоторыми браузерами, да и используются редко. Мы же разберем самые нужные и употребляемые. Значения:</p><br>
+							<p>block - делает элемент блочным. Например не блочный тег span будет вести себя как блочный, переноситься на новую строку.</p><br>
+							<p>inline - элемент отображается как не блочный. Блочные элементы переносятся на новую строку и их содержимое показывается на новой строке, но inline позволяет содержимым блочных элементов начинаться с того места где закончились предыдущие элементы.</p><br>
+							<p>inline-block - оно делает блочный элемент который обтекается с другими элементами страницы словно не блочный. Его внутренняя часть является подобию блочного, а сам элемент не блочный.</p><br>
+							<p>none - временно удаляет элемент из документа. Занимаемое им место не резервируется и веб-страница формируется так, словно элемента и не было. Можно снова сделать его видимым при определенных условиях добавлением стиля display с другим значением.</p><br>
+							<p>inherit - наследует значение родителя.</p>
+							<div class="attention">
+								<br>
+								<p>Если код не виден, вы можете <span style="color: #68d66e;">скролить</span> серый блок с кодом.</p>
+								<br>
+							</div>
+							<span>Например:</span>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div>
+		<p>Блок 1</p>
+	</div>
+	<div>
+		<p>Блок 2</p>
+	</div>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+div {
+	width: 100px;
+	height: 150px;
+	background-color: #60c7d9;
+	display: inline-block;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<div class="inlineblockexample">
+								<p>Блок 1</p>
+							</div>
+							<div  class="inlineblockexample">
+								<p>Блок 2</p>
+							</div>
+							<style>
+								.inlineblockexample {
+									width: 100px;
+									height: 150px;
+									background-color: #60c7d9;
+									display: inline-block;
+								}
+							</style>
+							<div class="divfact">
+								<div style="display: flex;">
+									<div class="factscircle">!</div>
+									<h4 class="factsquestion">Лайфхак</h4>
+								</div>
+								<p class="factstext">Если блоку у которого есть содержимое, добавить свойство display со значением inline-block, то ширина и высота блока будет подстроено под его содержимое. Например:</p>
+								<div>
+									<span>HTML код:</span>
+									<div class="htmlgreyfone">
+										<xmp>
+<body>
+	<div>
+		<p>Ого, прикольно</p>
+	</div>
+</body>
+										</xmp>
+									</div>
+								</div>
+								<div>
+									<span>CSS код:</span>
+									<div class="cssgreyfone">
+										<xmp>
+div {
+	border: 1px solid black;
+	display: inline-block;
+}
+										</xmp>
+									</div>
+								</div><br>
+								<div style="border: 1px solid black; display: inline-block; margin-bottom: 10px;">
+									<p>Ого, прикольно</p>
+								</div>
+							</div>
+							<br>
+							<h3>Свойство position</h3>
+							<p>Свойство position устанавливает способ позиционирования элемента относительно окна браузера или других объектов на веб-странице. Свойство не наследуется. Есть значения как: absolute, relative, fixed, inherit.</p><br>
+							<p>absolute - позиционирует элемент относительно окна браузера в левом верхнем углу если у родителя нет свойства position. Если у родителя есть свойство position со значениями как absolute, relative или fixed, то элемент будет позиционироваться относительно верхнего левого края родителя.</p><br>
+							<p>relative - позиционировать объект относительно с того место где оно сейчас находится. Добавление свойств left, top, right и bottom изменяет позицию элемента и сдвигает его в ту или иную сторону от первоначального расположения.</p><br>
+							<p>fixed - похоже на значение absolute своим позиционированием относительно края окна браузера или родителя. Но отличие заключается в том, что элемент становится фиксированным при прокрутке страницы.</p><br>
+							<p>inherit - наследует значение родителя.</p><br>
+							<p>Также при надобности можно добавлять свойства самого position такие как <strong style="color: #002340;">top, left, right, bottom</strong>. Они указывают на направление сторон с которого будет позиционироваться элемент. Значения могут быть отрицательные и положительные.</p><br>
+							<span>Например:</span>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div>
+		<p>Привет, мир!</p>
+	</div>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+div {
+	border: 1px solid black;
+	display: inline-block;
+	padding: 10px;
+	position: relative;
+	left: 100px;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<div style="border: 1px solid black; display: inline-block; padding: 10px; position: relative; left: 100px;">
+								<p>Привет, мир!</p>
+							</div><br>
+							<br><br><br>
+							<h3>Свойство z-index</h3>
+							<p>Свойство z-index позволяет задать слой элемента. Если есть оси x и y которые являются соответственно шириной и высотой, то ось z, направленная в нашу сторону, является "уровнем высоты" элементов. То есть чем значение будет больше, тем элемент выше остальных. Значения же могут быть любые числа начиная с отрицательных и заканчивая положительными. Но мы рекомендуем писать с нуля, и так ведь чисел хватает по горло. Свойство не наследуется.</p><br>
+							<p>Это свойство работает исключительно если у элемента задано свойство <u>position</u> со значениями absolute, relative или fixed!</p><br>
+							<div style="width: 70%; margin: 0 auto;">
+								<img src="../images/Слои.jpg" style="max-width: 100%; max-height: 100%;" alt="Слои рисунок">
+							</div><br>
+							<span>Например:</span>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div id="blockunder">А я внизу остался</div>
+	<div id="blockover">Я поверх него</div>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+#blockunder, #blockover {
+	width: 100px;
+	height: 100px;
+	position: relative;
+	display: inline-block;
+}
+#blockunder {
+	background-color: silver;
+	z-index: 1;
+}
+#blockover {
+	background-color: blue;
+	z-index: 2;
+	left: -50px;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<div id="blockunder">А я внизу остался</div>
+							<div id="blockover">Я поверх него</div>
+							<style>
+								#blockunder, #blockover {
+									width: 100px;
+									height: 100px;
+									position: relative;
+									display: inline-block;
+								}
+								#blockunder {
+									background-color: silver;
+									z-index: 1;
+								}
+								#blockover {
+									background-color: blue;
+									left: -50px;
+									z-index: 2;
+								}
+							</style>
+							<br><br><br>
+							<h3>Свойство float</h3>
+							<p>Свойство float определяет по какой стороне будет выравниваться элемент, а остальные элементы будут обтекать его с других сторон. Не работает только на абсолютно позиционированных элементах. Свойство не наследуется. Есть значения как:</p><br>
+							<p>left - выравнивает элемент по левому краю, все остальные элементы обтекать его по правой стороне.</p><br>
+							<p>right - выравнивает элемент по правому краю, все остальные элементы обтекают его по левой стороне.</p><br>
+							<p>inherit - наследует значение родителя.</p><br>
+							<span>Например:</span>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div id="block1">
+		<span>Я на правой стороне</span>
+	</div>
+	<div id="block2">
+		<span>А я обтекаю слева</span>
+	</div>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+#block1, #block2 {
+	display: inline-block;
+	padding: 20px;
+}
+#block1 {
+	background-color: aqua;
+	float: right;
+}
+#block2 {
+	background-color: silver;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<div style="display: inline-block; padding: 20px; background-color: aqua; float: right;">
+								<span>Я на правой стороне</span>
+							</div>
+							<div style="display: inline-block; padding: 20px; background-color: silver;">
+								<span>А я обтекаю слева</span>
+							</div>
+							<br><br>
+							<p>Также по желанию, вместе со свойством float можно добавить еще одно свойство под названием <strong style="color: #002340;">clear</strong>.</p>
+							<br>
+							<h4>Свойство clear</h4>
+							<p>Свойство clear устанавливает с какой стороны запрещено обтекание другими элементами. Свойство не наследуется. Есть значения как: both, left, right.</p><br>
+							<p>both - отменяет обтекание элемента с левой и правой стороны. Следует писать это значение когда нужно снять обтекание элемента, но неизвестно с какой стороны.</p><br>
+							<p>left - отменяет обтекание с левой стороны. Все элементы которые были в левой стороне опустяться вниз и будут под текущим элементом.</p><br>
+							<p>right - отменяет обтекание с правой стороны.</p><br>
+							<span>Например:</span>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div id="block1">
+		<span>Я на правой стороне</span>
+	</div>
+	<p>У меня отменено обтекание справа</p>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+#block1 {
+	display: inline-block;
+	padding: 20px;
+	background-color: aqua;
+	float: right;
+}
+p {
+	clear: right;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<div style="display: inline-block; padding: 20px; background-color: aqua; float: right;">
+								<span>Я на правой стороне</span>
+							</div>
+							<p style="clear: right;">У меня отменено обтекание справа</p>
+							<br><br>
+							<h3>Свойство overflow</h3>
+							<p>Свойство overflow управляет отображением элемента, если оно не помещается целиком. Есть значения:</p><br>
+							<p>visible - отображается весь элемент даже за пределами ширины и высоты. Это значение по умолчанию.</p><br>
+							<p>hidden - отображается только область внутри элемента, лишнии части элемента за пределами ширины и высоты будут скрыты.</p><br>
+							<p>scroll - добавляется полоса прокрутки.</p><br>
+							<p>auto - полосы прокрутки добавляются только при необходимости.</p><br>
+							<p>inherit - наследует значение родителя.</p><br>
+							<span>Например:</span>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div id="blockparent">
+		<div id="blockchild"></div>
+	</div>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+#blockparent {
+	width: 250px;
+	height: 250px;
+	border: 2px solid grey;
+	border-radius: 20px;
+	overflow: hidden;
+}
+#blockchild {
+	width: 100%;
+	height: 100%;
+	background-color: #242424;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<div id="blockparent">
+								<div id="blockchild"></div>
+							</div>
+							<style>
+								#blockparent {
+									width: 250px;
+									height: 250px;
+									border: 2px solid grey;
+									border-radius: 20px;
+									overflow: hidden;
+								}
+								#blockchild {
+									width: 100%;
+									height: 100%;
+									background-color: #242424;
+								}
+							</style>
+							<br><br>
+							<h3>Свойство box-sizing</h3>
+							<p>Свойство box-sizing применяется для алгоритма измерения ширины и высоты элемента.</p><br>
+							<p>Согласно спецификации CSS, ширины и высота блока состоит из размера самого содержимого(контента), внешний отступ(margin), внутрений отступ(padding), граница(border). Свойство box-sizing позволяет изменить этот алгоритм, задав размер не самого контента, а размер блока. Есть значения как:</p><br>
+							<p>content-box - стандарт CSS, width и height задает ширину и высоту контенту, значения внутренних отступов, отступов и границ не учитываются.</p><br>
+							<p>border-box - width и height включают в себя контент, значения внутренних отступов и границ, но не отступов(margin).</p><br>
+							<p>padding-box - width и height включают в себя контент, значения внутренних отступов, но не отступов(margin) и границ(border).</p><br>
+							<span>Например:</span>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div id="block1">Контент 200 пикселей</div>
+	<div id="block2">Контент, padding, border 200 пикселей</div>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+#block1 {
+	width: 200px;
+	height: 100px;
+	margin: 0 20px;
+	padding: 10px;
+	border: 3px solid black;
+	box-sizing: content-box;
+}
+#block2 {
+	width: 200px;
+	height: 100px;
+	margin: 0 20px;
+	padding: 10px;
+	border: 3px solid black;
+	box-sizing: border-box;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<div id="block1">Контент 200 пикселей</div>
+							<div id="block2">Контент, padding, border 200 пикселей</div>
+							<style>
+								#block1 {
+									width: 200px;
+									height: 100px;
+									margin: 0 20px;
+									padding: 10px;
+									border: 3px solid black;
+									box-sizing: content-box;
+								}
+								#block2 {
+									width: 200px;
+									height: 100px;
+									margin: 0 20px;
+									padding: 10px;
+									border: 3px solid black;
+									box-sizing: border-box;
+								}
+							</style>
+							<div class="fromlesson2nextback">
+								<a href="csslesson4.html"><div class="btnbackpage"><span>Предыдущее</span></div></a>
+								<a href="csslesson6.html"><div class="btnnextpage"><span>Следующее</span></div></a>
+							</div>
+						</div>
+						<aside>
+							<div class="asidedivfirst">
+								<a href="csslesson.html">
+									<div class="asidenav" title="Перейти к уроку 1">
+										<span>#1 - Что такое CSS | Селектор, свойства, значения | Текст</span>
+									</div>
+								</a>
+								<a href="csslesson2.html">
+									<div class="asidenav" title="Перейти к уроку 2">
+										<span>#2 - Свойства текстов</span>
+									</div>
+								</a>
+								<a href="csslesson3.html">
+									<div class="asidenav" title="Перейти к уроку 3">
+										<span>#3 - Ширина, высота, фон</span>
+									</div>
+								</a>
+								<a href="csslesson4.html">
+									<div class="asidenav" title="Перейти к уроку 4">
+										<span>#4 - Стили для блоков</span>
+									</div>
+								</a>
+								<div style="background: #ebebeb;" class="asidenav" title="Урок 5">
+									<span style="font-weight: 500;">#5 - Стили для блоков 2</span>
+								</div>
+								<a href="csslesson6.html">
+									<div class="asidenav" title="Перейти к уроку 6">
+										<span>#6 - Псевдоклассы, псевдоэлементы</span>
+									</div>
+								</a>
+								<a href="csslesson7.html">
+									<div class="asidenav" title="Перейти к уроку 7">
+										<span>#7 - Flexbox | Флекс элементы</span>
+									</div>
+								</a>
+								<a href="csslesson8.html">
+									<div class="asidenav" title="Перейти к уроку 8">
+										<span>#8 - Префиксы, тени, эффект перехода, состояния элемента</span>
+									</div>
+								</a>
+								<a href="csslesson9.html">
+									<div class="asidenav" title="Перейти к уроку 9">
+										<span>#9 - Ключевые кадры, анимация, доп. материал</span>
+									</div>
+								</a>
+								<a href="csslesson10.html">
+									<div class="asidenav" title="Перейти к уроку 10">
+										<span>#10 - Заключение</span>
+									</div>
+								</a>
+							</div>
+						</aside>
+					</div>
+				</div>
+			</section>
+			<!-- "Подвал" страницы -->
+			<footer class="footer">
+				<div class="container">
+					<div class="footerstyle">
+						<div class="footerfirstcolumn">
+							<a href="../index.html" class="footerbaseword" title="На главную страницу">ProgEasy</a>
+							<span class="footerafterbaseword">Обучение по</span><br><span class="footerafterbaseparagraph">программированию</span>
+						</div>
+						<ul class="footersecondcolumn">
+							<li class="footerlessons"><a href="../Lessons/lessons.html">Уроки</a></li>
+							<li class="footercontacts"><a href="../Contacts/contacts.html">Контакты</a></li>
+							<li class="footerabout"><a href="../Aboutus/aboutus.html">О создателе/сайте</a></li>
+						</ul>
+						<div class="footerthirdcolumn">
+							<div class="footerimages">
+								<div class="footerinstagram" title="Инстаграм" onclick="Insta()">
+									<img src="../images/instagram.png" alt="Instagram">
+								</div>
+								<div class="footervk"  title="Вк" onclick="Vk()">
+									<img src="../images/vk.png" alt="Vk">
+								</div>
+								<div class="footerwhatsapp" title="WhatsApp" onclick="WhatsApp()">
+									<img src="../images/whatsapp.png" alt="WhatsApp">
+								</div>
+							</div>
+							<div class="footeremailnumber">
+								<span class="footeremailnumbertexts">+7 (707) 200 35-83</span><br>
+								<span class="footeremailnumbertexts">Email: anuarzholdybaev2006@gmail.com</span>
+								<div class="footermadeby">
+									<span class="footermadebytext">© Created by Anuar Name ProgEasy, 2021</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<div class="windowfixed"></div>
+		</div>
+		<!-- Закончился wrapper -->
+		<script src="../HTML/jslesson.js"></script>
+	</body>
+</html>

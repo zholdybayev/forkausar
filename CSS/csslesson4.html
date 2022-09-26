@@ -1,0 +1,703 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="keywords" content="Программирование, сайт, HTML, CSS, JavaScript, бесплатное обучение, курсы программирования, бесплатные курсы по программированию, как создать сайт, Frontend, Frontend разработка, CSS урок, ProgEasy CSS урок 4">
+		<meta name="description" content="Урок №4 CSS от ProgEasy. Стили для блоков. Бесплатное обучение Frontend разработке.">
+		<meta name="format-detection" content="telephone=no">
+		<title>Урок 4 CSS</title>
+		<link rel="shortcut icon" href="../images/iconweb.png" type="image/png">
+		<link href="cssofcsslesson4.css" rel="stylesheet" type="text/css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<!-- Yandex.Metrika counter -->
+		<script type="text/javascript" >
+			(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+			m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+			(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+			ym(84034504, "init", {
+				clickmap:true,
+				trackLinks:true,
+				accurateTrackBounce:true,
+				webvisor:true
+			});
+		</script>
+		<noscript><div><img src="https://mc.yandex.ru/watch/84034504" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+		<!-- /Yandex.Metrika counter -->
+	</head>
+	<body>
+		<div class="wrapper">
+			<!-- header -->
+			<header class="header">
+				<div class="container">
+					<div class="headersectionstyles">
+						<div class="Basenameheader"><a href="../index.html" class="tothemainpage" title="На главную страницу">ProgEasy</a></div>
+						<div class="burger">
+							<span></span>
+						</div>
+						<div class="Baseultexts">
+							<span><a class="Basenav" href="../HTML/htmllesson.html" title="Перейти к HTML">HTML</a></span>
+							<span class="Basenav" title="Вы на этой странице">CSS</span>
+							<span><a class="Basenav" href="../JS/jslesson.html" title="Перейти к JS">JavaScript</a></span>
+							<span><a class="Basenav" href="../Contacts/contacts.html" title="Контакты">Контакты</a></span>
+							<span><a class="Basenav" href="../Aboutus/aboutus.html" title="О нас">О сайте</a></span>
+						</div>
+						<div class="Basenametitle">
+							<p class="headertitle">Понятные объяснения</p>
+						</div>
+					</div>
+				</div>
+			</header>
+			<!-- Закончился header -->
+			<section class="sectionhtml">
+				<div class="container">
+					<div class="Firstbasetextdiv">
+						<h1>Урок 4 CSS</h1>
+					</div>
+					<div class="sectionstyles2">
+						<div class="htmlexplalltextdiv">
+							<h2>Стили для блоков</h2>
+							<br>
+							<h3>Свойство border</h3>
+							<p>Свойство border позволяет задать границы блокам. Свойство не наследуется. Структура значения свойства border выглядит вот так:</p>
+							<div class="attention">
+								<br>
+								<p>Если код не виден, вы можете <span style="color: #68d66e;">скролить</span> серый блок с кодом.</p>
+								<br>
+							</div>
+							<div class="cssgreyfone">
+								<xmp>
+... {
+	border: ...px тип границы цвет;
+}
+								</xmp>
+							</div><br>
+							<p>Первое значение - толщина границы, это свойство border-width.</p><br>
+							<p>Второе значение - тип границы, это свойство border-type. Типы границы:</p>
+							<div>
+								<img src="../images/border types.JPG" style="max-width: 100%; max-height: 100%;" alt="Типы границ">
+							</div><br>
+							<p>Третье значение - цвет границы, это свойство border-color.</p><br>
+							<p>(Значение inherit - наследует значения родителя)</p><br>
+							<p>Но можно писать эти значения в перемешку.</p>
+							<span>Например:</span>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div>
+		<p>У меня тип границы solid!</p>
+	</div>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+div {
+	width: 200px;
+	height: 100px;
+	border: 3px solid green;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<div style="max-width: 200px; height: 100px; border: 3px solid green;">
+								<p>У меня тип границы solid!</p>
+							</div><br><br>
+							<p>Чтобы добавить границу на одну из сторон, после свойства border надо добавить направление на любую из сторон через дефис: top - вверх, right - справа, bottom - снизу, left - слева:</p>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div>
+		<p>У меня граница только справа</p>
+	</div>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+div {
+	width: 200px;
+	height: 100px;
+	border-right: 3px solid green;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<div style="max-width: 200px; height: 100px; border-right: 3px solid green;">
+								<p>У меня граница только справа</p>
+							</div>
+							<br><br>
+							<p>Чтобы убрать обводку с одной из сторон, после свойства border надо добавить направление на любую из сторон через дефис и добавить значение 0 или none. Направления сторон: top - вверх, right - справа, bottom - снизу, left - слева:</p>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div>
+		<p>У меня граница везде кроме справа</p>
+	</div>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+div {
+	width: 200px;
+	height: 100px;
+	border: 3px solid green;
+	border-right: none;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<div style="max-width: 200px; height: 100px; border: 3px solid green; border-right: none;">
+								<p>У меня граница везде кроме справа</p>
+							</div>
+							<br><br>
+							<h3>Свойство margin</h3>
+							<p>Свойство margin позволяет сделать внешний отступ элемента начиная от границы текущего элемента заканчивая внутренней границей его родителя. Довольно часто употребляемое свойство. Отступом является пространство от границы текущего элемента до внутренней границы его родительского элемента. Значения могут быть отрицательные и положительные. Если отступ отрицательный, элемент будет не отдаляться, а идти к тому месту с которого он относился. Свойство не наследуется. Значение inherit - наследует значение родителя.</p><br>
+							<p>Если мы пишем значения просто в свойство margin, то внешнии отступы будут в каждом направлении из сторон. Например:</p>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div>
+		<p>У меня отступ 50 пикселей слева, справа, сверху, снизу</p>
+	</div>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+div {
+	width: 100px;
+	height: 150px;
+	border: 2px solid black;
+	margin: 50px;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<div style="width: 100px; height: 150px; border: 2px solid black; margin: 50px;">
+								<p>У меня отступ 50 пикселей слева, справа, сверху, снизу</p>
+							</div><br>
+							<p>Если мы укажем одну из направлении сторон через дефис, то внешний отступ будет задан в том направлении. Например давайте сделаем отступ сверху:</p>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div>
+		<p>У меня отступ 50 пикселей сверху</p>
+	</div>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+div {
+	width: 100px;
+	height: 150px;
+	border: 2px solid black;
+	margin-top: 50px;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<div style="width: 100px; height: 150px; border: 2px solid black; margin-top: 50px;">
+								<p>У меня отступ 50 пикселей сверху</p>
+							</div><br><br>
+							<p>Можно задать два значения в свойстве margin. Первое значение будут отступы сверху и снизу, второе слева и справа.</p>
+							<div class="cssgreyfone">
+								<xmp>
+... {
+	margin: ...px ...px;
+}
+								</xmp>
+							</div><br>
+							<span>Например:</span>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div>
+		<p>Короче вы поняли</p>
+	</div>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+div {
+	width: 100px;
+	height: 150px;
+	border: 2px solid black;
+	margin: 20px 70px;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<div style="width: 100px; height: 150px; border: 2px solid black; margin: 20px 70px;">
+								<p>Короче вы поняли</p>
+							</div><br><br>
+							<p>Можно задать 4 значения. По очереди устанавливает отступ для верхней, правой, нижней, левой стороны.</p><br>
+							<span>Например:</span>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div>
+		<p>Что написать? Щас сами все увидите</p>
+	</div>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+div {
+	width: 100px;
+	height: 150px;
+	border: 2px solid black;
+	margin: 10px 0 30px 100px;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<div style="width: 100px; height: 150px; border: 2px solid black; margin: 10px 0 30px 100px;">
+								<p>Что написать? Щас сами все увидите</p>
+							</div>
+							<br><br>
+							<p>Можно выровнять элемент горизонтально по левому, правому, по центру при помощи значения auto. Если свойству margin-left задать значение auto, то элемент выравнается по правой стороне, так как auto занимает все доступное пространство.</p>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div>
+		<p>Эй, я здесь :)</p>
+	</div>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+div {
+	width: 100px;
+	height: 150px;
+	border: 2px solid black;
+	margin-left: auto;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<div style="width: 100px; height: 150px; border: 2px solid black; margin-left: auto;">
+								<p>Эй, я здесь :)</p>
+							</div><br>
+							<p>Точно так же если свойству margin-right задать значение auto, элемент выравняется по левой стороне:</p>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div>
+		<p>Теперь я тут :)</p>
+	</div>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+div {
+	width: 100px;
+	height: 150px;
+	border: 2px solid black;
+	margin-right: auto;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<div style="width: 100px; height: 150px; border: 2px solid black; margin-right: auto;">
+								<p>Теперь я тут :)</p>
+							</div><br>
+							<p>Чтобы выровнять элемент по центру, надо без направлении сторон написать просто margin с двумя значениями 0 и auto. Перве значение делает нулевые отступы сверху и снизу, а боковые стороны равны друг-другу:</p>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div>
+		<p>Я по середине :)</p>
+	</div>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+div {
+	width: 100px;
+	height: 150px;
+	border: 2px solid black;
+	margin: 0 auto;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<div style="width: 100px; height: 150px; border: 2px solid black; margin: 0 auto">
+								<p>Теперь я тут :)</p>
+							</div>
+							<br><br>
+							<h3>Свойство padding</h3>
+							<p>Свойство padding делает внутренние отступы между границами и содержимым элемента. Точно так же как margin, если мы пишем значения просто в свойство padding, то внутренние отступы будут в каждом направлении сторон. Свойство не наследуется. Значение inherit - наследует значение родителя.</p><br>
+							<span>Например:</span>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div>
+		<p>У меня внутренние отступы везде одинаковы</p>
+	</div>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+div {
+	border: 2px solid black;
+	padding: 30px;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<div>
+								<p style="border: 2px solid black; padding: 30px;">У меня внутренние отступы везде одинаковы</p>
+							</div><br><br>
+							<p>Опять же как margin, если мы укажем одну из направлении сторон через дефис, то внутренний отступ будет задан в том направлении. Например давайте сделаем отступ слева:</p>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div>
+		<p>У меня отступ слева 50 пикселей</p>
+	</div>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+div {
+	border: 2px solid black;
+	padding-left: 50px;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<div style="border: 2px solid black; padding-left: 50px;">
+								<p>У меня отступ слева 50 пикселей</p>
+							</div>
+							<br><br>
+							<p>Также можно писать сразу два значения. Первое будет отступ сверху и снизу, второе слева и справа:</p>
+							<div class="cssgreyfone">
+								<xmp>
+... {
+	margin: ...px ...px;
+}
+								</xmp>
+							</div><br>
+							<span>Например:</span>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div>
+		<p>Короче щас сами всё увидите</p>
+	</div>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+div {
+	border: 2px solid black;
+	padding: 20px 50px;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<div style="border: 2px solid black; padding: 20px 50px;">
+								<p>Короче щас сами всё увидите</p>
+							</div>
+							<p>Можно задать 4 значения. По очереди устанавливает отступ для верхней, правой, нижней, левой стороны.</p><br>
+							<span>Например:</span>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div>
+		<p>У меня идеи закончились</p>
+	</div>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+div {
+	border: 2px solid black;
+	padding: 10px 0 50px 50px;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<div style="border: 2px solid black; padding: 10px 0 50px 50px;">
+								<p>У меня идеи закончились</p>
+							</div>
+							<br><br>
+							<h3>Свойство border-radius</h3>
+							<p>Свойство border-radius позволяет установить радиус округление краев рамки или фона. Значения же могут быть пиксели, проценты и т.д. В случае с процентами, отсчет берется относительно ширины блока. Свойство не наследуется. Можно писать от одного до четырех значений.</p><br>
+							<p>1 значение - радиус указывается для всех четырех уголков.</p><br>
+							<p>2 значения - первое значение задает радиус верхнего левого и нижнего правого уголка, второе значение &mdash; верхнего правого и нижнего левого уголка.</p><br>
+							<p>3 значения - первое значение задает радиус для верхнего левого уголка, второе &mdash; одновременно для верхнего правого и нижнего левого, а третье для нижнего правого уголка.</p><br>
+							<p>4 значения - по очереди устанавливает радиус для верхнего левого, верхнего правого, нижнего правого и нижнего левого уголка.</p><br>
+							<span>Примеры:</span>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div style="border-radius: 20px;" class="exampledivs">
+		<p>У меня одно значение в пикселях</p>
+	</div>
+	<div style="border-radius: 20% 30%;" class=exampledivs>
+		<p>У меня два значения в процентах</p>
+	</div>
+	<div style="border-radius: 10px 30px 50px;" class="exampledivs">
+		<p>У меня 3 значения</p>
+	</div>
+	<div style="border-radius: 20% 0 20px 30px;" class=exampledivs>
+		<p>У меня 4 значения</p>
+	</div>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+.exampledivs {
+	padding: 15px;
+	border: 1px solid black;
+	margin-bottom: 10px;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<div style="border-radius: 20px;" class="exampledivs">
+								<p>У меня одно значение в пикселях</p>
+							</div>
+							<div style="border-radius: 20% 30%;" class=exampledivs>
+								<p>У меня два значения в процентах</p>
+							</div>
+							<div style="border-radius: 10px 30px 50px;" class="exampledivs">
+								<p>У меня 3 значения</p>
+							</div>
+							<div style="border-radius: 20% 0 20px 30px;" class=exampledivs>
+								<p>У меня 4 значения</p>
+							</div>
+							<style>
+								.exampledivs {
+									padding: 15px;
+									border: 1px solid black;
+									margin-bottom: 10px;
+								}
+							</style>
+							<br><br>
+							<h3>Свойство opacity</h3>
+							<p>Свойство opacity задает прозрачность какому либо объекту. Значения от нуля до единицы. Единица это первоначальная прозрачность объекта, ноль это значит что объект полностью прозрачен и невидим. Свойство не наследуется.</p><br>
+							<span>Например:</span>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div>
+		<p>У моего родителя на самом деле цвет черный</p>
+	</div>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+div {
+	height: 200px;
+	background-color: black;
+	text-align: center;
+	opacity: 0.2;
+}
+div p {
+	color: white;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<div style="height: 200px; background-color: black; text-align: center; opacity: 0.2;">
+								<p style="color: white;">Мой родитель прозрачный, на самом деле он черный</p>
+							</div>
+							<div class="fromlesson2nextback">
+								<a href="csslesson3.html"><div class="btnbackpage"><span>Предыдущее</span></div></a>
+								<a href="csslesson5.html"><div class="btnnextpage"><span>Следующее</span></div></a>
+							</div>
+						</div>
+						<aside>
+							<div class="asidedivfirst">
+								<a href="csslesson.html">
+									<div class="asidenav" title="Перейти к уроку 1">
+										<span>#1 - Что такое CSS | Селектор, свойства, значения | Текст</span>
+									</div>
+								</a>
+								<a href="csslesson2.html">
+									<div class="asidenav" title="Перейти к уроку 2">
+										<span>#2 - Свойства текстов</span>
+									</div>
+								</a>
+								<a href="csslesson3.html">
+									<div class="asidenav" title="Перейти к уроку 3">
+										<span>#3 - Ширина, высота, фон</span>
+									</div>
+								</a>
+								<div style="background: #ebebeb;" class="asidenav" title="Урок 4">
+									<span style="font-weight: 500;">#4 - Стили для блоков</span>
+								</div>
+								<a href="csslesson5.html">
+									<div class="asidenav" title="Перейти к уроку 5">
+										<span>#5 - Стили для блоков 2</span>
+									</div>
+								</a>
+								<a href="csslesson6.html">
+									<div class="asidenav" title="Перейти к уроку 6">
+										<span>#6 - Псевдоклассы, псевдоэлементы</span>
+									</div>
+								</a>
+								<a href="csslesson7.html">
+									<div class="asidenav" title="Перейти к уроку 7">
+										<span>#7 - Flexbox | Флекс элементы</span>
+									</div>
+								</a>
+								<a href="csslesson8.html">
+									<div class="asidenav" title="Перейти к уроку 8">
+										<span>#8 - Префиксы, тени, эффект перехода, состояния элемента</span>
+									</div>
+								</a>
+								<a href="csslesson9.html">
+									<div class="asidenav" title="Перейти к уроку 9">
+										<span>#9 - Ключевые кадры, анимация, доп. материал</span>
+									</div>
+								</a>
+								<a href="csslesson10.html">
+									<div class="asidenav" title="Перейти к уроку 10">
+										<span>#10 - Заключение</span>
+									</div>
+								</a>
+							</div>
+						</aside>
+					</div>
+				</div>
+			</section>
+			<!-- "Подвал" страницы -->
+			<footer class="footer">
+				<div class="container">
+					<div class="footerstyle">
+						<div class="footerfirstcolumn">
+							<a href="../index.html" class="footerbaseword" title="На главную страницу">ProgEasy</a>
+							<span class="footerafterbaseword">Обучение по</span><br><span class="footerafterbaseparagraph">программированию</span>
+						</div>
+						<ul class="footersecondcolumn">
+							<li class="footerlessons"><a href="../Lessons/lessons.html">Уроки</a></li>
+							<li class="footercontacts"><a href="../Contacts/contacts.html">Контакты</a></li>
+							<li class="footerabout"><a href="../Aboutus/aboutus.html">О создателе/сайте</a></li>
+						</ul>
+						<div class="footerthirdcolumn">
+							<div class="footerimages">
+								<div class="footerinstagram" title="Инстаграм" onclick="Insta()">
+									<img src="../images/instagram.png" alt="Instagram">
+								</div>
+								<div class="footervk"  title="Вк" onclick="Vk()">
+									<img src="../images/vk.png" alt="Vk">
+								</div>
+								<div class="footerwhatsapp" title="WhatsApp" onclick="WhatsApp()">
+									<img src="../images/whatsapp.png" alt="WhatsApp">
+								</div>
+							</div>
+							<div class="footeremailnumber">
+								<span class="footeremailnumbertexts">+7 (707) 200 35-83</span><br>
+								<span class="footeremailnumbertexts">Email: anuarzholdybaev2006@gmail.com</span>
+								<div class="footermadeby">
+									<span class="footermadebytext">© Created by Anuar Name ProgEasy, 2021</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<div class="windowfixed"></div>
+		</div>
+		<!-- Закончился wrapper -->
+		<script src="../HTML/jslesson.js"></script>
+	</body>
+</html>

@@ -1,0 +1,590 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="keywords" content="Программирование, сайт, HTML, CSS, JavaScript, бесплатное обучение, курсы программирования, бесплатные курсы по программированию, как создать сайт, Frontend, Frontend разработка, CSS урок, ProgEasy CSS урок 8">
+		<meta name="description" content="Урок №8 CSS от ProgEasy. Префиксы, тени, эффект перехода, состояния элемента. Бесплатное обучение Frontend разработке.">
+		<meta name="format-detection" content="telephone=no">
+		<title>Урок 8 CSS</title>
+		<link rel="shortcut icon" href="../images/iconweb.png" type="image/png">
+		<link href="cssofcsslesson8.css" rel="stylesheet" type="text/css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<!-- Yandex.Metrika counter -->
+		<script type="text/javascript" >
+			(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+			m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+			(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+			ym(84034504, "init", {
+				clickmap:true,
+				trackLinks:true,
+				accurateTrackBounce:true,
+				webvisor:true
+			});
+		</script>
+		<noscript><div><img src="https://mc.yandex.ru/watch/84034504" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+		<!-- /Yandex.Metrika counter -->
+	</head>
+	<body>
+		<div class="wrapper">
+			<!-- header -->
+			<header class="header">
+				<div class="container">
+					<div class="headersectionstyles">
+						<div class="Basenameheader"><a href="../index.html" class="tothemainpage" title="На главную страницу">ProgEasy</a></div>
+						<div class="burger">
+							<span></span>
+						</div>
+						<div class="Baseultexts">
+							<span><a class="Basenav" href="../HTML/htmllesson.html" title="Перейти к HTML">HTML</a></span>
+							<span class="Basenav" title="Вы на этой странице">CSS</span>
+							<span><a class="Basenav" href="../JS/jslesson.html" title="Перейти к JS">JavaScript</a></span>
+							<span><a class="Basenav" href="../Contacts/contacts.html" title="Контакты">Контакты</a></span>
+							<span><a class="Basenav" href="../Aboutus/aboutus.html" title="О нас">О сайте</a></span>
+						</div>
+						<div class="Basenametitle">
+							<p class="headertitle">Понятные объяснения</p>
+						</div>
+					</div>
+				</div>
+			</header>
+			<!-- Закончился header -->
+			<section class="sectionhtml">
+				<div class="container">
+					<div class="Firstbasetextdiv">
+						<h1>Урок 8 CSS</h1>
+					</div>
+					<div class="sectionstyles2">
+						<div class="htmlexplalltextdiv">
+							<h2>Префиксы, тени, эффект перехода, состояния элемента</h2>
+							<br>
+							<h3>Что такое префиксы?</h3>
+							<p><u>Префиксы</u> - это непонятные слова которые стоят до свойств с двумя дефисами по сторонам. А если точнее, это небольшие дополнения для правил, которые помогают браузеру увидеть, что мы хотим использовать новое правило. Также префиксы необходимы для поддержки старых браузеров, в которых по умолчанию может не быть правила.</p>
+							<div class="attention">
+								<br>
+								<p>Если код не виден, вы можете <span style="color: #68d66e;">скролить</span> серый блок с кодом.</p>
+								<br>
+							</div>
+							<div class="cssgreyfone">
+								<xmp>
+-webkit-
+-moz-
+-ms-
+-o-
+								</xmp>
+							</div><br>
+							<p>Некоторые браузеры не понимают некоторых свойств, поэтому чтобы они поняли какое свойство и команду мы хотим задать, прописываются префиксы. Они означают, что свойство прописанное после префикса будет применяться исключительно в указанном браузере. Все остальные браузеры данное свойство будут игнорировать, т.к. для них данный префикс неизвестен.</p><br>
+							<h4>Зачем и нужны префиксы и почему их пишут?</h4>
+							<ol>
+								<li style="list-style-position: inside;">Для включения в браузер свойств CSS, которые стандартом ещё полностью не реализованы и не утверждены.</li><br>
+								<li style="list-style-position: inside;">Для исправки проблем с кроссбраузерностью. Кроссбраузерность - это одинаковое отображение и работа сайта в различных браузерах. Если не учесть этот факт, то ваш сайт будет выглядить по разному на разных браузерах.</li>
+							</ol>
+							<br>
+							<h4>Префиксы браузеров</h4>
+							<p>-webkit- : Chrome, Safari.</p><br>
+							<p>-moz- : Mozilla FireFox.</p><br>
+							<p>-ms- : Internet Explorer.</p><br>
+							<p>-o- : Opera.</p><br>
+							<h4>Как определить, к какому свойству прописывать префикс?</h4>
+							<p>На сайте <a href="https://caniuse.com/" target="_blank">Can I use</a> вы можете прописывать свойства которые под сомнением поддержки браузерами, и оно покажет прямоугольники разных цветов которые говорят какой браузер поддерживает, к какому нужен префикс и у кого это свойство не реализовано.</p><br>
+							<p>Красный прямоугольник - браузер, в котором данное свойство не реализовано.</p><br>
+							<p>Зелёный прямоугольник с дефисом, расположенным в правом верхнем углу – браузер, в котором данное свойство используется через префикс.</p><br>
+							<p>Светло-зелёный прямоугольник – браузер, в котором данное свойство реализовано частично.</p><br>
+							<p>Зелёный прямоугольник – браузер, в котором данное свойство реализовано в соответствии со стандартом.</p><br>
+							<h4>Как прописывать префиксы?</h4>
+							<p>Давайте например возьмем свойство transition(пройдем чуть ниже). Для него нужны префиксы -webkit- и -o-. Префиксы прописываются следующим образом:</p>
+							<div class="cssgreyfone">
+								<xmp>
+Селектор {
+	-webkit-transition: ...;
+	-o-transition: ...;
+	transition: ...;
+}
+								</xmp>
+							</div><br>
+							<p>Первые два свойства transition с префиксами работают в указанном браузере, а третье свойство transition без префиксов работает на всех браузерах где префиксы по умолчанию не требуются.</p>
+							<br><br>
+							<h3>Свойство text-shadow</h3>
+							<p>Свойство text-shadow позволяет сделать тень для текста. Прописывается 4 значения:</p>
+							<div class="cssgreyfone">
+								<xmp>
+Селектор {
+	text-shadow: 1) 2) 3) 4);
+}
+								</xmp>
+							</div><br>
+							<p>1) Цвет тени.</p><br>
+							<p>2) Смещение по горизонтали. Положительное значение сдвигает вправо, отрицательное значение сдвигает влево.</p><br>
+							<p>3) Cмещение по вертикали. Положительное значение сдвигает вниз, отрицательное вверх.</p><br>
+							<p>4) Радиус размытия.</p><br>
+							<span>Например:</span>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<span>Привет мир!</span>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+span {
+	color: #fff;
+	text-shadow: black 0 3px 3px;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<span id="span1">Привет мир!</span>
+							<style>
+								#span1 {
+									color: #fff;
+									text-shadow: black 0 3px 3px;
+								}
+							</style>
+							<br><br><br>
+							<h3>Свойство box-shadow</h3>
+							<p>Свойство box-shadow позволяет сделать тень для блока. Свойство не наследуется. Есть 6 значений:</p><br>
+							<p>1) Ключевое слово inset. Оно делает тень внутри элемента. Можно прописывать по желанию.</p><br>
+							<p>2) Сдвиг тени по горизонтали. Положительное значение сдвигает вправо, отрицательное значение сдвигает влево.</p><br>
+							<p>3) Сдвиг тени по вертикали. Положительное значение сдвигает вниз, отрицательное вверх.</p><br>
+							<p>4) Радиус размытия тени.</p><br>
+							<p>5) Растяжение тени.</p><br>
+							<p>6) Цвет тени.</p><br>
+							<span>Например:</span>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div>
+		<span>Я тут короче текст видите</span>
+	</div>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+div {
+	width: 100px;
+	height: 100px;
+	padding: 10px 20px;
+	text-align: center;
+	border: 1px solid black;
+	-webkit-box-shadow: 5px 5px 3px 0 grey;
+	box-shadow: 5px 5px 3px 0 grey;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<div id="div1">
+								<span>Я тут короче текст видите</span>
+							</div>
+							<style>
+								#div1 {
+									width: 100px;
+									height: 100px;
+									padding: 10px 20px;
+									text-align: center;
+									border: 1px solid black;
+									-webkit-box-shadow: 5px 5px 3px 0 grey;
+									box-shadow: 5px 5px 3px 0 grey;
+								}
+							</style>
+							<br><br>
+							<h3>Свойство transition</h3>
+							<p>Свойство transition это эффект перехода между двумя состояниями элемента. Свойство не наследуется. Оно делится еще на несколько свойств:</p><br>
+							<h4>1) transition-property</h4>
+							<p>Свойство transition-property определяет список свойств(можно перечислять через запятые), участвующих в переходе. Значение по умолчанию: all(все свойства).</p><br>
+							<h4>2) transition-duration</h4>
+							<p>Свойство transition-duration задает длительность/время перехода. Значения: s - секунды, ms - милисекунды. 1s = 1000ms. Можно писать десятичные числа, например 0.5s без нуля: .5s.</p><br>
+							<h4>3) transition-timing-function</h4>
+							<p>Свойство transition-timing-function указывает как быстро по времени меняется указанное через transition-property значение свойства. Есть значения как:</p><br>
+							<p>ease - переход начинается медленно, разгоняется быстро и замедляется в конце. Или же можно писать функцию cubic-bezier(0.25,0.1,0.25,1). Это значение по умолчанию.</p><br>
+							<p>linear - переход происходит равномерно на протяжении всего времени, без колебаний в скорости. Его функция - cubic-bezier(0,0,1,1).</p><br>
+							<p>ease-in - переход начинается медленно, а затем плавно ускоряется в конце cubic-bezier. Его функция - (0.42,0,1,1).</p><br>
+							<p>ease-out - переход начинается быстро и плавно замедляется в конце. Функция - cubic-bezier(0,0,0.58,1).</p><br>
+							<p>ease-in-out - переход медленно начинается и медленно заканчивается. Функция - cubic-bezier(0.42,0,0.58,1).</p><br>
+							<h4>4) transition-delay</h4>
+							<p>Свойство transition-delay указывает задержку до эффекта перехода. Значения секунды - s, миллисекунды - ms. 1s = 1000ms. Значение по умолчанию - 0.</p><br><br>
+							<p>Можно всё это упростить и записать все эти значения свойств в одно свойство transition:</p>
+							<div class="cssgreyfone">
+								<xmp>
+transition: 1) 2) 3) 4);
+								</xmp>
+							</div><br><br>
+							<span>Например:</span>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div>
+		<span>Я тут короче текст видите</span>
+	</div>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+div {
+	width: 100px;
+	height: 100px;
+	padding: 10px 20px;
+	text-align: center;
+	border: 1px solid black;
+	-webkit-box-shadow: 5px 5px 3px 0 grey;
+	box-shadow: 5px 5px 3px 0 grey;
+	position: relative;
+	left: 0;
+	-webkit-transition: 1s linear;
+	-o-transition: 1s linear;
+	transition: 1s linear;
+}
+div:hover {
+	left: 100px;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<div id="div2">
+								<span>Я тут короче текст видите</span>
+							</div>
+							<style>
+								#div2 {
+									width: 100px;
+									height: 100px;
+									padding: 10px 20px;
+									text-align: center;
+									border: 1px solid black;
+									-webkit-box-shadow: 5px 5px 3px 0 grey;
+									box-shadow: 5px 5px 3px 0 grey;
+									position: relative;
+									left: 0;
+									-webkit-transition: 1s linear;
+									-o-transition: 1s linear;
+									transition: 1s linear;
+								}
+								#div2:hover {
+									left: 100px;
+								}
+							</style>
+							<div class="divfact">
+								<div style="display: flex;">
+									<div class="factscircle">i</div>
+									<h4 class="factsquestion">Примечание</h4>
+								</div>
+								<p class="factstext">Свойство transition пишется к основному первому состоянию элемента, в верхнем примере это был блок div. Также чтобы элемент перешел во второе состояние, первому основному состоянию надо задать первоначальные свойства, в верхнем примере это было left: 0;, второе состояние уже left: 100px;. Все значения transition работают и в обраную сторону, когда элемент дошел до второго своего состояния, и возвращается в свое изначальное состояние. </p>
+							</div>
+							<h3>Свойство transform</h3>
+							<p>Свойство transform позволяет трансформировать элемент, масштабировать, вращать, сдвигать, наклонать и комбинировать виды трансформаций. Свойство не наследуется. У этого свойства вместо значений функции. Есть функции как:</p><br>
+							<p>translateX(...) - сдвигает элемент относительно его обычного положения по оси X.</p><br>
+							<p>translateY(...) - сдвигает элемент относительно его обычного положения по оси Y.</p><br>
+							<p>translate(..., ...) - сдвигает элемент на новое место, перемещая относительно обычного положения вправо и вниз, используя координаты X и Y, не затрагивая при этом соседние элементы. Первое значение координата по оси X, второе по оси Y. Если нужно сдвинуть элемент влево или вверх, то нужно использовать отрицательные значения.</p><br>
+							<p>scaleX(...) - функция масштабирует элемент по ширине, делая его шире или уже. Если значение больше единицы, элемент становится шире, если значение находится между единицей и нулем, элемент становится уже. Отрицательные значения отображают элемент зеркально по горизонтали.</p><br>
+							<p>scaleY(...) - функция масштабирует элемент по высоте, делая его выше или ниже. Если значение больше единицы, элемент становится выше, если значение находится между единицей и нулем — ниже. Отрицательные значения отображают элемент зеркально по вертикали.</p><br>
+							<p>scale(..., ...) - масштабирует элементы, делая их больше или меньше. Значения от 0 до 1 уменьшают элемент. Первое значение масштабирует элемент по ширине, второе — по высоте. Отрицательные значения отображают элемент зеркально.</p><br>
+							<p>rotate(...deg) - поворачивает элементы на заданное количество градусов, отрицательные значения от -1deg до -360deg поворачивают элемент против часовой стрелки, положительные — по часовой стрелке. deg - degree - градус.</p><br>
+							<p>skewX(...deg) - деформирует стороны элемента относительно оси X.</p><br>
+							<p>skewY(...deg) - деформирует стороны элемента относительно оси Y.</p><br>
+							<p>skew(...deg, ...deg) - используется для деформирования(искажения) сторон элемента относительно координатных осей. Если указано одно значение, второе будет определено браузером автоматически.</p><br>
+							<span>Например:</span>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div id="maindiv">
+		<div id="divtranslate">
+			<span>Я красиво двигаюсь</span>
+		</div>
+		<div id="divscale">
+			<span>Я становлюсь большим</span>
+		</div>
+		<div id="divrotate">
+			<span>Я кручусь</span>
+		</div>
+		<div id="divskew">
+			<span>Я параллелограмм</span>
+		</div>
+	</div>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone" style="height: 400px; overflow: auto">
+									<xmp>
+#maindiv {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+#maindiv div {
+	height: 100px;
+	padding: 10px 20px;
+	text-align: center;
+	border: 1px solid black;
+	-webkit-transition: .5s;
+	-o-transition: .5s;
+	transition: .5s;
+}
+#divtranslate:hover {
+	-webkit-transform: translate(10px, 10px);
+	-ms-transform: translate(10px, 10px);
+	transform: translate(10px, 10px);
+}
+#divscale:hover {
+	-webkit-transform: scale(1.2);
+	-ms-transform: scale(1.2);
+	transform: scale(1.2);
+}
+#divrotate:hover {
+	-webkit-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+#divskew:hover {
+	-webkit-transform: skew(-20deg);
+	-ms-transform: skew(-20deg);
+	transform: skew(-20deg);
+}
+									</xmp>
+								</div>
+							</div><br>
+							<div id="maindiv">
+								<div id="divtranslate">
+									<span>Я красиво двигаюсь</span>
+								</div>
+								<div id="divscale">
+									<span>Я становлюсь большим</span>
+								</div>
+								<div id="divrotate">
+									<span>Я кручусь</span>
+								</div>
+								<div id="divskew">
+									<span>Я параллелограмм</span>
+								</div>
+							</div>
+							<style>
+								#maindiv {
+									display: flex;
+									justify-content: space-between;
+									flex-wrap: wrap;
+								}
+								#maindiv div {
+									height: 100px;
+									padding: 10px 20px;
+									text-align: center;
+									border: 1px solid black;
+									-webkit-transition: .5s;
+									-o-transition: .5s;
+									transition: .5s;
+								}
+								#divtranslate:hover {
+									-webkit-transform: translate(10px, 10px);
+									-ms-transform: translate(10px, 10px);
+									transform: translate(10px, 10px);
+								}
+								#divscale:hover {
+									-webkit-transform: scale(1.2);
+									-ms-transform: scale(1.2);
+									transform: scale(1.2);
+								}
+								#divrotate:hover {
+									-webkit-transform: rotate(180deg);
+									-ms-transform: rotate(180deg);
+									transform: rotate(180deg);
+								}
+								#divskew:hover {
+									-webkit-transform: skew(-20deg);
+									-ms-transform: skew(-20deg);
+									transform: skew(-20deg);
+								}
+							</style>
+							<br><br>
+							<h3>Свойство transform-origin</h3>
+							<p>Свойство transform-origin позволяет сместить центр трансформации, относительно которого происходит положения/размера/формы элемента. Обычно применяется для функции rotate(). Это свойство применяется со свойством и ключевыми кадрами animation и @keyframes(пройдем на следующем уроке). Писать два значения:</p><br>
+							<p>Первое значения - сместить центр трансформации по оси X. Значения могут быть left, center, right, единицы измерения.</p><br>
+							<p>Второе значения - сместить центр трансформации по оси Y. Значения могут быть top, center, bottom, единицы измерения.</p><br>
+							<span>Например:</span>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div id="divrotate2">
+		<span>Я кручусь</span>
+	</div>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+#divrotate2 {
+	height: 100px;
+	padding: 10px 20px;
+	text-align: center;
+	border: 1px solid black;
+	transform-origin: right top;
+	animation: rotatediv 5s linear infinite;
+}
+@keyframes rotatediv {
+	0% {
+		-webkit-transform: rotate(0deg);
+		-ms-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+									</xmp>
+								</div>
+							</div><br>
+							<div id="divrotate2">
+								<span>Я кручусь</span>
+							</div>
+							<style>
+								#divrotate2 {
+									width: 150px;
+									height: 100px;
+									padding: 10px 20px;
+									margin: 160px 0;
+									text-align: center;
+									border: 1px solid black;
+									transform-origin: right top;
+									animation: rotatediv 5s linear infinite;
+								}
+								@keyframes rotatediv {
+									0% {
+										-webkit-transform: rotate(0deg);
+										-ms-transform: rotate(0deg);
+										transform: rotate(0deg);
+									}
+									100% {
+										-webkit-transform: rotate(360deg);
+										-ms-transform: rotate(360deg);
+										transform: rotate(360deg);
+									}
+								}
+							</style>
+							<div class="fromlesson2nextback">
+								<a href="csslesson7.html"><div class="btnbackpage"><span>Предыдущее</span></div></a>
+								<a href="csslesson9.html"><div class="btnnextpage"><span>Следующее</span></div></a>
+							</div>
+						</div>
+						<aside>
+							<div class="asidedivfirst">
+								<a href="csslesson.html">
+									<div class="asidenav" title="Перейти к уроку 1">
+										<span>#1 - Что такое CSS | Селектор, свойства, значения | Текст</span>
+									</div>
+								</a>
+								<a href="csslesson2.html">
+									<div class="asidenav" title="Перейти к уроку 2">
+										<span>#2 - Свойства текстов</span>
+									</div>
+								</a>
+								<a href="csslesson3.html">
+									<div class="asidenav" title="Перейти к уроку 3">
+										<span>#3 - Ширина, высота, фон</span>
+									</div>
+								</a>
+								<a href="csslesson4.html">
+									<div class="asidenav" title="Перейти к уроку 4">
+										<span>#4 - Стили для блоков</span>
+									</div>
+								</a>
+								<a href="csslesson5.html">
+									<div class="asidenav" title="Перейти к уроку 5">
+										<span>#5 - Стили для блоков 2</span>
+									</div>
+								</a>
+								<a href="csslesson6.html">
+									<div class="asidenav" title="Перейти к уроку 6">
+										<span>#6 - Псевдоклассы, псевдоэлементы</span>
+									</div>
+								</a>
+								<a href="csslesson7.html">
+									<div class="asidenav" title="Перейти к уроку 7">
+										<span>#7 - Flexbox | Флекс элементы</span>
+									</div>
+								</a>
+								<div style="background: #ebebeb;" class="asidenav" title="Урок 8">
+									<span style="font-weight: 500;">#8 - Префиксы, тени, эффект перехода, состояния элемента</span>
+								</div>
+								<a href="csslesson9.html">
+									<div class="asidenav" title="Перейти к уроку 9">
+										<span>#9 - Ключевые кадры, анимация, доп. материал</span>
+									</div>
+								</a>
+								<a href="csslesson10.html">
+									<div class="asidenav" title="Перейти к уроку 10">
+										<span>#10 - Заключение</span>
+									</div>
+								</a>
+							</div>
+						</aside>
+					</div>
+				</div>
+			</section>
+			<!-- "Подвал" страницы -->
+			<footer class="footer">
+				<div class="container">
+					<div class="footerstyle">
+						<div class="footerfirstcolumn">
+							<a href="../index.html" class="footerbaseword" title="На главную страницу">ProgEasy</a>
+							<span class="footerafterbaseword">Обучение по</span><br><span class="footerafterbaseparagraph">программированию</span>
+						</div>
+						<ul class="footersecondcolumn">
+							<li style="list-style: none;" class="footerlessons"><a href="../Lessons/lessons.html">Уроки</a></li>
+							<li style="list-style: none;" class="footercontacts"><a href="../Contacts/contacts.html">Контакты</a></li>
+							<li style="list-style: none;" class="footerabout"><a href="../Aboutus/aboutus.html">О создателе/сайте</a></li>
+						</ul>
+						<div class="footerthirdcolumn">
+							<div class="footerimages">
+								<div class="footerinstagram" title="Инстаграм" onclick="Insta()">
+									<img src="../images/instagram.png" alt="Instagram">
+								</div>
+								<div class="footervk"  title="Вк" onclick="Vk()">
+									<img src="../images/vk.png" alt="Vk">
+								</div>
+								<div class="footerwhatsapp" title="WhatsApp" onclick="WhatsApp()">
+									<img src="../images/whatsapp.png" alt="WhatsApp">
+								</div>
+							</div>
+							<div class="footeremailnumber">
+								<span class="footeremailnumbertexts">+7 (707) 200 35-83</span><br>
+								<span class="footeremailnumbertexts">Email: anuarzholdybaev2006@gmail.com</span>
+								<div class="footermadeby">
+									<span class="footermadebytext">© Created by Anuar Name ProgEasy, 2021</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<div class="windowfixed"></div>
+		</div>
+		<!-- Закончился wrapper -->
+		<script src="../HTML/jslesson.js"></script>
+	</body>
+</html>

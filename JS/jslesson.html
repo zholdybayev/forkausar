@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="keywords" content="Программирование, сайт, HTML, CSS, JavaScript, бесплатное обучение, курсы программирования, бесплатные курсы по программированию, как создать сайт, Frontend, Frontend разработка, JavaScript урок, ProgEasy JavaScript урок 1">
+		<meta name="description" content="Урок №1 JavaScript от ProgEasy. Что такое JavaScript, Переменные. Бесплатное обучение Frontend разработке.">
+		<meta name="format-detection" content="telephone=no">
+		<title>Урок 1 JS</title>
+		<link rel="shortcut icon" href="../images/iconweb.png" type="image/png">
+		<link href="cssofjslesson.css" rel="stylesheet" type="text/css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<!-- Yandex.Metrika counter -->
+		<script type="text/javascript" >
+			(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+			m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+			(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+			ym(84034504, "init", {
+				clickmap:true,
+				trackLinks:true,
+				accurateTrackBounce:true,
+				webvisor:true
+			});
+		</script>
+		<noscript><div><img src="https://mc.yandex.ru/watch/84034504" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+		<!-- /Yandex.Metrika counter -->
+	</head>
+	<body>
+		<div class="wrapper">
+			<!-- header -->
+			<header class="header">
+				<div class="container">
+					<div class="headersectionstyles">
+						<div class="Basenameheader"><a href="../index.html" class="tothemainpage" title="На главную страницу">ProgEasy</a></div>
+						<div class="burger">
+							<span></span>
+						</div>
+						<div class="Baseultexts">
+							<span><a class="Basenav" href="../HTML/htmllesson.html" title="Перейти к HTML">HTML</a></span>
+							<span><a class="Basenav" href="../CSS/csslesson.html" title="Перейти к CSS">CSS</a></span>
+							<span class="Basenav" title="Вы на этой странице">JavaScript</span>
+							<span><a class="Basenav" href="../Contacts/contacts.html" title="Контакты">Контакты</a></span>
+							<span><a class="Basenav" href="../Aboutus/aboutus.html" title="О нас">О сайте</a></span>
+						</div>
+						<div class="Basenametitle">
+							<p class="headertitle">Понятные объяснения</p>
+						</div>
+					</div>
+				</div>
+			</header>
+			<!-- Закончился header -->
+			<section class="sectionhtml">
+				<div class="container">
+					<div class="Firstbasetextdiv">
+						<h1>Урок 1 JavaScript</h1>
+					</div>
+					<div class="sectionstyles2">
+						<div class="htmlexplalltextdiv">
+							<h2>Что такое JavaScript?</h2>
+							<br>
+							<h3>Введение в JavaScript</h3>
+							<p>JavaScript - это динамический клиентский скриптинг. Если упростить то это язык который позволяет делать сложные вещи, функционалы страницы без перезагрузки страницы. Например при нажатии делалось что-то, при прокрутки страницы и т.д. На этом уроке мы не будем изучать профессиональный JavaScript, а базовый JavaScript. По своему уровню он запутаннее чем CSS, ибо тут есть странные моменты. При изучений JavaScript'а, му будем много работать с консолью, а позже разберемся как же работать с HTML документом через JavaScript.</p>
+							<br><br>
+							<h3>Как и где начать писать JavaScript код?</h3>
+							<p>JavaScript код можно прямиком писать в HTML документе в теге script. Вот:</p>
+							<div class="attention">
+								<br>
+								<p>Если код не виден, вы можете <span style="color: #68d66e;">скролить</span> серый блок с кодом.</p>
+								<br>
+							</div>
+							<div class="htmlgreyfone">
+								<xmp>
+<body>
+	...
+	<script>
+		...
+	</script>
+</body>
+								</xmp>
+							</div><br>
+							<p>Или самым удобным методом это создать отдельный JavaScript файл(окончание должно быть .js) и подключить его в HTML документ. Подключается оно с помощью того же тега script при помощи атрибута src где мы указываем путь к JavaScript файлу. Вот:</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<body>
+	...
+	<script src="javascript.js"></script>
+</body>
+								</xmp>
+							</div><br>
+							<p>Тег script с подключением файла через атрибут src следует писать в самом конце кода до закрывающего тега body.</p>
+							<br><br>
+							<p>В JavaScript нет конкретной структуры кода.</p>
+							<br><br>
+							<h3>Комментарии</h3>
+							<p>Комментарии в JavaScript бывают двух типов. Первый многострочный(хотя можно использовать как однострочный):</p>
+							<div class="jsgreyfone">
+								<xmp>
+/*
+Я
+многострочный
+комментарий
+*/
+
+/* Я однострочный комментарий */
+								</xmp>
+							</div>
+							<p>Второй однострочный:</p>
+							<div class="jsgreyfone">
+								<xmp>
+// Я однострочный комментарий
+								</xmp>
+							</div><br>
+							<h3>Тег noscript</h3>
+							<p>Этот тег нужен чтобы уведомлять пользователю если у него не включен JS:</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<body>
+	<noscript>Включите JavaScript!</noscript>
+</body>
+								</xmp>
+							</div>
+							<br><br>
+							<h3>Типы данных</h3>
+							<p>В JavaScript существует несколько типов данных. Они деляется на примитивные и особенные типы данных.</p><br>
+							<p>Примитивные типы данных:</p><br>
+							<p>number - числа.</p>
+							<p>boolean - булевые выражения(true и false).</p>
+							<p>string - строки. Строки пишутся в одинарных или двойных кавычках. Разницы в них нету.</p>
+							<p>undefined - не определено.</p>
+							<p>null - пустота.</p>
+							<br>
+							<p>Особенные типы данных:</p>
+							<p>object - объект.</p>
+							<br><br>
+							<p>В примитивном типе данных boolean, кроме false есть еще и ложные значения такие как: "" - пустая строка, 0, NaN, null, undefined, []. Все они выдадут значение false.</p><br>
+							<p>О всех типах данных мы ознакомимся по ходу уроков.</p>
+							<br><br>
+							<h3>Переменные</h3>
+							<p>Переменные наверно самое главное в JavaScript. Оно используется почти всегда. Переменная это "ячейка" куда можно записать какую-либо информацию. Чтобы создать переменную, используются ключевые слова var, let или const. Структура СОЗДАНИЯ переменной выглядит вот так:</p><br>
+							<span>JS код:</span>
+							<div class="jsgreyfone">
+								<xmp>
+var название переменной1;
+let название переменной2;
+const название переменной2;
+								</xmp>
+							</div>
+							<div class="divfact">
+								<div style="display: flex;">
+									<div class="factscircle">i</div>
+									<h4 class="factsquestion">Примечание</h4>
+								</div>
+								<p class="factstext">После заканчивания определенного участка кода в JavaScript нужно прописывать точку с запятой.</p>
+							</div>
+							<p>Ключевые слово <strong style="color: #002340;">var</strong> и <strong style="color: #002340;">let</strong> по сути одинаковы лишь с маленьким отличием(разберемся на уроке функции). Но var уже устаревшая форма создания переменной, так что следует использовать let</p><br>
+							<p>Ключевое слово <strong style="color: #002340;">const</strong>(константа) делает переменную где нельзя уже изменить информацию.</p>
+							<br><br>
+							<p>Чтобы записать информацию в переменную можно сделать так:</p>
+							<div class="jsgreyfone">
+								<xmp>
+let hello;
+hello = "Привет";
+								</xmp>
+							</div>
+							<p>Или же традиционным, удобным и быстрым форматом вот так:</p>
+							<div class="jsgreyfone">
+								<xmp>
+let hello = "Привет";
+								</xmp>
+							</div>
+							<div class="divfact">
+								<div style="display: flex;">
+									<div class="factscircle">i</div>
+									<h4 class="factsquestion">Примечание</h4>
+								</div>
+								<p class="factstext">Названия переменных не должны повторятся.</p>
+							</div>
+							<h3>Вывод информации</h3>
+							<p>Теперь настало время поработать с консолью. Чтобы открыть консоль вы должны зайти сперва в код элемента страницы, затем в верхней части выбрать пункт "Console". Готово.</p>
+							<br>
+							<p>Есть несколько способов вывести информацию в консоль:</p>
+							<p>1) document.write(...);</p><br>
+							<p>2) console.log(...);</p><br>
+							<p>3) console.info(...);</p><br>
+							<p>4) console.error(...);</p><br>
+							<p>5) console.warn(...);</p><br>
+							<p>1) document - это глобальный объект всего который имеет доступ ко всему документу. Оно не выводит информацию в консоль, но выводит ее на странице. У него есть метод/функция write. Методы пишутся с точкой. Метод write может просто написать что-либо на странице. Но лучше не использовать его так как он не эффективен да и никто им не пользуется.</p><br>
+							<p>2) console.log - уже используют все для работы с консолью. Его используют для общего вывода журнальной информации. Именно его мы будем использовать в дальнейшем.</p><br>
+							<p>3) console.info - используют чтобы вывести необходимую информацию.</p><br>
+							<p>4) console.error - выводит сообщение о специальной ошибке.</p><br>
+							<p>5) console.warn - выводит предупреждающее сообщение. Это не ошибка, а просто предупреждение.</p>
+							<br>
+							<p>Чтобы увидеть результат в консоли, надо обновить страницу.</p><br>
+							<p>Давайте выведем что-то в консоль:</p>
+							<div class="jsgreyfone">
+								<xmp>
+console.log("Привет, консоль!");
+								</xmp>
+							</div>
+							<div class="console">
+								<div style="padding-bottom: 5px;"><span>Консоль</span></div>
+								<div style="overflow: auto;">
+									<p>Привет, консоль!</p>
+								</div>
+							</div>
+							<p>Консоль может сказать где и какая ошибка находится в коде. Она может показать в каком файле и на какой строчке кода ошибка. Также оно говорит какая именна ошибка произошла.</p><br>
+							<p>Можно выводить значения переменных:</p>
+							<div class="jsgreyfone">
+								<xmp>
+let text = "Я текст";
+console.log(text);
+								</xmp>
+							</div>
+							<div class="console">
+								<div style="padding-bottom: 5px;"><span>Консоль</span></div>
+								<div style="overflow: auto;">
+									<p>Я текст</p>
+								</div>
+							</div>
+							<p>Чтобы изменить значение у переменной, можно прописать вот так:</p>
+							<div class="jsgreyfone">
+								<xmp>
+let hello = "Привет";
+hello = "Привет 2"
+console.log(hello);
+								</xmp>
+							</div>
+							<div class="console">
+								<div style="padding-bottom: 5px;"><span>Консоль</span></div>
+								<div style="overflow: auto;">
+									<p>Привет 2</p>
+								</div>
+							</div>
+							<p>Можно изменить значение у переменной при помощи другой переменной:</p>
+							<div class="jsgreyfone">
+								<xmp>
+let name = "Leha";
+let name2 = "Alex";
+name = name2;
+console.log(name);
+								</xmp>
+							</div>
+							<div class="console">
+								<div style="padding-bottom: 5px;"><span>Консоль</span></div>
+								<div style="overflow: auto;">
+									<p>Alex</p>
+								</div>
+							</div>
+							<p>У директива const не получится уже изменить информацию. Она постоянна. Если мы попытаемся изменить значения у const, будет ошибка.</p>
+							<div class="jsgreyfone">
+								<xmp>
+const hello = "Hello";
+hello = "Bye";		// Будет ошибка
+								</xmp>
+							</div>
+							<br>
+							<p>Чтобы узнать тип данных, используется оператор typeof. Например:</p>
+							<div class="jsgreyfone">
+								<xmp>
+let num = 123;
+console.log(typeof num);
+								</xmp>
+							</div>
+							<div class="console">
+								<div style="padding-bottom: 5px;"><span>Консоль</span></div>
+								<div style="overflow: auto;">
+									<p>number</p>
+								</div>
+							</div>
+							<p>Можно объединять строки, числа, переменные с помощью знака плюс +. Пример:</p>
+							<div class="jsgreyfone">
+								<xmp>
+let name = "Имя";
+let age = 18;
+console.log("Меня зовут " + name + " и мне " + age + " лет");
+								</xmp>
+							</div>
+							<div class="console">
+								<div style="padding-bottom: 5px;"><span>Консоль</span></div>
+								<div style="overflow: auto;">
+									<p>Меня зовут Имя и мне 18 лет</p>
+								</div>
+							</div>
+							<a href="jslesson2.html"><div class="btnnextpage"><span>Следующее</span></div></a>
+						</div>
+						<aside>
+							<div class="asidedivfirst">
+								<div style="background: #ebebeb;" class="asidenav" title="Урок 1">
+									<span style="font-weight: 500;">#1 - Что такое JavaScript | Переменные</span>
+								</div>
+								<a href="jslesson2.html">
+									<div class="asidenav" title="Перейти к уроку 2">
+										<span>#2 - Математические действия, Условные операторы</span>
+									</div>
+								</a>
+								<a href="jslesson3.html">
+									<div class="asidenav" title="Перейти к уроку 3">
+										<span>#3 - Массивы, Циклы</span>
+									</div>
+								</a>
+								<a href="jslesson4.html">
+									<div class="asidenav" title="Перейти к уроку 4">
+										<span>#4 - Всплывающие окна, Функции</span>
+									</div>
+								</a>
+								<a href="jslesson5.html">
+									<div class="asidenav" title="Перейти к уроку 5">
+										<span>#5 - Обработчики события, this, Выбор объектов, Стили</span>
+									</div>
+								</a>
+								<a href="jslesson6.html">
+									<div class="asidenav" title="Перейти к уроку 6">
+										<span>#6 - Отслеживание объектов в JS, Формы, Таймеры, Интервалы</span>
+									</div>
+								</a>
+								<a href="jslesson7.html">
+									<div class="asidenav" title="Перейти к уроку 7">
+										<span>#7 - Скролл страницы, Работа с классами</span>
+									</div>
+								</a>
+								<a href="jslesson8.html">
+									<div class="asidenav" title="Перейти к уроку 8">
+										<span>#8 - Заключение</span>
+									</div>
+								</a>
+							</div>
+						</aside>
+					</div>
+				</div>
+			</section>
+			<!-- "Подвал" страницы -->
+			<footer class="footer">
+				<div class="container">
+					<div class="footerstyle">
+						<div class="footerfirstcolumn">
+							<a href="../index.html" class="footerbaseword" title="На главную страницу">ProgEasy</a>
+							<span class="footerafterbaseword">Обучение по</span><br><span class="footerafterbaseparagraph">программированию</span>
+						</div>
+						<ul class="footersecondcolumn">
+							<li class="footerlessons"><a href="../Lessons/lessons.html">Уроки</a></li>
+							<li class="footercontacts"><a href="../Contacts/contacts.html">Контакты</a></li>
+							<li class="footerabout"><a href="../Aboutus/aboutus.html">О создателе/сайте</a></li>
+						</ul>
+						<div class="footerthirdcolumn">
+							<div class="footerimages">
+								<div class="footerinstagram" title="Инстаграм" onclick="Insta()">
+									<img src="../images/instagram.png" alt="Instagram">
+								</div>
+								<div class="footervk"  title="Вк" onclick="Vk()">
+									<img src="../images/vk.png" alt="Vk">
+								</div>
+								<div class="footerwhatsapp" title="WhatsApp" onclick="WhatsApp()">
+									<img src="../images/whatsapp.png" alt="WhatsApp">
+								</div>
+							</div>
+							<div class="footeremailnumber">
+								<span class="footeremailnumbertexts">+7 (707) 200 35-83</span><br>
+								<span class="footeremailnumbertexts">Email: anuarzholdybaev2006@gmail.com</span>
+								<div class="footermadeby">
+									<span class="footermadebytext">© Created by Anuar Name ProgEasy, 2021</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<div class="windowfixed"></div>
+		</div>
+		<!-- Закончился wrapper -->
+		<script src="../HTML/jslesson.js"></script>
+	</body>
+</html>

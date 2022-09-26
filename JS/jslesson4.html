@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="keywords" content="Программирование, сайт, HTML, CSS, JavaScript, бесплатное обучение, курсы программирования, бесплатные курсы по программированию, как создать сайт, Frontend, Frontend разработка, JavaScript урок, ProgEasy JavaScript урок 4">
+		<meta name="description" content="Урок №4 JavaScript от ProgEasy. Всплывающие окна, Функции. Бесплатное обучение Frontend разработке.">
+		<meta name="format-detection" content="telephone=no">
+		<title>Урок 4 JS</title>
+		<link rel="shortcut icon" href="../images/iconweb.png" type="image/png">
+		<link href="cssofjslesson2.css" rel="stylesheet" type="text/css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<!-- Yandex.Metrika counter -->
+		<script type="text/javascript" >
+			(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+			m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+			(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+			ym(84034504, "init", {
+				clickmap:true,
+				trackLinks:true,
+				accurateTrackBounce:true,
+				webvisor:true
+			});
+		</script>
+		<noscript><div><img src="https://mc.yandex.ru/watch/84034504" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+		<!-- /Yandex.Metrika counter -->
+	</head>
+	<body>
+		<div class="wrapper">
+			<!-- header -->
+			<header class="header">
+				<div class="container">
+					<div class="headersectionstyles">
+						<div class="Basenameheader"><a href="../index.html" class="tothemainpage" title="На главную страницу">ProgEasy</a></div>
+						<div class="burger">
+							<span></span>
+						</div>
+						<div class="Baseultexts">
+							<span><a class="Basenav" href="../HTML/htmllesson.html" title="Перейти к HTML">HTML</a></span>
+							<span><a class="Basenav" href="../CSS/csslesson.html" title="Перейти к CSS">CSS</a></span>
+							<span class="Basenav" title="Вы на этой странице">JavaScript</span>
+							<span><a class="Basenav" href="../Contacts/contacts.html" title="Контакты">Контакты</a></span>
+							<span><a class="Basenav" href="../Aboutus/aboutus.html" title="О нас">О сайте</a></span>
+						</div>
+						<div class="Basenametitle">
+							<p class="headertitle">Понятные объяснения</p>
+						</div>
+					</div>
+				</div>
+			</header>
+			<!-- Закончился header -->
+			<section class="sectionhtml">
+				<div class="container">
+					<div class="Firstbasetextdiv">
+						<h1>Урок 4 JavaScript</h1>
+					</div>
+					<div class="sectionstyles2">
+						<div class="htmlexplalltextdiv">
+							<h2>Всплывающие окна, Функции</h2>
+							<br>
+							<p>Всплывающие окна это баннеры с уведомлениями, кнопками, полем для ввода. Рассмотрим всех по порядку.</p>
+							<br><br>
+							<h3>Всплывающее окно alert</h3>
+							<p>Всплывающее окно alert позволяет показать пользователю уведомление с текстом. Текст или другие выражения пишутся внутри скобок:</p>
+							<div class="attention">
+								<br>
+								<p>Если код не виден, вы можете <span style="color: #68d66e;">скролить</span> серый блок с кодом.</p>
+								<br>
+							</div>
+							<div class="jsgreyfone">
+								<xmp>
+alert("Привет!");
+								</xmp>
+							</div>
+							<button onclick="alert1()" class="buttoncheck">Протестировать</button>
+							<script>
+								function alert1() {alert("Привет!");}
+							</script>
+							<p>Как обычно можно передавать значения переменных:</p>
+							<div class="jsgreyfone">
+								<xmp>
+let word = 123;
+alert(word);
+								</xmp>
+							</div>
+							<button onclick="alert2()" class="buttoncheck">Протестировать</button>
+							<script>
+								function alert2() {alert(123);}
+							</script>
+							<h3>Всплывающее окно confirm</h3>
+							<p>Всплывающее окно confirm позволяет показать уведомление с двумя кнопками "ОК" и "Отмена" или "Да", "Нет". На разных браузерах по разному, но суть прежняя.</p>
+							<div class="jsgreyfone">
+								<xmp>
+let cont = "Продолжить?";
+confirm(cont);
+								</xmp>
+							</div>
+							<button onclick="confirm1()" class="buttoncheck">Протестировать</button>
+							<script>
+								function confirm1() {confirm("Продолжить?");}
+							</script>
+							<h3>Всплывающее окно prompt</h3>
+							<p>Это уже интересно. Всплывающее окно prompt позволяет пользователю вводить что-либо в текстовое поле. С этим можно уже делать реальные вещи по типу выводить то что написал пользователь в консоль, в окно и т.д. Вот:</p>
+							<div class="jsgreyfone">
+								<xmp>
+prompt("Введите ваше имя");
+								</xmp>
+							</div>
+							<button onclick="prompt1()" class="buttoncheck">Протестировать</button>
+							<script>
+								function prompt1() {prompt("Введите ваше имя");}
+							</script>
+							<p>Давайте узнаем имя пользователя. Сперва поместим prompt в переменную:</p>
+							<div class="jsgreyfone">
+								<xmp>
+let name = prompt("Введите ваше имя");
+alert("Привет, " + name + "!");
+								</xmp>
+							</div>
+							<button onclick="prompt2()" class="buttoncheck">Протестировать</button>
+							<script>
+								function prompt2() {
+									let name = prompt("Введите ваше имя");
+									alert("Привет, " + name + "!");
+								}
+							</script>
+							<p>Не стоит просто так записывать alert, confirm, prompt без всяких вспомогательных объектов по типу переменных.</p>
+							<br>
+							<p>Как мы видим в верхнем примере, если ничего не вводить или нажать отмена, то происходит странные операции. Получаются пустые данные. Давайте мы это исправим при помощи проверок:</p>
+							<div class="jsgreyfone">
+								<xmp>
+let name = prompt("Введите ваше имя");
+if(name && name != null) { // Возвращает значение true(нажато "Да"), при этом поле не пустое
+	alert("Привет, " + name + "!");
+} else if(name === null) { // Возвращает значение false(нажато "Нет")
+	alert("Вы нажали на Отмена");
+} else { // Просто нажато "Да", при этом поле пустое
+	alert("Вы не ввели имя");
+}
+								</xmp>
+							</div>
+							<button onclick="prompt3()" class="buttoncheck">Протестировать</button>
+							<script>
+								function prompt3() {
+									let name = prompt("Введите ваше имя");
+									if(name && name != null) { // Возвращает значение true(нажато "Да"), при этом поле не пустое
+										alert("Привет, " + name + "!");
+									} else if(name === null) { // Возвращает значение false(нажато "Нет")
+										alert("Вы нажали на Отмена");
+									} else { // Просто нажато "Да", при этом поле пустое
+										alert("Вы не ввели имя");
+									}
+								}
+							</script>
+							<h3>Функции function</h3>
+							<p>Функции это специальные участки кода, которые содержат в себе всякие команды. И при создании некоторых операции в JavaScript, мы можем ссылатся к этим функциями, и команды в этой функции будут выполнятся. Это удобно если например у нас имеется повторяющийся участок кода.</p><br>
+							<p>Чтобы создать функцию, используется ключевое слово function. Вот:</p>
+							<div class="jsgreyfone">
+								<xmp>
+function имя функции(параметр) {
+	...
+}
+								</xmp>
+							</div><br>
+							<p>Имя функции может быть любым но не начиная с цифр и не имея специальных символ. Любые придуманные названия в JavaScript, если в названии есть два слова, то начиная со второго слова, каждое последующее слово следует писать с большой буквы, например simpleFunction. Это этикет написания в JavaScript. Функция также принимает разные параметры. Название у них может быть любым. Параметры мы рассмотрим чуть позже.</p><br>
+							<p>Давайте создадим простую функцию:</p>
+							<div class="jsgreyfone">
+								<xmp>
+function simple() {
+	console.log("Я функция!");
+}
+								</xmp>
+							</div>
+							<div class="console">
+								<div style="padding-bottom: 5px;"><span>Консоль</span></div>
+								<div style="overflow: auto;">
+									<p></p>
+								</div>
+							</div>
+							<p>Почему консоль пустая? Дело в том что нам надо еще эту функцию вызвать. Вызывается она так:</p>
+							<div class="jsgreyfone">
+								<xmp>
+function simple() {
+	console.log("Я функция!");
+}
+simple();
+								</xmp>
+							</div>
+							<div class="console">
+								<div style="padding-bottom: 5px;"><span>Консоль</span></div>
+								<div style="overflow: auto;">
+									<p>Я функция!</p>
+								</div>
+							</div>
+							<p>Внутри параметров мы можем передавать разные значения и работать с ними:</p>
+							<div class="jsgreyfone">
+								<xmp>
+function simple(element) { // 1) Есть параметр element
+	console.log("Я " + element); // 3) Мы принимаем значение от параметра
+}
+simple("функция!"); // 2) Внутри параметра мы передаем значение+вызываем функцию
+								</xmp>
+							</div>
+							<div class="console">
+								<div style="padding-bottom: 5px;"><span>Консоль</span></div>
+								<div style="overflow: auto;">
+									<p>Я функция!</p>
+								</div>
+							</div>
+							<p>Можно писать несколько параметров:</p>
+							<div class="jsgreyfone">
+								<xmp>
+function simple(num, num2) {
+	console.log(num + num2);
+}
+simple(22, 65);
+								</xmp>
+							</div>
+							<div class="console">
+								<div style="padding-bottom: 5px;"><span>Консоль</span></div>
+								<div style="overflow: auto; font-weight: 300; color: blue; font-size: 16px;">
+									<p>87</p>
+								</div>
+							</div>
+							<p>Нельзя <u>создать</u> функцию в другой функции. Но можно <u>вызвать</u> функцию в другой функции.</p>
+							<br><br>
+							<p>Локальный переменные - переменные записанные внутри функции. Она видна только в пределах функции, больше нигде она не видна + мы не можем обратиться к ней вне функции, если мы работаем внутри функции с переменной, то следует её писать в функции, то есть это будет локальная переменная.</p><br>
+							<p>Глобальные переменные - переменные записанные вне функции. К глобальной функции мы можем обращаться в функции и вне функции.</p><br>
+							<p>Разница let и var заключается в том, что переменная объявленная через var, видна везде в функции, в то время как переменная объявленная через let, видна только в рамках блока {...}, в котором объявлена.</p><br>
+							<p>Давайте создадим функцию которая будет подсчитывать суммы чисел в массиве:</p>
+							<div class="jsgreyfone">
+								<xmp>
+function sour(arr) {
+	let res = 0;
+	for(let i = 0; i < arr.length; i++)
+		res += arr[i]; // Берем элементы массива под индексом i и складывами все числа
+	console.log(res);
+}
+let arr = [1, 2, 3, 4]; // Чтобы не путаться, название переменных можно записать как название параметров)
+sour(arr);
+								</xmp>
+							</div>
+							<div class="console">
+								<div style="padding-bottom: 5px;"><span>Консоль</span></div>
+								<div style="overflow: auto; font-weight: 300; color: blue; font-size: 16px;">
+									<p>10</p>
+								</div>
+							</div>
+							<p>Описание примера выше:</p>
+							<p>Мы передали параметр arr для функции, и чтобы не путаться с названиями переменных и параметров, мы создали переменную с названием параметра.</p><br>
+							<p>Внутри функции sour находится переменная res(result - результат), что будет показывать результат сложения.</p><br>
+							<p>Мы создали цикл for с длиной массива arr которого мы приняли от параметра arr.</p><br>
+							<p>Для переменной res мы плюсуем все элементы массива под каждым их индексом i.</p><br>
+							<p>Выводим переменную res с результатом в области функции. Результат доступен и виден только внутри функции.</p>
+							<br><br>
+							<p>Чтобы вернуть значение из функции, используется ключевое слово <strong style="color: #002340;">return</strong>. Давайте мы результат сложения, переменную res, вынесем за функцию при помощи ключевого слова return, и уже дальше поместим ее в другую переменную. Так мы сможем работать с ней вне функции:</p>
+							<div class="jsgreyfone">
+								<xmp>
+function sour(arr) {
+	let res = 0;
+	for(let i = 0; i < arr.length; i++)
+		res += arr[i];
+	return res; // Возвращаем значение из функции
+}
+let arr = [1, 2, 3, 4];
+let abc = sour(arr); // Описание ниже
+								</xmp>
+							</div>
+							<p>Описание: При вызове  функции sour(arr) мы подсчитали сумму сложения чисел и поместили в эту переменную. Теперь sour(arr) как будто стал результатом res, и этот результат мы поместили внутрь переменной.</p><br>
+							<p>Теперь можно вывести эту переменную:</p>
+							<div class="jsgreyfone">
+								<xmp>
+function sour(arr) {
+	let res = 0;
+	for(let i = 0; i < arr.length; i++)
+		res += arr[i];
+	return res;
+}
+let arr = [1, 2, 3, 4];
+let abc = sour(arr);
+console.log(abc);
+								</xmp>
+							</div>
+							<div class="console">
+								<div style="padding-bottom: 5px;"><span>Консоль</span></div>
+								<div style="overflow: auto; font-weight: 300; color: blue; font-size: 16px;">
+									<p>10</p>
+								</div>
+							</div>
+							<style>
+								.buttoncheck {
+									box-shadow: inset 1px 1px 0px 0px #ffffff;
+									background: linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+									background-color: #ffffff;
+									border-radius: 6px;
+									border: 1px solid #dcdcdc;
+									display: inline-block;
+									cursor: pointer;
+									color: #002340;
+									font-size: 16px;
+									font-weight: 600;
+									padding: 6px 15px;
+									margin: 10px 0 30px 0;
+									text-decoration: none;
+									text-shadow: 0px 1px 0px #ffffff;
+								}
+								.buttoncheck:active {
+									position:relative;
+									top:1px;
+								}
+							</style>
+							<div class="fromlesson2nextback">
+								<a href="jslesson3.html"><div class="btnbackpage"><span>Предыдущее</span></div></a>
+								<a href="jslesson5.html"><div class="btnnextpage"><span>Следующее</span></div></a>
+							</div>
+						</div>
+						<aside>
+							<div class="asidedivfirst">
+								<a href="" title="Перейти к уроку 1">
+									<div class="asidenav" title="Перейти к уроку 1">
+										<span>#1 - Что такое JavaScript | Переменные</span>
+									</div>
+								</a>
+								<a href="jslesson2.html">
+									<div class="asidenav" title="Перейти к уроку 2">
+										<span>#2 - Математические действия, Условные операторы</span>
+									</div>
+								</a>
+								<a href="jslesson3.html">
+									<div class="asidenav" title=" Перейти к уроку 3">
+										<span>#3 - Массивы, Циклы</span>
+									</div>
+								</a>
+								<div style="background: #ebebeb;" class="asidenav" title="Урок 4">
+									<span style="font-weight: 500;">#4 - Всплывающие окна, Функции</span>
+								</div>
+								<a href="jslesson5.html">
+									<div class="asidenav" title="Перейти к уроку 5">
+										<span>#5 - Обработчики события, this, Выбор объектов, Стили</span>
+									</div>
+								</a>
+								<a href="jslesson6.html">
+									<div class="asidenav" title="Перейти к уроку 6">
+										<span>#6 - Отслеживание объектов в JS, Формы, Таймеры, Интервалы</span>
+									</div>
+								</a>
+								<a href="jslesson7.html">
+									<div class="asidenav" title="Перейти к уроку 7">
+										<span>#7 - Скролл страницы, Работа с классами</span>
+									</div>
+								</a>
+								<a href="jslesson8.html">
+									<div class="asidenav" title="Перейти к уроку 8">
+										<span>#8 - Заключение</span>
+									</div>
+								</a>
+							</div>
+						</aside>
+					</div>
+				</div>
+			</section>
+			<!-- "Подвал" страницы -->
+			<footer class="footer">
+				<div class="container">
+					<div class="footerstyle">
+						<div class="footerfirstcolumn">
+							<a href="../index.html" class="footerbaseword" title="На главную страницу">ProgEasy</a>
+							<span class="footerafterbaseword">Обучение по</span><br><span class="footerafterbaseparagraph">программированию</span>
+						</div>
+						<ul class="footersecondcolumn">
+							<li class="footerlessons"><a href="../Lessons/lessons.html">Уроки</a></li>
+							<li class="footercontacts"><a href="../Contacts/contacts.html">Контакты</a></li>
+							<li class="footerabout"><a href="../Aboutus/aboutus.html">О создателе/сайте</a></li>
+						</ul>
+						<div class="footerthirdcolumn">
+							<div class="footerimages">
+								<div class="footerinstagram" title="Инстаграм" onclick="Insta()">
+									<img src="../images/instagram.png" alt="Instagram">
+								</div>
+								<div class="footervk"  title="Вк" onclick="Vk()">
+									<img src="../images/vk.png" alt="Vk">
+								</div>
+								<div class="footerwhatsapp" title="WhatsApp" onclick="WhatsApp()">
+									<img src="../images/whatsapp.png" alt="WhatsApp">
+								</div>
+							</div>
+							<div class="footeremailnumber">
+								<span class="footeremailnumbertexts">+7 (707) 200 35-83</span><br>
+								<span class="footeremailnumbertexts">Email: anuarzholdybaev2006@gmail.com</span>
+								<div class="footermadeby">
+									<span class="footermadebytext">© Created by Anuar Name ProgEasy, 2021</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<div class="windowfixed"></div>
+		</div>
+		<!-- Закончился wrapper -->
+		<script src="../HTML/jslesson.js"></script>
+	</body>
+</html>

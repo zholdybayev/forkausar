@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="keywords" content="Программирование, сайт, HTML, CSS, JavaScript, бесплатное обучение, курсы программирования, бесплатные курсы по программированию, как создать сайт, Frontend, Frontend разработка, CSS урок, ProgEasy CSS урок 3">
+		<meta name="description" content="Урок №3 CSS от ProgEasy. Ширина, высота, фон. Бесплатное обучение Frontend разработке.">
+		<meta name="format-detection" content="telephone=no">
+		<title>Урок 3 CSS</title>
+		<link rel="shortcut icon" href="../images/iconweb.png" type="image/png">
+		<link href="cssofcsslesson3.css" rel="stylesheet" type="text/css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<!-- Yandex.Metrika counter -->
+		<script type="text/javascript" >
+			(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+			m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+			(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+			ym(84034504, "init", {
+				clickmap:true,
+				trackLinks:true,
+				accurateTrackBounce:true,
+				webvisor:true
+			});
+		</script>
+		<noscript><div><img src="https://mc.yandex.ru/watch/84034504" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+		<!-- /Yandex.Metrika counter -->
+	</head>
+	<body>
+		<div class="wrapper">
+			<!-- header -->
+			<header class="header">
+				<div class="container">
+					<div class="headersectionstyles">
+						<div class="Basenameheader"><a href="../index.html" class="tothemainpage" title="На главную страницу">ProgEasy</a></div>
+						<div class="burger">
+							<span></span>
+						</div>
+						<div class="Baseultexts">
+							<span><a class="Basenav" href="../HTML/htmllesson.html" title="Перейти к HTML">HTML</a></span>
+							<span class="Basenav" title="Вы на этой странице">CSS</span>
+							<span><a class="Basenav" href="../JS/jslesson.html" title="Перейти к JS">JavaScript</a></span>
+							<span><a class="Basenav" href="../Contacts/contacts.html" title="Контакты">Контакты</a></span>
+							<span><a class="Basenav" href="../Aboutus/aboutus.html" title="О нас">О сайте</a></span>
+						</div>
+						<div class="Basenametitle">
+							<p class="headertitle">Понятные объяснения</p>
+						</div>
+					</div>
+				</div>
+			</header>
+			<!-- Закончился header -->
+			<section class="sectionhtml">
+				<div class="container">
+					<div class="Firstbasetextdiv">
+						<h1>Урок 3 CSS</h1>
+					</div>
+					<div class="sectionstyles2">
+						<div class="htmlexplalltextdiv">
+							<h2>Ширина, высота, фон</h2>
+							<br>
+							<h3>Свойства width и height</h3>
+							<p>Свойства width и height задают определенную ширину и высоту чему-либо. Значениями же будут единицы измерения такие как: px - пиксели, % - проценты относительно изначального размера и еще много разных единиц измерений. Свойства не наследуются.</p><br>
+							<div class="attention">
+								<br>
+								<p>Если код не виден, вы можете <span style="color: #68d66e;">скролить</span> серый блок с кодом.</p>
+								<br>
+							</div>
+							<span>Все блочные элементы по умолчанию имеют ширину 100% относительно родителя. Например давайте установим ширину 300 пикселей и высоту 100 пикселей для тега div(Добавлю границы блока чтобы вы могли увидеть его размеры):</span>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div>
+		<p>У меня ширина 300 пикселей, а высота 100 пикселей</p>
+	</div>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+div {
+	width: 300px;
+	height: 100px;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<div style="max-width: 300px; height: 100px; border: 1px solid #002340;">
+								<p>У меня ширина 300 пикселей, а высота 100 пикселей</p>
+							</div>
+							<div class="divfact">
+								<div style="display: flex;">
+									<div class="factscircle">!</div>
+									<h4 class="factsquestion">Лайфхак</h4>
+								</div>
+								<p class="factstext">Если свойству line-height, которое мы уже прошли, написать высоту его родителя, то текст расположиться идеально по вертикали по центру.</p>
+							</div>
+							<p>Значение auto делает элемент на 100%, но само значение 100% не является значением auto. Разница между ними в том что значение 100% растягивает элемент по всему устройству даже если ширина устройства 99999 пикселей, а значение auto делает адаптивным 100% ширины элемента. Это значит что элемент будет растягиваться по текущей ширине, а не по основной как 99999 пикселей.</p><br>
+							<p>Когда ширина элемента задано как auto, ширина элемента ограничивающего содержимое блочного элемента, будет размер содержимого за вычетом ширины его частей как отступы(пройдем на четвертом уроке), толщина границы и т.д. А когда задано значение 100%, сам элемент будет занимать 100% ширины родителя, при этом отступы останутся.</p>
+							<div style="width: 100%; margin: 20px 0;">
+								<img src="../images/width auto.jpg" style="max-width: 100%; max-height: 100%;" alt="Width auto and 100%">
+							</div><br>
+							<p>С высотой height со значением auto все обстоит иначе. Высота элемента равна его содержимому, где значение по умолчанию auto.</p><br><br>
+							<p>Также существуют свойства max-width и max-height что позволяют задать максимальную ширину и высоту.</p>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div>
+		<p>У меня максимальная ширина 300 пикселей, а высота 100 пикселей</p>
+	</div>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+div {
+	max-width: 300px;
+	max-height: 100px;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<div style="max-width: 300px; max-height: 100px; border: 1px solid #002340;">
+								<p>У меня максимальная ширина 300 пикселей, а высота 100 пикселей</p>
+							</div>
+							<div class="divfact">
+								<div style="display: flex;">
+									<div class="factscircle">i</div>
+									<h4 class="factsquestion">Примечание</h4>
+								</div>
+								<p class="factstext">В верхнем примере, когда у нас задан max-width вместе с max-height, max-width выполнится и задастся максимальная ширина, а поэтому высота подстроиться под контент автоматически, просто max-height будет работать "невидимо". Когда мы уже зададим определенную height высоту, контент уже не будет подстроен под автоматическую высоту, а задастся та высота которую мы указали в height. Значение height будет работать до тех пор пока не достигнет значения max-height. Значения выше уже не будут работать. Такой же принцип с width и max-width.</p>
+							</div>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div>
+		<p>У меня максимальная ширина все еще 300 пикселей, а высота 100 пикселей!</p>
+	</div>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+div {
+	max-width: 300px;
+	width: 400px; /* Специально делаем значение выше максимального */
+	max-height: 100px;
+	height: 200px; /* Специально делаем значение выше максимального */
+}
+									</xmp>
+								</div>
+							</div><br>
+							<div style="max-width: 300px; max-height: 100px; height: 200px; border: 1px solid #002340;">
+								<p>У меня максимальная ширина все еще 300 пикселей, а высота 100 пикселей!</p>
+							</div><br><br>
+							<p>Точно по принципу max-width и max-height, существуют еще min-width и min-height. Они позволяют установить минимальные размеры ширины и высоты. Ниже уже быть не может.</p>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div>
+		<p>У меня минимальная ширина все еще 300 пикселей, а высота 100 пикселей!</p>
+	</div>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+div {
+	min-width: 300px;
+	width: 200px; /* Специально делаем значение ниже минимального */
+	min-height: 100px;
+	height: 50px;  /* Специально делаем значение ниже минимального */
+}
+									</xmp>
+								</div>
+							</div><br>
+							<div style="max-width: 300px; min-height: 100px; border: 1px solid #002340;">
+								<p>У меня минимальная ширина все еще 300 пикселей, а высота 100 пикселей!</p>
+							</div>
+							<br><br>
+							<h3>Свойство background</h3>
+							<p>Свойство background позволяет установить цвет или фоновое изображение на задний фон. Свойство background делится на несколько других свойств: 1) background-color, 2) background-image, 3) background-repeat, 4) background-size, 5) background-position, 6) background-attachment. Свойства не наследуются.</p><br>
+							<h4>1) background-color</h4>
+							<p>background-color позволяет установить цвет на фон. В этом же сайте цвет background-color для тега body является белый. Например давайте зададим синий цвет блоку:</p>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div>
+		<h2>Заголовок</h2>
+	</div>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+div {
+	height: 50px;
+	background-color: aqua;
+	text-align: center;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<div style="height: 50px; background-color: blue; text-align: center;">
+								<h2>Заголовок</h2>
+							</div>
+							<br>
+							<h4>2) background-image</h4>
+							<p>background-image позволяет поставить фоновое изображение на фон. Структура свойства выглядит вот так:</p>
+							<div class="htmlgreyfone">
+								<xmp>
+... {
+	background-image: url("URL или имя изображения");
+}
+								</xmp>
+							</div><br>
+							<p>После слова url в скобках надо писать либо URL изображения, либо путь к имени изображения.</p><br>
+							<p>Например давайте на задний фон блока поставим изображение природы(без указания ширины и высоты блока, изображение не появится):</p>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div></div>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+div {
+	background-image: url("../images/Nature.jpg");
+	width: 100%;
+	height: 400px;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<div style="background-image: url('../images/Nature.jpg'); width: 100%; height: 400px;"></div><br>
+							<p>Вот изображение появилось у нас на экране. Но согласитесь оно какое-то странное. Следующии свойства помогут исправить все недостатки.</p>
+							<br>
+							<h4>3) background-repeat</h4>
+							<p>background-repeat позволяет изменять повтор изображения. Есть значения как:</p><br>
+							<p>repeat-x - повторяется по горизонтали.</p><br>
+							<p>repeat-y - повторяется по вертикали.</p><br>
+							<p>repeat - повторяется в обоих значениях.</p><br>
+							<p>round - повторяется чтобы заполнить область фона не обрезаясь, если не получается, то изображение масштабируется.</p><br>
+							<p>no-repeat - размещается один раз и не повторяется.</p><br>
+							<span>Например:</span>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div></div>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+div {
+	background-image: url("../images/Nature.jpg");
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 400px;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<div style="background-image: url('../images/Nature.jpg'); background-repeat: no-repeat; width: 100%; height: 400px;"></div>
+							<br>
+							<h4>4) background-size</h4>
+							<p>background-size позволяет задать размер фонового изображения. Есть значения как:</p><br>
+							<p>...% ...% - в процентах. Первое значение ширина, второе высота.</p><br>
+							<p>...px ...px - в пикселях. Первое значение ширина, второе высота.</p><br>
+							<p>Если задано одно значение, то второе по умолчанию будет 50%.</p><br>
+							<p>cover - масштабирует изображение с сохранением пропорций так, чтобы его ширина или высота равнялась ширине или высоте блока.</p><br>
+							<p>contain - масштабирует изображение с сохранением пропорций таким образом, чтобы изображение целиком поместилось внутрь блока.</p><br>
+							<span>Например:</span>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div></div>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+div {
+	background-image: url("../images/Nature.jpg");
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: 100%;
+	height: 400px;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<div class="bgmedia" style="background-image: url('../images/Nature.jpg'); background-repeat: no-repeat; background-size: contain; width: 100%;"></div>
+							<br>
+							<h4>5) background-position</h4>
+							<p>background-position задает расположение фонового изображения. Есть значения как:</p><br>
+							<p>...% ...% - в процентах. Первое значение расстояние относительно левого края, второе значение относительно вверхнего края.</p><br>
+							<p>...px ...px - в пикселях. Первое значение расстояние относительно левого края, второе значение относительно вверхнего края.</p><br>
+							<p>left - расположен слева</p><br>
+							<p>right - расположен справа</p><br>
+							<p>top - расположен сверху.</p><br>
+							<p>bottom - расположен снизу.</p><br>
+							<p>center - по центру.</p><br>
+							<p>right top - два значения. Первое по горизонтали(left, center, right), второе по вертикали(top, center, bottom).</p><br>
+							<p>Если задано одно значение, то второе по умолчанию будет 50%.</p><br>
+							<span>Например чтобы это увидеть давайте уменьшим размер фонового изображения:</span>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div></div>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+div {
+	background-image: url("../images/Nature.jpg");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center center;
+	width: 100%;
+	height: 400px;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<div class="bgmedia" style="background-image: url('../images/Nature.jpg'); background-repeat: no-repeat; background-size: contain; background-position: center center; width: 100%;"></div>
+							<style>
+								@media (max-width: 745px) {
+									.bgmedia {
+										height: 350px;
+									}
+								}
+								@media (max-width: 655px) {
+									.bgmedia {
+										height: 300px;
+									}
+								}
+								@media (max-width: 615px) {
+									.bgmedia {
+										height: 250px;
+									}
+								}
+								@media (max-width: 570px) {
+									.bgmedia {
+										height: 200px;
+									}
+								}
+								@media (max-width: 525px) {
+									.bgmedia {
+										height: 150px;
+									}
+								}
+							</style>
+							<br>
+							<h4>6) background-attachment</h4>
+							<p>background-attachment задает свойство будет ли прокручиваться изображение вместе с содержимым или нет. Есть несколько значении:</p><br>
+							<p>fixed - фоновое изображение зафиксировано.</p><br>
+							<p>local -  если элемент имеет прокрутку, то фон будет прокручиваться вместе с содержимым, но фон выходящий за рамки элемента остаётся на месте.</p><br>
+							<p>scroll - позволяет перемещаться фону вместе с содержимым.</p>
+							<br>
+							<br>
+							<p>Все эти значения свойств можно писать в одном лишь свойстве background через пробел:</p>
+							<div class="cssgreyfone">
+									<xmp>
+... {
+	background: background-image background-repeat background-size background-position background-attachment;
+}
+									</xmp>
+							</div>
+							<div class="fromlesson2nextback">
+								<a href="csslesson2.html"><div class="btnbackpage"><span>Предыдущее</span></div></a>
+								<a href="csslesson4.html"><div class="btnnextpage"><span>Следующее</span></div></a>
+							</div>
+						</div>
+						<aside>
+							<div class="asidedivfirst">
+								<a href="csslesson.html">
+									<div class="asidenav" title="Перейти к уроку 1">
+										<span>#1 - Что такое CSS | Селектор, свойства, значения | Текст</span>
+									</div>
+								</a>
+								<a href="csslesson2.html">
+									<div class="asidenav" title="Перейти к уроку 2">
+										<span>#2 - Свойства текстов</span>
+									</div>
+								</a>
+								<div style="background: #ebebeb;" class="asidenav" title="Урок 3">
+									<span style="font-weight: 500;">#3 - Ширина, высота, фон</span>
+								</div>
+								<a href="csslesson4.html">
+									<div class="asidenav" title="Перейти к уроку 4">
+										<span>#4 - Стили для блоков</span>
+									</div>
+								</a>
+								<a href="csslesson5.html">
+									<div class="asidenav" title="Перейти к уроку 5">
+										<span>#5 - Стили для блоков 2</span>
+									</div>
+								</a>
+								<a href="csslesson6.html">
+									<div class="asidenav" title="Перейти к уроку 6">
+										<span>#6 - Псевдоклассы, псевдоэлементы</span>
+									</div>
+								</a>
+								<a href="csslesson7.html">
+									<div class="asidenav" title="Перейти к уроку 7">
+										<span>#7 - Flexbox | Флекс элементы</span>
+									</div>
+								</a>
+								<a href="csslesson8.html">
+									<div class="asidenav" title="Перейти к уроку 8">
+										<span>#8 - Префиксы, тени, эффект перехода, состояния элемента</span>
+									</div>
+								</a>
+								<a href="csslesson9.html">
+									<div class="asidenav" title="Перейти к уроку 9">
+										<span>#9 - Ключевые кадры, анимация, доп. материал</span>
+									</div>
+								</a>
+								<a href="csslesson10.html">
+									<div class="asidenav" title="Перейти к уроку 10">
+										<span>#10 - Заключение</span>
+									</div>
+								</a>
+							</div>
+						</aside>
+					</div>
+				</div>
+			</section>
+			<!-- "Подвал" страницы -->
+			<footer class="footer">
+				<div class="container">
+					<div class="footerstyle">
+						<div class="footerfirstcolumn">
+							<a href="../index.html" class="footerbaseword" title="На главную страницу">ProgEasy</a>
+							<span class="footerafterbaseword">Обучение по</span><br><span class="footerafterbaseparagraph">программированию</span>
+						</div>
+						<ul class="footersecondcolumn">
+							<li class="footerlessons"><a href="../Lessons/lessons.html">Уроки</a></li>
+							<li class="footercontacts"><a href="../Contacts/contacts.html">Контакты</a></li>
+							<li class="footerabout"><a href="../Aboutus/aboutus.html">О создателе/сайте</a></li>
+						</ul>
+						<div class="footerthirdcolumn">
+							<div class="footerimages">
+								<div class="footerinstagram" title="Инстаграм" onclick="Insta()">
+									<img src="../images/instagram.png" alt="Instagram">
+								</div>
+								<div class="footervk"  title="Вк" onclick="Vk()">
+									<img src="../images/vk.png" alt="Vk">
+								</div>
+								<div class="footerwhatsapp" title="WhatsApp" onclick="WhatsApp()">
+									<img src="../images/whatsapp.png" alt="WhatsApp">
+								</div>
+							</div>
+							<div class="footeremailnumber">
+								<span class="footeremailnumbertexts">+7 (707) 200 35-83</span><br>
+								<span class="footeremailnumbertexts">Email: anuarzholdybaev2006@gmail.com</span>
+								<div class="footermadeby">
+									<span class="footermadebytext">© Created by Anuar Name ProgEasy, 2021</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<div class="windowfixed"></div>
+		</div>
+		<!-- Закончился wrapper -->
+		<script src="../HTML/jslesson.js"></script>
+	</body>
+</html>

@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="keywords" content="Программирование, сайт, HTML, CSS, JavaScript, бесплатное обучение, курсы программирования, бесплатные курсы по программированию, как создать сайт, Frontend, Frontend разработка, CSS урок, ProgEasy CSS урок 9">
+		<meta name="description" content="Урок №9 CSS от ProgEasy. Ключевые кадры, анимация, дополнительный материал. Бесплатное обучение Frontend разработке.">
+		<meta name="format-detection" content="telephone=no">
+		<title>Урок 9 CSS</title>
+		<link rel="shortcut icon" href="../images/iconweb.png" type="image/png">
+		<link href="cssofcsslesson9.css" rel="stylesheet" type="text/css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<!-- Yandex.Metrika counter -->
+		<script type="text/javascript" >
+			(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+			m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+			(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+			ym(84034504, "init", {
+				clickmap:true,
+				trackLinks:true,
+				accurateTrackBounce:true,
+				webvisor:true
+			});
+		</script>
+		<noscript><div><img src="https://mc.yandex.ru/watch/84034504" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+		<!-- /Yandex.Metrika counter -->
+	</head>
+	<body>
+		<div class="wrapper">
+			<!-- header -->
+			<header class="header">
+				<div class="container">
+					<div class="headersectionstyles">
+						<div class="Basenameheader"><a href="../index.html" class="tothemainpage" title="На главную страницу">ProgEasy</a></div>
+						<div class="burger">
+							<span></span>
+						</div>
+						<div class="Baseultexts">
+							<span><a class="Basenav" href="../HTML/htmllesson.html" title="Перейти к HTML">HTML</a></span>
+							<span class="Basenav" title="Вы на этой странице">CSS</span>
+							<span><a class="Basenav" href="../JS/jslesson.html" title="Перейти к JS">JavaScript</a></span>
+							<span><a class="Basenav" href="../Contacts/contacts.html" title="Контакты">Контакты</a></span>
+							<span><a class="Basenav" href="../Aboutus/aboutus.html" title="О нас">О сайте</a></span>
+						</div>
+						<div class="Basenametitle">
+							<p class="headertitle">Понятные объяснения</p>
+						</div>
+					</div>
+				</div>
+			</header>
+			<!-- Закончился header -->
+			<section class="sectionhtml">
+				<div class="container">
+					<div class="Firstbasetextdiv">
+						<h1>Урок 9 CSS</h1>
+					</div>
+					<div class="sectionstyles2">
+						<div class="htmlexplalltextdiv">
+							<h2>Ключевые кадры, анимация</h2>
+							<br>
+							<h3>Ключевые кадры @keyframes</h3>
+							<p>Ключевые кадры @keyframes позволяет менять CSS стили для заданного селектора в любой точке в момент смены состояния или события. Структура выглядит вот так:</p>
+							<div class="attention">
+								<br>
+								<p>Если код не виден, вы можете <span style="color: #68d66e;">скролить</span> серый блок с кодом.</p>
+								<br>
+							</div>
+							<div class="cssgreyfone">
+								<xmp>
+@keyframes название анимации {
+	...% {
+		...
+	}
+	...% {
+		...
+	}
+	/* Можно писать еще ключевые кадры */
+}
+								</xmp>
+							</div><br>
+							<p>Название анимации это свойство animation-name, увидите чуть ниже, а проценты представляют собой точки вдоль временной линии анимации, внутри которых задаются стили. Например в точке изначального положения(старта), 0%, стили такие, а в конечной точке, 100%, стили вот такие. Вместо 0% и 100% можно использовать ключевые слова соотвественно from и to. Теперь давайте поговорим об анимации.</p>
+							<br><br>
+							<h3>Свойство animation</h3>
+							<p>Свойство animation позволяет сделать анимацию элементу. Свойство animation нужно писать до ключевых кадров @keyframes. Свойство не наследуется. Его можно разделить еще на несколько свойств:</p><br>
+							<h4>1) animation-name</h4>
+							<p>Свойство animation-name задает название анимации. Название может быть любым.</p><br>
+							<h4>2) animation-duration</h4>
+							<p>Свойство animation-duration задает длительность анимации. Значения: s - секунда, ms - миллисекунда. 1s = 1000ms.</p><br>
+							<h4>3) animation-timing-function</h4>
+							<p>Свойство animation-timing-function указывает как быстро по времени меняется анимация. Значения такие же как у свойства transition как ease, linear, ease-in и т.д.</p><br>
+							<h4>4) animation-iteration-count</h4>
+							<p>Свойство animation-iteration-count задает количество повторов анимации. Значения: натуральные числа или значение infinite(бесконечно).</p><br>
+							<h4>5) animation-direction</h4>
+							<p>Свойство animation-direction определяет тип движения ключевых кадров. Значения:</p><br>
+							<p>normal - как обычно. Это значение по умолчанию.</p><br>
+							<p>alternate - каждый четный проход по клоючевым кадрам будет проигрываться в обратную сторону.</p><br>
+							<p>alternate-reverse - каждый нечетный проход по ключевым кадрам будет проигрываться в обратную сторону.</p><br>
+							<p>reverse - задом наперет.</p><br>
+							<h4>5) animation-play-state</h4>
+							<p>Свойство animation-play-state позволяет приостановить анимацию, например при наведении. Значения:</p><br>
+							<p>running - анимация идет. Это значение по умолчанию.</p><br>
+							<p>paused - остановить анимацию.</p><br>
+							<h4>6) animation-delay</h4>
+							<p>Свойство animation-delay позволяет сделать паузу до начала анимации. Значения: секунды и миллисекунды.</p><br>
+							<h4>7) animation-fill-mode</h4>
+							<p>Свойство animation-fill-mode позволяет остановить анимацию в конечном ключевом кадре. Значения: none - не остановить(значение по умолчанию), forwards - остановить в конечном ключевом кадре.</p><br><br>
+							<p>Можно всё упростить и писать значения этих свойство в одно свойство animation:</p>
+							<div class="cssgreyfone">
+								<xmp>
+... {
+	animation: 1) 2) 3) 4) 5) 6) 7);
+}
+								</xmp>
+							</div><br>
+							<p>Можно не писать значения свойств которые по умолчанию, а просто продолжить писать значения следующих нужных нам свойств.</p><br>
+							<span>Например:</span>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div id="blocktough">
+		<span>Я кручусь и я сумасшедший</span>
+	</div>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+#blocktough {
+	width: 150px;
+	text-align: center;
+	padding: 50px 0;
+	margin: 20px auto;
+	background-color: #3d77cf;
+	-webkit-animation: crazyblock 3s linear infinite alternate;
+	animation: crazyblock 3s linear infinite;
+}
+@keyframes crazyblock {
+	0% {
+		-webkit-transform: rotate(0deg);
+		-ms-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+									</xmp>
+								</div>
+							</div><br>
+							<div id="blocktough">
+								<span>Я кручусь и я сумасшедший</span>
+							</div>
+							<style>
+								#blocktough {
+									width: 150px;
+									text-align: center;
+									padding: 50px 0;
+									margin: 20px auto;
+									background-color: #3d77cf;
+									-webkit-animation: crazyblock 3s linear infinite alternate;
+									animation: crazyblock 3s linear infinite;
+								}
+								@keyframes crazyblock {
+									0% {
+										-webkit-transform: rotate(0deg);
+										-ms-transform: rotate(0deg);
+										transform: rotate(0deg);
+									}
+									100% {
+										-webkit-transform: rotate(360deg);
+										-ms-transform: rotate(360deg);
+										transform: rotate(360deg);
+									}
+								}
+							</style>
+							<br><br>
+							<h3>Правило/Медиа запросы @media</h3>
+							<p>Правило @media используется для изменения CSS стилей на основании определенных характеристик устройства, связанных с отображением контента, таких как ширина, высота, ориентация, разрешение экрана и так далее. Оно позволяет адаптировать контент под разные мобильные устройства. Например на компьютере и телефоне, один и тот же сайт будет выглядить по другому.</p><br>
+							<p>Также на уроке HTML мы говорили о мета теге который пропишем при адаптивности сайта. Так вот этот мета тег выглядить вот так:</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+								</xmp>
+							</div><br>
+							<p>Атрибут name предназначен для того чтобы указать браузеру, какую именно информацию о странице хотим ему сообщить. В данном случае эта информация касается viewport.</p><br>
+							<p>Контент (содержимое) этих сведений указывается в качестве значения атрибута content посредством пар ключ-значение, разделённых между собой запятыми.</p><br>
+							<p>Для адаптивного дизайна значения атрибута content viewport должно определяться 2 параметрами:</p><br>
+							<p>width=device-width</p>
+							<p>initial-scale=1</p>
+							<br>
+							<p>После добавляния мета тега, вы готовы приступить к медиа запросам.</p><br>
+							<p>Структура медиа запросов выглядит так:</p>
+							<div class="cssgreyfone">
+								<xmp>
+@media ... {
+	/* Стили */
+}
+								</xmp>
+							</div><br>
+							<p>Под тремя точками можно писать тип устройства(необязательно), условие которое связано с характеристикой устройства. Чаще всего под условием выступает максимальная или минимальная ширина устройства. Условие надо писать в скобках и без точки с запятой после значения свойства. Например у нас есть блок с идентификатором #block, и нам нужно чтобы он до 500 пикселей в ширину экрана не появлялся и исчез. Всё будет выглядить вот так:</p>
+							<div class="cssgreyfone">
+								<xmp>
+#block {
+	display: block
+}
+
+@media (max-width: 500px) {
+	#block {
+		display: none;
+	}
+}
+								</xmp>
+							</div>
+							<br>
+							<p>Также к медиа запросам можно добавлять логические операторы. С помощью них можно делать комбинированные медиазапросы, в которых будет проверяться соответствие нескольким условиям.</p><br>
+							<h4>Оператор and</h4>
+							<p>Оператор and связывает друг с другом разные условия:</p>
+							<div class="cssgreyfone">
+								<xmp>
+@media (min-width: 200px) and (max-width: 600px) {
+	/* Стили */
+}
+								</xmp>
+							</div>
+							<br><br>
+							<h3>Доп. материал</h3>
+							<p>Есть специальные свойства которые прописывают только к определенным селекторам. Их мы щас рассмотрим:</p>
+							<br>
+							<h4>Свойство list-style</h4>
+							<p>Это свойство используется для тегов ol или ul. Для него можно прописать еще ключевые слова через дефис, например list-style-position, которое определяет, как будет размещаться маркер(точки) относительно текста. Вы также можете при надобности поискать это свойство и его значения в интернете. Свойство наследуется.</p><br>
+							<h4>Свойство outline</h4>
+							<p>Это свойство одновременно устанавливающее цвет, стиль и толщину внешней границы на всех четырех сторонах элемента. Иногда применяется для input, чтобы когда мы нажали, не было черной полосы на всех четырех сторонах элемента, для этого пишется значение 0. Также можно писать ключевые слова свойству через дефис. Их также можно поискать в интернете. Свойство не наследуется.</p><br>
+							<span>Например:</span>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div>
+		<span>До:</span><br>
+		<input type="text" placeholder="Введите что-то">
+	</div>
+	<br>
+	<div>
+		<span>После:</span><br>
+		<input id="input2" type="text" placeholder="Введите что-то">
+	</div>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+#input2 {
+	outline: 0;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<div>
+								<span>До:</span><br>
+								<input type="text" placeholder="Введите что-то">
+							</div>
+							<br>
+							<div>
+								<span>После:</span><br>
+								<input id="input2" type="text" placeholder="Введите что-то">
+							</div>
+							<style>
+								#input2 {
+									outline: 0;
+								}
+							</style>
+							<br><br>
+							<h3>Псевдоэлемент ::marker</h3>
+							<p>Псевдоэлемент ::marker позволяет управлять маркерами(точками) у элементов списка. Вот например:</p>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<ul>
+		<li>Привет!</li>
+		<li>Мир!</li>
+	</ul>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+ul {
+	list-style-position: inside;
+}
+ul li::marker {
+	color: blue;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<ul id="ul">
+								<li>Привет!</li>
+								<li>Мир!</li>
+							</ul>
+							<style>
+								#ul {
+									list-style-position: inside;
+								}
+								#ul li::marker {
+									color: blue;
+								}
+							</style>
+							<br>
+							<h3>Свойство cursor</h3>
+							<p>Свойство cursor мыши позволяет изменять курсор мыши при наведении. Есть куча значений, их вы можете поискать в интернете.</p><br>
+							<span>Например:</span>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<p>Наведи на меня</p>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+p:hover {
+	cursor: pointer;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<p id="pexample">Наведи на меня</p>
+							<style>
+								#pexample:hover {
+									cursor: pointer;
+								}
+							</style>
+							<br><br>
+							<h3>Правило !important</h3>
+							<p>!important играет роль, когда пользователь хочет подключить/изменить таблицу стилей. Если у автора в таблице стилей написан !important, то сработают его стили, а пользователь не сможет их изменить. Грубо говоря, он повышает приоритет стиля где он написан. Но, есть и другие исключения:</p><br>
+							<p>!important добавлен в авторский стиль — будет применяться стиль автора.</p><br>
+							<p>!important добавлен в пользовательский стиль — будет применяться стиль пользователя.</p><br>
+							<p>!important нет как в авторском стиле, так и стиле пользователя — будет применяться стиль автора.</p><br>
+							<p>!important содержится в авторском стиле и стиле пользователя — будет применяться стиль пользователя.</p><br>
+							<p>Структура выглядит вот так:</p>
+							<div class="cssgreyfone">
+								<xmp>
+Селектор {
+	свойство: значение !important;
+}
+								</xmp>
+							</div><br>
+							<p>Таблицу стилей пользователь может изменять в исходном коде страницы.</p>
+							<div class="fromlesson2nextback">
+								<a href="csslesson8.html"><div class="btnbackpage"><span>Предыдущее</span></div></a>
+								<a href="csslesson10.html"><div class="btnnextpage"><span>Следующее</span></div></a>
+							</div>
+						</div>
+						<aside>
+							<div class="asidedivfirst">
+								<a href="csslesson.html">
+									<div class="asidenav" title="Перейти к уроку 1">
+										<span>#1 - Что такое CSS | Селектор, свойства, значения | Текст</span>
+									</div>
+								</a>
+								<a href="csslesson2.html">
+									<div class="asidenav" title="Перейти к уроку 2">
+										<span>#2 - Свойства текстов</span>
+									</div>
+								</a>
+								<a href="csslesson3.html">
+									<div class="asidenav" title="Перейти к уроку 3">
+										<span>#3 - Ширина, высота, фон</span>
+									</div>
+								</a>
+								<a href="csslesson4.html">
+									<div class="asidenav" title="Перейти к уроку 4">
+										<span>#4 - Стили для блоков</span>
+									</div>
+								</a>
+								<a href="csslesson5.html">
+									<div class="asidenav" title="Перейти к уроку 5">
+										<span>#5 - Стили для блоков 2</span>
+									</div>
+								</a>
+								<a href="csslesson6.html">
+									<div class="asidenav" title="Перейти к уроку 6">
+										<span>#6 - Псевдоклассы, псевдоэлементы</span>
+									</div>
+								</a>
+								<a href="csslesson7.html">
+									<div class="asidenav" title="Перейти к уроку 7">
+										<span>#7 - Flexbox | Флекс элементы</span>
+									</div>
+								</a>
+								<a href="csslesson8.html">
+									<div class="asidenav" title="Перейти к уроку 8">
+										<span>#8 - Префиксы, тени, эффект перехода, состояния элемента</span>
+									</div>
+								</a>
+								<div style="background: #ebebeb;" class="asidenav" title="Урок 9">
+									<span style="font-weight: 500;">#9 - Ключевые кадры, анимация, доп. материал</span>
+								</div>
+								<a href="csslesson10.html">
+									<div class="asidenav" title="Перейти к уроку 10">
+										<span>#10 - Заключение</span>
+									</div>
+								</a>
+							</div>
+						</aside>
+					</div>
+				</div>
+			</section>
+			<!-- "Подвал" страницы -->
+			<footer class="footer">
+				<div class="container">
+					<div class="footerstyle">
+						<div class="footerfirstcolumn">
+							<a href="../index.html" class="footerbaseword" title="На главную страницу">ProgEasy</a>
+							<span class="footerafterbaseword">Обучение по</span><br><span class="footerafterbaseparagraph">программированию</span>
+						</div>
+						<ul class="footersecondcolumn">
+							<li style="list-style: none;" class="footerlessons"><a href="../Lessons/lessons.html">Уроки</a></li>
+							<li style="list-style: none;" class="footercontacts"><a href="../Contacts/contacts.html">Контакты</a></li>
+							<li style="list-style: none;" class="footerabout"><a href="../Aboutus/aboutus.html">О создателе/сайте</a></li>
+						</ul>
+						<div class="footerthirdcolumn">
+							<div class="footerimages">
+								<div class="footerinstagram" title="Инстаграм" onclick="Insta()">
+									<img src="../images/instagram.png" alt="Instagram">
+								</div>
+								<div class="footervk"  title="Вк" onclick="Vk()">
+									<img src="../images/vk.png" alt="Vk">
+								</div>
+								<div class="footerwhatsapp" title="WhatsApp" onclick="WhatsApp()">
+									<img src="../images/whatsapp.png" alt="WhatsApp">
+								</div>
+							</div>
+							<div class="footeremailnumber">
+								<span class="footeremailnumbertexts">+7 (707) 200 35-83</span><br>
+								<span class="footeremailnumbertexts">Email: anuarzholdybaev2006@gmail.com</span>
+								<div class="footermadeby">
+									<span class="footermadebytext">© Created by Anuar Name ProgEasy, 2021</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<div class="windowfixed"></div>
+		</div>
+		<!-- Закончился wrapper -->
+		<script src="../HTML/jslesson.js"></script>
+	</body>
+</html>

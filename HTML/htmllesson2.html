@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="keywords" content="Программирование, сайт, HTML, CSS, JavaScript, бесплатное обучение, курсы программирования, бесплатные курсы по программированию, как создать сайт, Frontend, Frontend разработка, HTML урок, ProgEasy HTML урок 2">
+		<meta name="description" content="Урок №2 HTML от ProgEasy. Теги для текстов, Базовые теги HTML. Бесплатное обучение Frontend разработке.">
+		<meta name="format-detection" content="telephone=no">
+		<title>Урок 2 HTML</title>
+		<link rel="shortcut icon" href="../images/iconweb.png" type="image/png">
+		<link href="csslesson2.css" rel="stylesheet" type="text/css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<!-- Yandex.Metrika counter -->
+		<script type="text/javascript" >
+			(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+			m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+			(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+			ym(84034504, "init", {
+				clickmap:true,
+				trackLinks:true,
+				accurateTrackBounce:true,
+				webvisor:true
+			});
+		</script>
+		<noscript><div><img src="https://mc.yandex.ru/watch/84034504" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+		<!-- /Yandex.Metrika counter -->
+	</head>
+	<body>
+		<div class="wrapper">
+			<!-- header -->
+			<header class="header">
+				<div class="container">
+					<div class="headersectionstyles">
+						<div class="Basenameheader"><a href="../index.html" class="tothemainpage" title="На главную страницу">ProgEasy</a></div>
+						<div class="burger">
+							<span></span>
+						</div>
+						<div class="Baseultexts">
+							<span class="Basenav" title="Вы на этой странице">HTML</span>
+							<span><a class="Basenav" href="../CSS/csslesson.html" title="Перейти к CSS">CSS</a></span>
+							<span><a class="Basenav" href="../JS/jslesson.html" title="Перейти к JS">JavaScript</a></span>
+							<span><a class="Basenav" href="../Contacts/contacts.html" title="Контакты">Контакты</a></span>
+							<span><a class="Basenav" href="../Aboutus/aboutus.html" title="О нас">О сайте</a></span>
+						</div>
+						<div class="Basenametitle">
+							<p class="headertitle">Понятные объяснения</p>
+						</div>
+					</div>
+				</div>
+			</header>
+			<!-- Закончился header -->
+			<section class="sectionhtml">
+				<div class="container">
+					<div class="Firstbasetextdiv">
+						<h1>Урок 2 HTML</h1>
+					</div>
+					<div class="sectionstyles2">
+						<div class="htmlexplalltextdiv">
+							<h2>Теги для текста</h2>
+							<br>
+							<h3>Теги h1-h6</h3>
+							<p>Теги от h1 до h6 делают текст заголовком. Соответственно начинается от крупного жирного шрифта до меньшего. Элемент является блочным.</p>
+							<div class="attention">
+								<br>
+								<p>Если код не виден, вы можете <span style="color: #68d66e;">скролить</span> серый блок с кодом.</p>
+								<br>
+							</div>
+							<div class="htmlgreyfone">
+								<xmp>
+<h1>Я заголовок с жирностью h1</h1>
+<h2>Я заголовок с жирностью h2</h2>
+<h3>Я заголовок с жирностью h3</h3>
+<h4>Я заголовок с жирностью h4</h4>
+<h5>Я заголовок с жирностью h5</h5>
+<h6>Я заголовок с жирностью h6</h6>
+								</xmp>
+							</div><br>
+							<h1>Я заголовок с жирностью h1</h1>
+							<h2 style="font-size: 1.35em;">Я заголовок с жирностью h2</h2>
+							<h3>Я заголовок с жирностью h3</h3>
+							<h4>Я заголовок с жирностью h4</h4>
+							<h5>Я заголовок с жирностью h5</h5>
+							<h6>Я заголовок с жирностью h6</h6>
+							<br>
+							<p>И давайте договоримся что в следующих примерах родительный тег будет p или span. Ибо не следует писать просто так эти теги без основного родителя который является основой всего текста. Уже в самом родителе мы будем изменять текст при помощи этими следующими тегами.</p>
+							<br><br>
+							<h3>Тег strong</h3>
+							<p>Тег strong делает текст жирным</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<span>
+	<strong>Я жирный текст</strong>
+</span>
+								</xmp>
+							</div><br>
+							<span><strong>Я жирный текст</strong></span>
+							<br><br>
+							<h3>Тег b(устаревший)</h3>
+							<p>Тег b тоже делает текст жирным, но этот тег уже устарел, вместо него лучше использовать тег strong, но все же о теге b тоже следует знать.</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<span>
+	<b>Я тоже жирный текст</b>
+</span>
+								</xmp>
+							</div><br>
+							<span><b>Я тоже жирный текст</b></span>
+							<br><br>
+							<h3>Тег em</h3>
+							<p>Тег em делает текст курсивным.</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<span>
+	<em>Я курсивный текст</em>
+</span>
+								</xmp>
+							</div><br>
+							<span><em>Я курсивный текст</em></span>
+							<br><br>
+							<h3>Тег small</h3>
+							<p>Тег small делает текст маленьким.</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<span>
+	<small>Я маленький текст</small>
+</span>
+								</xmp>
+							</div><br>
+							<span><small>Я маленький текст</small></span>
+							<br><br>
+							<h3>Тег big</h3>
+							<p>Тег big делает текст большим.</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<span>
+	<big>Я большой текст</big>
+</span>
+								</xmp>
+							</div><br>
+							<span><big>Я большой текст</big></span>
+							<br><br>
+							<h3>Тег pre</h3>
+							<p>Тег pre сохраняет все отступы и пробелы. Например давайте сделаем вот такую причудливую картину.</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<span>
+	<pre>
+		 -                -----
+		 -----           |-----
+		||----|          ----||
+		||-----         -----||
+		||-----|       |-----||
+		|| -----       ------||
+		||- ----|     |------||
+		||---||--     -------||
+		||--|| --|   |-------||
+		|| -|| |--   --- - --||
+		|| -||  --|-|--| - ---|
+		|---||  |-----| |-----|
+		|---||   |----  |-----|
+		|----|    ---   |-----|
+		|-----          ------|
+	</pre>
+</span>
+								</xmp>
+							</div><br>
+							<span>
+<pre>
+	 -                -----  
+	 -----           |-----
+	||----|          ----||  
+	||-----         -----||  
+	||-----|       |-----||
+	|| -----       ------||
+	||- ----|     |------||
+	||---||--     -------||
+	||--|| --|   |-------||
+	|| -|| |--   --- - --||
+	|| -||  --|-|--| - ---|
+	|---||  |-----| |-----|
+	|---||   |----  |-----| 
+	|----|    ---   |-----|
+	|-----          ------| 
+</pre>
+							</span>
+							<br><br>
+							<h3>Тег blockquote</h3>
+							<p>Тег blockquote нужен для цитат. Внутри этого тега пишут длинные цитаты.</p>
+							<p>Также у него есть атрибут cite где надо писать источник цитаты.</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<p>
+	<blockquote cite="...">Какая-то длинная цитата</blockquote>
+</p>
+								</xmp>
+							</div>
+							<br><br>
+							<h3>Тег q</h3>
+							<p>Тег q тоже используется для цитат только для коротких. Также присутствует атрибут cite где надо писать источник цитаты.</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<p>
+	<q cite="...">Какая-то короткая цитата</q>
+</p>
+								</xmp>
+							</div>
+							<br><br>
+							<h3>Тег strike</h3>
+							<p>Тег strike делает текст перечеркнутым.</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<span>
+	<strike>Перечеркнутый текст</strike>
+</span>
+								</xmp>
+							</div><br>
+							<span>
+								<strike>Перечеркнутый текст</strike>
+							</span>
+							<br><br>
+							<h3>Тег u</h3>
+							<p>Тег u делает текст подчеркнутым.</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<span>
+	<u>Подчеркнутый текст</u>
+</span>
+								</xmp>
+							</div><br>
+							<span>
+								<u>Подчеркнутый текст</u>
+							</span>
+							<br><br>
+							<h3>Тег br</h3>
+							<p>Тег br делает перевод строки. Если элемент не блочный, и вы хотите такой же не блочный элемент перенести на новую строку, тогда тег br вам в помощь. Тег одинарный.</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<span>Я не блок но мы отделены</span>
+<br>
+<span>Я на новой строке</span>
+								</xmp>
+							</div><br>
+							<span>Я не блок но мы отделены</span>
+							<br>
+							<span>Я на новой строке</span>
+							<br><br>
+							<p>Иногда тег br используют дабы просто сделать вертикальное расстояние между блоками.</p><br>
+							<div style="border-top: 1px solid #002340; margin: 20px 0;"></div>
+							<h3>Основные HTML теги кроме текстов</h3>
+							<br>
+							<h3>Тег ol</h3>
+							<p>Тег ol позволяет создавать упорядочный список начиная с чисел. У него есть объязательный дочерний тег под названием li, который и является пунктом списка.</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<ol>
+	<li></li>
+</ol>
+								</xmp>
+							</div><br>
+							<p>Давайте рассмотрим пример:</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<ol>
+	<li>Я первый элемент! Я крутой</li>
+	<li>А я второй элемент! Я не хуже</li>
+	<li>А я третий элемент :)</li>
+</ol>
+								</xmp>
+							</div><br>
+							<ol>
+								<li>Я первый элемент! Я крутой</li>
+								<li>А я второй элемент! Я не хуже</li>
+								<li>А я третий элемент :)</li>
+							</ol>
+							<br>
+							<p>То есть, появляются числа упорядочные в соответствии нумерации элемента. Также они не выделяются.</p><br>
+							<p>Также у тега ol есть атрибуты type со значениями: a, A, i, I, 1. Можно выбрать один из них. Этот атрибут позволяет вместо упорядочных чисел поменять на какой-то другой символ.</p><br>
+							<p>a - начиная с английского алфавита с маленькой буквы.</p><br>
+							<p>A - начиная с английского алфавита с большой буквы.</p><br>
+							<p>i - начиная с римских чисел с маленькими буквами.</p><br>
+							<p>I - начиная с римских чисел с большими буквами.</p><br>
+							<p>1 - начиная с чисел. Это значение по умолчанию.</p><br>
+							<span>Например:</span>
+							<div class="htmlgreyfone">
+								<xmp>
+<ol type="i">
+	<li>Я первый элемент! Я крутой</li>
+	<li>А я второй элемент! Я не хуже</li>
+	<li>А я третий элемент :)</li>
+</ol>
+								</xmp>
+							</div><br>
+							<ol type="i">
+								<li>Я первый элемент! Я крутой</li>
+								<li>А я второй элемент! Я не хуже</li>
+								<li>А я третий элемент :)</li>
+							</ol>
+							<br>
+							<p>Также есть атрибут start, который позволяет начать нумерацию с определенной цифры. К сожалению, этот атрибут работает только с числами, с буквами или римскими числами оно не работает.</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<ol start="4">
+	<li>Я хоть стою первым но начинаю с цифры 4</li>
+	<li>А я какой элемент? Я запутался</li>
+	<li>Я последний элемент</li>
+</ol>
+								</xmp>
+							</div><br>
+							<ol start="4">
+								<li>Я хоть стою первым но начинаю с цифры 4</li>
+								<li>А я какой элемент? Я запутался</li>
+								<li>Я последний элемент</li>
+							</ol><br>
+							<p>Также присутствует атрибут reversed что позволяет сделать нумерацию в обратном порядке. Можно писать значение reversed или можно не писать, просто написав атрибут.</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<ol reversed>
+	<li>У меня что нумерация 3?</li>
+	<li>А я неизменяемая двойка</li>
+	<li>Я теперь первый</li>
+</ol>
+								</xmp>
+							</div><br>
+							<ol reversed>
+								<li>У меня что нумерация 3?</li>
+								<li>А я неизменяемая двойка</li>
+								<li>Я теперь первый</li>
+							</ol>
+							<br><br>
+							<h3>Тег ul</h3>
+							<p>Тег ul позволяет сделать неупорядочный список. Да, почти как тег ol. У него также есть объязательный тег li который является пунктами списка.</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<ul>
+	<li>У меня нет нумерации</li>
+	<li>У меня тоже</li>
+	<li>И у меня</li>
+</ul>
+								</xmp>
+							</div><br>
+							<ul>
+								<li>У меня нет нумерации</li>
+								<li>У меня тоже</li>
+								<li>И у меня</li>
+							</ul>
+							<br>
+							<p>У тега ul есть атрибут type что позволяет менять форму заполненных круглижков на другие формы. Есть значения: dics, circle, square. Можно выбрать один из них.</p><br>
+							<p>dics - заполненные круглижки. Это значение по умолчанию.</p><br>
+							<p>circle - круги.</p><br>
+							<p>square - квадратики.</p><br>
+							<span>Пример:</span>
+							<div class="htmlgreyfone">
+								<xmp>
+<ul type="circle">
+	<li>У меня нет нумерации</li>
+	<li>У меня тоже</li>
+	<li>И у меня</li>
+</ul>
+								</xmp>
+							</div><br>
+							<ul type="circle">
+								<li>У меня нет нумерации</li>
+								<li>У меня тоже</li>
+								<li>И у меня</li>
+							</ul>
+							<br><br>
+							<h3>Тег img</h3>
+							<p>Тег img позволяет добавить изображение. У него есть объязательный атрибут src, в котором мы указываем URL или имя картины. Имя картины пишется в том случае, если картина в той же папке что и HTML документ.</p>
+							<p>Например папка где находится HTML документ называется HTML, и рядом с ней находится еще одна папка с картинками под названием images. Давайте пропишем путь к картине picture.jpg в папке images.</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<img src="../images/picture.jpg">
+								</xmp>
+							</div><br>
+							<p>Эти две точки в коде означают что мы выходим из текущей папки и заходим в папку images. Сколько раз надо выйти из папки, столько раз надо писать эти точки. Так как мы находились в папке HTML где был HTML документ, нам надо было сперва выйти и найти папку images и внутри нее картину picture.jpg</p><br>
+							<p>Например давайте поставим картину гор с помощью названия картины. Картина гор называется Mountains.jpg</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<img src="../images/Mountains.jpg">
+								</xmp>
+							</div><br>
+							<div style="width: 100%;">
+								<img src="../images/Mountains.jpg" style="max-width: 100%;">
+							</div><br>
+							<p>У тега img также есть атрибут alt который отображает текст в случае если картина не появилась у пользователя или в коде возникла ошибка.</p>
+							<div class="htmlgreyfone">
+								<xmp>
+<img src="../images/Mountains.jpg" alt="Картина гор">
+								</xmp>
+							</div><br>
+							<div style="width: 100%;">
+								<img src="../images/" alt="Картина гор" style="max-width: 100%;">
+							</div>
+							<br><br>
+							<h3>Тег header</h3>
+							<p>Тег header позволяет сделать "шапку" страницы. В ней записывают все необходимые элементы для "шапки". Вы наверно уже видели эти "шапки" на разных сайтах. На этом сайте "шапкой" является этот верхний белый фиксированный блок внутри которого всякие элементы.</p>
+							<br><br>
+							<h3>Тег footer</h3>
+							<p>Тег footer позволяет сделать "подвал" страницы. В ней записывают все необходимые элементы для "подвала". Вы наверно уже видели эти "подвалы" на разных сайтах. На этом сайте "подвалом" является белый блок который находится в самом низу страницы.</p>
+							<br><br>
+							<h3>Тег main</h3>
+							<p>В теге main пишут всю основную информация страницы. Выделяет основное содержание страницы, которое не повторяется на других сайтах.</p>
+							<br><br>
+							<h3>Тег section</h3>
+							<p>Тег section позволяет сделать секцию сайта/крупный(или логический) смысловой раздел. Внутри тега section находятся все блоки, тексты этой секции. Обычно высота секции бывает в высоту экрана монитора.</p>
+							<br><br>
+							<h3>Тег article</h3>
+							<p>Тег article задает содержание сайта вроде новости, статьи, записи блога, форума и др.</p><br>
+							<p>Оба эти элемента, section и article, обычно пишут в теге main.</p><br>
+							<p>Оба элемента article и section организуют структуру документа и помогают наметить его схему. Если содержимое сгруппировано исключительно для стилизации и не несёт ценность для схемы документа, используйте элемент div.</p><br>
+							<p>Если содержимое добавляется к схеме документа и может быть независимо повторено или перенесено, используйте элемент article.</p><br>
+							<p>Если содержимое добавляется к схеме документа и представляет собой тематическую группу содержимого, используйте элемент section.</p>
+							<br><br>
+							<h3>Тег aside</h3>
+							<p>Тег aside нужен для боковых панелей/сайтбаров. Дополнительное содержание, не связанный напрямую с основным содержанием. Например на этом сайте боковой панелью является блок с навигациями на уроки.</p>
+							<div class="fromlesson2nextback">
+								<a href="htmllesson.html"><div class="btnbackpage"><span>Предыдущее</span></div></a>
+								<a href="htmllesson3.html"><div class="btnnextpage"><span>Следующее</span></div></a>
+							</div>
+						</div>
+						<aside>
+							<div class="asidedivfirst">
+								<a href="htmllesson.html">
+									<div class="asidenav" title="Перейти к уроку 1">
+										<span>#1 - Что такое HTML | Теги, атрибуты</span>
+									</div>
+								</a>
+								<div style="background: #ebebeb;" class="asidenav" title="Урок 2">
+									<span style="font-weight: 500;">#2 - Теги для текстов | Базовые теги HTML</span>
+								</div>
+								<a href="htmllesson3.html">
+									<div class="asidenav" title="Перейти к уроку 3">
+										<span>#3 - Тег table</span>
+									</div>
+								</a>
+								<a href="htmllesson4.html">
+									<div class="asidenav" title="Перейти к уроку 4">
+										<span>#4 - Поле для ввода | Теги form, input, label, textarea</span>
+									</div>
+								</a>
+								<a href="htmllesson5.html">
+									<div class="asidenav" title="Перейти к уроку 5">
+										<span>#5 - Кнопка | Теги button, audio, video</span>
+									</div>
+								</a>
+								<a href="htmllesson6.html">
+									<div class="asidenav" title="Перейти к уроку 6">
+										<span>#6 - Заключение</span>
+									</div>
+								</a>
+							</div>
+						</aside>
+					</div>
+				</div>
+			</section>
+			<!-- "Подвал" страницы -->
+			<footer class="footer">
+				<div class="container">
+					<div class="footerstyle">
+						<div class="footerfirstcolumn">
+							<a href="../index.html" class="footerbaseword" title="На главную страницу">ProgEasy</a>
+							<span class="footerafterbaseword">Обучение по</span><br><span class="footerafterbaseparagraph">программированию</span>
+						</div>
+						<ul class="footersecondcolumn">
+							<li style="list-style: none;" class="footerlessons"><a href="../../Lessons/lessons.html">Уроки</a></li>
+							<li style="list-style: none;" class="footercontacts"><a href="../../Contacts/contacts.html">Контакты</a></li>
+							<li style="list-style: none;" class="footerabout"><a href="../../Aboutus/aboutus.html">О создателе/сайте</a></li>
+						</ul>
+						<div class="footerthirdcolumn">
+							<div class="footerimages">
+								<div class="footerinstagram" title="Инстаграм" onclick="Insta()">
+									<img src="../images/instagram.png" alt="Instagram">
+								</div>
+								<div class="footervk" title="Вк" onclick="Vk()">
+									<img src="../images/vk.png" alt="Vk">
+								</div>
+								<div class="footerwhatsapp" title="WhatsApp" onclick="WhatsApp()">
+									<img src="../images/whatsapp.png" alt="WhatsApp">
+								</div>
+							</div>
+							<div class="footeremailnumber">
+								<span class="footeremailnumbertexts">+7 (707) 200 35-83</span><br>
+								<span class="footeremailnumbertexts">Email: anuarzholdybaev2006@gmail.com</span>
+								<div class="footermadeby">
+									<span class="footermadebytext">© Created by Anuar Name ProgEasy, 2021</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<!-- "Подвал" страницы закончился -->
+			<div class="windowfixed"></div>
+		</div>
+		<!-- Закончился wrapper -->
+		<script src="jslesson.js"></script>
+	</body>
+</html>

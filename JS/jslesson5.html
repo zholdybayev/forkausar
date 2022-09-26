@@ -1,0 +1,643 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="keywords" content="Программирование, сайт, HTML, CSS, JavaScript, бесплатное обучение, курсы программирования, бесплатные курсы по программированию, как создать сайт, Frontend, Frontend разработка, JavaScript урок, ProgEasy JavaScript урок 5">
+		<meta name="description" content="Урок №5 JavaScript от ProgEasy. Обработчики события, this, Выбор объектов, Стили. Бесплатное обучение Frontend разработке.">
+		<meta name="format-detection" content="telephone=no">
+		<title>Урок 5 JS</title>
+		<link rel="shortcut icon" href="../images/iconweb.png" type="image/png">
+		<link href="cssofjslesson2.css" rel="stylesheet" type="text/css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<!-- Yandex.Metrika counter -->
+		<script type="text/javascript" >
+			(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+			m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+			(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+			ym(84034504, "init", {
+				clickmap:true,
+				trackLinks:true,
+				accurateTrackBounce:true,
+				webvisor:true
+			});
+		</script>
+		<noscript><div><img src="https://mc.yandex.ru/watch/84034504" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+		<!-- /Yandex.Metrika counter -->
+	</head>
+	<body>
+		<div class="wrapper">
+			<!-- header -->
+			<header class="header">
+				<div class="container">
+					<div class="headersectionstyles">
+						<div class="Basenameheader"><a href="../index.html" class="tothemainpage" title="На главную страницу">ProgEasy</a></div>
+						<div class="burger">
+							<span></span>
+						</div>
+						<div class="Baseultexts">
+							<span><a class="Basenav" href="../HTML/htmllesson.html" title="Перейти к HTML">HTML</a></span>
+							<span><a class="Basenav" href="../CSS/csslesson.html" title="Перейти к CSS">CSS</a></span>
+							<span class="Basenav" title="Вы на этой странице">JavaScript</span>
+							<span><a class="Basenav" href="../Contacts/contacts.html" title="Контакты">Контакты</a></span>
+							<span><a class="Basenav" href="../Aboutus/aboutus.html" title="О нас">О сайте</a></span>
+						</div>
+						<div class="Basenametitle">
+							<p class="headertitle">Понятные объяснения</p>
+						</div>
+					</div>
+				</div>
+			</header>
+			<!-- Закончился header -->
+			<section class="sectionhtml">
+				<div class="container">
+					<div class="Firstbasetextdiv">
+						<h1>Урок 5 JavaScript</h1>
+					</div>
+					<div class="sectionstyles2">
+						<div class="htmlexplalltextdiv">
+							<h2>Обработчики события, this, выбор объектов, стили</h2>
+							<br>
+							<p>Вы наверно уже спросите, ну когда же мы будем взаимодействовать с HTML при помощи JavaScript? А этот урок настал. Мы разберем JavaScript атрибуты которые мы будем добавлять к HTML тегам и ключевое слово this.</p>
+							<br>
+							<h3>Обработчики событии</h3>
+							<p>Есть очень много атрибутов для HTML из JavaScript, но мы разберем те которые реально применяются на практике.</p><br>
+							<p>Атрибут onclick - при нажатии.</p><br>
+							<p>Атрибут onsubmit - при отправке формы.</p><br>
+							<p>Атрибут onmouseover - при наведении мышью.</p><br>
+							<p>Атрибут onmouseout - когда отвели мышку после наведения.</p><br>
+							<p>Атрибут onload - когда страница загрузилась(обычно добавляется к тегу body).</p><br>
+							<p>Атрибут onmousedown - когда нажали.</p>
+							<p>Атрибут onmouseup - когда отжали.</p><br>
+							<p>oninput - когда пользователь вводит что-то в input поле.</p><br>
+							<p>Например давайте при клике на текст будем показывать всплывающее окно:</p>
+							<div class="attention">
+								<br>
+								<p>Если код не виден, вы можете <span style="color: #68d66e;">скролить</span> серый блок с кодом.</p>
+								<br>
+							</div>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<button onclick="alert('Привет!')" class="button">Нажми на меня</button>
+	<style>
+		.button {
+			padding: 5px;
+		}
+	</style>
+</body>
+									</xmp>
+								</div>
+							</div><br>
+							<button onclick="alert('Привет!')" id="button">Нажми на меня</button>
+							<style>
+								#button {
+									padding: 5px;
+								}
+							</style>
+							<div class="divfact">
+								<div style="display: flex;">
+									<div class="factscircle">i</div>
+									<h4 class="factsquestion">Примечание</h4>
+								</div>
+								<p class="factstext">При написании одной двойной кавычки внутри другой, оно будет написано неправильно и код не сработает. Для этого следует одну из кавычек писать одинарной.</p>
+							</div>
+							<p>Если при событии нужно выполнить несколько строчек кода, то лучше всего будет писать название функции в обработчиках событии, и уже потом совершать с ними операции.</p>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<button onclick="func()" class="button">Нажми на меня</button>
+	<style>
+		.button {
+			padding: 5px;
+		}
+	</style>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>JS код:</span>
+								<div class="jsgreyfone">
+									<xmp>
+function func() {
+	let name = prompt("Введите ваше имя");
+	console.log(name);
+}
+									</xmp>
+								</div>
+							</div><br>
+							<button onclick="func()" id="button2">Нажми на меня</button>
+							<style>
+								#button2 {
+									padding: 5px;
+								}
+							</style>
+							<div class="console">
+								<div style="padding-bottom: 5px;"><span>Консоль</span></div>
+								<div style="overflow: auto;">
+									<p class="onclickname"></p>
+								</div>
+							</div>
+							<script>
+								function func() {
+									let name = prompt("Введите ваше имя");
+
+									if(name && name !== null) {
+										document.querySelector(".onclickname").innerHTML = name;
+									} else if(name === null) {
+										var greyNull = "null";
+										document.querySelector(".onclickname").innerHTML = greyNull;
+									} else {
+										document.querySelector(".onclickname").innerHTML = "";
+									}
+								}
+							</script>
+							<h3>Ключевое слово this</h3>
+							<p>Ключевое слово this в параметрах функции в обработчиках событии, говорит что мы как бы внутрь этой функции передаем объект(тег) с которым мы работаем. В JavaScript мы можем обращаться к параметру функции, и оно будет передаваться к текущему объекту(тегу).</p>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<Тег атрибут="название функции(this)">
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>JS код:</span>
+								<div class="jsgreyfone">
+									<xmp>
+function название функции(параметр) { // Название параметра может быть любым
+	...
+}
+									</xmp>
+								</div>
+							</div><br>
+							<p>Чтобы понять как работает this, давайте рассмотрим такой метод <strong style="color: #002340;">value</strong>. Он позволяет брать значения внутри объектов. Например давайте рассмотрим на примере input поля:</p>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<input oninput="inputPole(this)">
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>JS код:</span>
+								<div class="jsgreyfone">
+									<xmp>
+function inputPole(event) {
+	console.log(event.value);
+}
+									</xmp>
+								</div>
+							</div><br>
+							<input oninput="inputPole(this)">
+							<div class="console">
+								<div style="padding-bottom: 5px;"><span>Консоль</span></div>
+								<div style="overflow: auto;">
+									<p class="oninputvalue"></p>
+								</div>
+							</div>
+							<script>
+								let inpval = document.querySelector(".oninputvalue");
+								function inputPole(event) {
+									inpval.innerHTML = event.value;
+								}
+							</script>
+							<p>Мы можем обращаться к атрибутам самого этого тега(не на примере input):</p>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div id="box" onmouseover="boxMouseOver(this)"></div>
+	<style>
+		#box {
+			width: 100px;
+			height: 100px;
+			background-color: #ae7db8;
+		}
+	</style>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>JS код:</span>
+								<div class="jsgreyfone">
+									<xmp>
+function boxMouseOver(el) {
+	console.log(el.id);
+}
+									</xmp>
+								</div>
+							</div><br>
+							<p>Чтобы протестировать пример ниже занова, перезагрузите страницу.</p><br>
+							<div id="box" onmouseover="boxMouseOver(this)"></div>
+							<style>
+								#box {
+									width: 100px;
+									height: 100px;
+									background-color: #4a69f7;
+								}
+							</style>
+							<div class="console">
+								<div style="padding-bottom: 5px;"><span>Консоль</span></div>
+								<div style="overflow: auto;">
+									<p class="onmouseid"></p>
+								</div>
+							</div>
+							<script>
+								let cnslMouseId = document.querySelector(".onmouseid");
+								function boxMouseOver(el) {
+									cnslMouseId.innerHTML = el.id;
+								}
+							</script>
+							<h3>Выбор объектов</h3>
+							<p>Выбор объектов это наверно самая часто используемая вещь в JavaScript. Ведь при помощи этого мы можем выбирать объекты HTML и уже работать с ними.</p><br>
+							<p>Чтобы реализовать это, нам надо обратиться к такому глобальному объекту document. После мы указываем через метод, к какому объекту в HTML мы хотим обратиться, к объекту с тегом, к объекту с идентификатором, к объектам с классом.</p><br>
+							<p>getElementById() - выбор объекта по идентификатору.</p><br>
+							<p>getElementsByClassName() - выбор всех объектов по определенным классам. Не забывайте что в названии метода не element, а elementS.</p><br>
+							<p>getElementsByTagName() - выбор всех объектов по тегам. Тоже не element, а elementS.</p><br>
+							<p>Внутри скобок мы пишем кавычки и уже пишем значения:</p>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div id="boxid"></div>
+	<div class="boxclass"></div>
+	<p>Я текст</p>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>JS код:</span>
+								<div class="jsgreyfone">
+									<xmp>
+document.getElementById("boxid"); // Не нужно писать в кавычках символ #
+document.getElementsByClassName("boxclass"); // Не нужно писать в кавычках точку
+document.getElementsByTagName("p");
+									</xmp>
+								</div>
+							</div><br>
+							<p>Будет лучше если мы запишем всё это в переменные:</p>
+							<div class="jsgreyfone">
+								<xmp>
+let ident = document.getElementById("boxid");
+let classes = document.getElementsByClassName("boxclass");
+let tags = document.getElementsByTagName("p");
+								</xmp>
+							</div><br><br>
+							<p>Или же можно выбирать объекты при помощи селекторов вот такими методами:</p><br>
+							<p>querySelector() - выбирает первый стоящий заданный объект.</p><br>
+							<p>querySelectorAll() - выбирает все объекты определенного типа.</p><br>
+							<p>Например давайте выбирем объект при помощи этих методов:</p>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div id="boxident"></div>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>JS код:</span>
+								<div class="jsgreyfone">
+									<xmp>
+let ident = document.querySelector("#boxident");
+									</xmp>
+								</div>
+							</div>
+							<br>
+							<p>Как мы уже говорили, querySelector выбирает первый стоящий заданный объект. Например:</p>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div class="boxclass"></div> <!-- querySelector выбрал первый стоящий объект -->
+	<div class="boxclass"></div>
+	<div class="boxclass"></div>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>JS код:</span>
+								<div class="jsgreyfone">
+									<xmp>
+let classes = document.querySelector(".boxclass");
+									</xmp>
+								</div>
+							</div>
+							<br>
+							<p>Давайте выберем все заданные классы при помощи querySelectorAll:</p>
+							<div class="jsgreyfone">
+								<xmp>
+let classes = document.querySelectorAll(".boxclass");
+								</xmp>
+							</div>
+							<br><br>
+							<p>После того как мы научились выбирать объекты на HTML странице, мы можем делать с ними всё что угодно. Сейчас мы рассмотрим что с ними можно делать:</p>
+							<br><br>
+							<h3>Метод innerHTML</h3>
+							<p>Метод innerHTML позволяет записать что-либо в объект(тег). Например:</p>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<p id="paragraph"></p>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>JS код:</span>
+								<div class="jsgreyfone">
+									<xmp>
+let prgh = document.getElementById("paragraph");
+prgh.innerHTML = "Привет!";
+									</xmp>
+								</div>
+							</div><br>
+							<p>Привет!</p>
+							<br><br>
+							<p>Если мы хотим добавить метод с коротким кодом, не создавая переменные, то можно прямиком прописать вот так: </p>
+							<div class="jsgreyfone">
+								<xmp>
+document.getElementById("paragraph").innerHTML = "Привет!";
+								</xmp>
+							</div><br>
+							<p>Также внутри метода innerHTML можно писать HTML теги. Они также будут работать:</p>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<p id="paragraph"></p>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>JS код:</span>
+								<div class="jsgreyfone">
+									<xmp>
+let prgh = document.querySelector("#paragraph");
+prgh.innerHTML = "Я <strong>жирный</strong>";
+									</xmp>
+								</div>
+							</div><br>
+							<p>Я <strong>жирный</strong></p>
+							<br>
+							<p>Можно написать значения разных переменных, параметров, атрибутов при разных обработчиках событии. Тут уже играет ваша фантазия и надобность. Пример 1:</p>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<input onclick="onInputPole()">
+	<p id="paragraph"></p>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>JS код:</span>
+								<div class="jsgreyfone">
+									<xmp>
+let prgh = document.querySelector("#paragraph");
+function onInputPole() {
+	prgh.innerHTML = "Введите что-то";
+}
+									</xmp>
+								</div>
+							</div><br>
+							<input onclick="onInputPole(this)">
+							<p id="paragraph1"></p>
+							<script>
+								let prgh = document.querySelector("#paragraph1");
+								function onInputPole(el) {
+									prgh.innerHTML = "Введите что-то";
+								}
+							</script>
+							<br>
+							<p>Пример 2:</p>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<input type="text" placeholder="Введите что-то" maxlength="20" id="inputtext">
+	<button onclick="btnClick()">Вывести</button>
+	<p id="hereistext"></p>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>JS код:</span>
+								<div class="jsgreyfone">
+									<xmp>
+let input = document.querySelector("#inputtext");
+let p = document.querySelector("#hereistext");
+function btnClick() {
+	p.innerHTML = input.value;
+	input.value = "";
+}
+									</xmp>
+								</div>
+							</div><br>
+							<input type="text" placeholder="Введите что-то" maxlength="20" id="inputtext">
+							<button onclick="btnClick()">Вывести</button>
+							<p id="hereistext"></p>
+							<script>
+								let input = document.querySelector("#inputtext");
+								let p = document.querySelector("#hereistext");
+								function btnClick() {
+									p.innerHTML = input.value;
+									input.value = "";
+								}
+							</script>
+							<br><br>
+							<h3>Изменение стилей</h3>
+							<p>При помощи JavaScript можно изменять стили к объектам в HTML. Для этого используется метод <strong style="color: #002340;">style</strong>. Этот метод позволяет изменить стили для объектов кроме текстов:</p>
+							<div class="jsgreyfone">
+								<xmp>
+object.style.свойство = "значение";
+								</xmp>
+							</div><br>
+							<span>Например:</span>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div id="box">
+		<p>Привет я текст!</p>
+	</div>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>JS код:</span>
+								<div class="jsgreyfone">
+									<xmp>
+document.querySelector("#box").style.background = "#4a69f7";
+									</xmp>
+								</div>
+							</div><br>
+							<div id="boxid2">
+								<p>Привет я текст!</p>
+							</div>
+							<script>
+								let divsimple = document.querySelector("#boxid2");
+								divsimple.style.background = "#4a69f7";
+							</script>
+							<br><br>
+							<p>Если мы пишем свойство у которого два слова в названии, то второе слово мы пишем с большой буквы:</p>
+							<div class="jsgreyfone">
+								<xmp>
+document.querySelector("#box").style.backgroundColor = "#4a69f7";
+// background-color --> backgroundColor
+								</xmp>
+							</div>
+							<br><br>
+							<p>Метод <strong style="color: #002340;">cssText</strong> позволяет изменить стиль текстам:</p>
+							<div class="jsgreyfone">
+								<xmp>
+object.style.cssText = "свойство: значение;";
+								</xmp>
+							</div><br>
+							<span>Например:</span>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<p id="prghstyle">Привет я текст!</p>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>JS код:</span>
+								<div class="jsgreyfone">
+									<xmp>
+document.querySelector("#prghstyle").style.cssText = "color: blue;";
+									</xmp>
+								</div>
+							</div><br>
+							<p id="prghstyle">Привет я текст!</p>
+							<script>
+								let prghText = document.querySelector("#prghstyle");
+								prghText.style.cssText = "color: blue";
+							</script>
+							<div class="fromlesson2nextback">
+								<a href="jslesson4.html"><div class="btnbackpage"><span>Предыдущее</span></div></a>
+								<a href="jslesson6.html"><div class="btnnextpage"><span>Следующее</span></div></a>
+							</div>
+						</div>
+						<aside>
+							<div class="asidedivfirst">
+								<a href="jslesson.html">
+									<div class="asidenav" title="Перейти к уроку 1">
+										<span>#1 - Что такое JavaScript | Переменные</span>
+									</div>
+								</a>
+								<a href="jslesson2.html">
+									<div class="asidenav" title="Перейти к уроку 2">
+										<span>#2 - Математические действия, Условные операторы</span>
+									</div>
+								</a>
+								<a href="jslesson3.html">
+									<div class="asidenav" title=" Перейти к уроку 3">
+										<span>#3 - Массивы, Циклы</span>
+									</div>
+								</a>
+								<a href="jslesson4.html">
+									<div class="asidenav" title="Перейти к уроку 4">
+										<span>#4 - Всплывающие окна, Функции</span>
+									</div>
+								</a>
+								<div style="background: #ebebeb;" class="asidenav" title="Урок 5">
+									<span style="font-weight: 500;">#5 - Обработчики события, this, Выбор объектов, Стили</span>
+								</div>
+								<a href="jslesson6.html">
+									<div class="asidenav" title="Перейти к уроку 6">
+										<span>#6 - Отслеживание объектов в JS, Формы, Таймеры, Интервалы</span>
+									</div>
+								</a>
+								<a href="jslesson7.html">
+									<div class="asidenav" title="Перейти к уроку 7">
+										<span>#7 - Скролл страницы, Работа с классами</span>
+									</div>
+								</a>
+								<a href="jslesson8.html">
+									<div class="asidenav" title="Перейти к уроку 8">
+										<span>#8 - Заключение</span>
+									</div>
+								</a>
+							</div>
+						</aside>
+					</div>
+				</div>
+			</section>
+			<!-- "Подвал" страницы -->
+			<footer class="footer">
+				<div class="container">
+					<div class="footerstyle">
+						<div class="footerfirstcolumn">
+							<a href="../index.html" class="footerbaseword" title="На главную страницу">ProgEasy</a>
+							<span class="footerafterbaseword">Обучение по</span><br><span class="footerafterbaseparagraph">программированию</span>
+						</div>
+						<ul class="footersecondcolumn">
+							<li class="footerlessons"><a href="../Lessons/lessons.html">Уроки</a></li>
+							<li class="footercontacts"><a href="../Contacts/contacts.html">Контакты</a></li>
+							<li class="footerabout"><a href="../Aboutus/aboutus.html">О создателе/сайте</a></li>
+						</ul>
+						<div class="footerthirdcolumn">
+							<div class="footerimages">
+								<div class="footerinstagram" title="Инстаграм" onclick="Insta()">
+									<img src="../images/instagram.png" alt="Instagram">
+								</div>
+								<div class="footervk"  title="Вк" onclick="Vk()">
+									<img src="../images/vk.png" alt="Vk">
+								</div>
+								<div class="footerwhatsapp" title="WhatsApp" onclick="WhatsApp()">
+									<img src="../images/whatsapp.png" alt="WhatsApp">
+								</div>
+							</div>
+							<div class="footeremailnumber">
+								<span class="footeremailnumbertexts">+7 (707) 200 35-83</span><br>
+								<span class="footeremailnumbertexts">Email: anuarzholdybaev2006@gmail.com</span>
+								<div class="footermadeby">
+									<span class="footermadebytext">© Created by Anuar Name ProgEasy, 2021</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<div class="windowfixed"></div>
+		</div>
+		<!-- Закончился wrapper -->
+		<script src="../HTML/jslesson.js"></script>
+	</body>
+</html>

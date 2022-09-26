@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="keywords" content="Программирование, сайт, HTML, CSS, JavaScript, бесплатное обучение, курсы программирования, бесплатные курсы по программированию, как создать сайт, Frontend, Frontend разработка, JavaScript урок, ProgEasy JavaScript урок 2">
+		<meta name="description" content="Урок №2 JavaScript от ProgEasy. Математические действия, Условные операторы. Бесплатное обучение Frontend разработке.">
+		<meta name="format-detection" content="telephone=no">
+		<title>Урок 2 JS</title>
+		<link rel="shortcut icon" href="../images/iconweb.png" type="image/png">
+		<link href="cssofjslesson2.css" rel="stylesheet" type="text/css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<!-- Yandex.Metrika counter -->
+		<script type="text/javascript" >
+			(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+			m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+			(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+			ym(84034504, "init", {
+				clickmap:true,
+				trackLinks:true,
+				accurateTrackBounce:true,
+				webvisor:true
+			});
+		</script>
+		<noscript><div><img src="https://mc.yandex.ru/watch/84034504" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+		<!-- /Yandex.Metrika counter -->
+	</head>
+	<body>
+		<div class="wrapper">
+			<!-- header -->
+			<header class="header">
+				<div class="container">
+					<div class="headersectionstyles">
+						<div class="Basenameheader"><a href="../index.html" class="tothemainpage" title="На главную страницу">ProgEasy</a></div>
+						<div class="burger">
+							<span></span>
+						</div>
+						<div class="Baseultexts">
+							<span><a class="Basenav" href="../HTML/htmllesson.html" title="Перейти к HTML">HTML</a></span>
+							<span><a class="Basenav" href="../CSS/csslesson.html" title="Перейти к CSS">CSS</a></span>
+							<span class="Basenav" title="Вы на этой странице">JavaScript</span>
+							<span><a class="Basenav" href="../Contacts/contacts.html" title="Контакты">Контакты</a></span>
+							<span><a class="Basenav" href="../Aboutus/aboutus.html" title="О нас">О сайте</a></span>
+						</div>
+						<div class="Basenametitle">
+							<p class="headertitle">Понятные объяснения</p>
+						</div>
+					</div>
+				</div>
+			</header>
+			<!-- Закончился header -->
+			<section class="sectionhtml">
+				<div class="container">
+					<div class="Firstbasetextdiv">
+						<h1>Урок 2 JavaScript</h1>
+					</div>
+					<div class="sectionstyles2">
+						<div class="htmlexplalltextdiv">
+							<h2>Математические действия, Условные операторы</h2>
+							<br>
+							<p>В JavaScript можно создать целый калькулятор. Но пока давайте рассмотрим базовые математические действия:</p><br>
+							<h3>Сложение, вычитание, умножение, деление, остаток при делении</h3>
+							<p>Сложение - +</p><br>
+							<p>Вычитание - -(минус)</p><br>
+							<p>Умножение - *</p><br>
+							<p>Деление - /</p><br>
+							<p>Остаток при делении - %</p><br>
+							<p>Можно записать в переменную все эти действия, например:</p>
+							<div class="attention">
+								<br>
+								<p>Если код не виден, вы можете <span style="color: #68d66e;">скролить</span> серый блок с кодом.</p>
+								<br>
+							</div>
+							<div class="jsgreyfone">
+								<xmp>
+let number = 5 + 5;
+console.log(number);
+								</xmp>
+							</div>
+							<div class="console">
+								<div style="padding-bottom: 5px;"><span>Консоль</span></div>
+								<div style="overflow: auto;">
+									<p style="font-weight: 300; color: blue; font-size: 16px;">10</p>
+								</div>
+							</div>
+							<p>Можно записать числа в переменные, и уже потом делать математические операции:</p>
+							<div class="jsgreyfone">
+								<xmp>
+let number1 = 63;
+let number2 = 7;
+console.log(number1 / number2);
+								</xmp>
+							</div>
+							<div class="console">
+								<div style="padding-bottom: 5px;"><span>Консоль</span></div>
+								<div style="overflow: auto;">
+									<p style="font-weight: 300; color: blue; font-size: 16px;">9</p>
+								</div>
+							</div>
+							<p>Если мы хотим изменить значение числа у переменной, можно прописать так:</p>
+							<div class="jsgreyfone">
+								<xmp>
+let number1 = 22;
+number1 = number1 / 2;
+console.log(number1);
+								</xmp>
+							</div>
+							<div class="console">
+								<div style="padding-bottom: 5px;"><span>Консоль</span></div>
+								<div style="overflow: auto;">
+									<p style="font-weight: 300; color: blue; font-size: 16px;">11</p>
+								</div>
+							</div>
+							<p>Или можно поступить еще легче и просто добавить знак сложение, вычитание и т.д. перед знаком равно(=). Выглядит все следующим образом:</p>
+							<div class="jsgreyfone">
+								<xmp>
+let number1 = 22;
+number1 /= 2;
+console.log(number1);
+								</xmp>
+							</div>
+							<div class="console">
+								<div style="padding-bottom: 5px;"><span>Консоль</span></div>
+								<div style="overflow: auto;">
+									<p style="font-weight: 300; color: blue; font-size: 16px;">11</p>
+								</div>
+							</div>
+							<p>Если мы хотим добавить или отнять единицу, то можно прописать два знака + или - после переменной. Вот так:</p>
+							<div class="jsgreyfone">
+								<xmp>
+let number1 = 22;
+number1++; // Добавили единицу к 22
+console.log(number1);
+
+let number2 = 43;
+number2--; // Отняли единицу от 43
+console.log(number2);
+								</xmp>
+							</div>
+							<div class="console">
+								<div style="padding-bottom: 5px;"><span>Консоль</span></div>
+								<div style="overflow: auto;">
+									<p style="font-weight: 300; color: blue; font-size: 16px;">23</p>
+									<p style="font-weight: 300; color: blue; font-size: 16px;">42</p>
+								</div>
+							</div>
+							<p>Давайте выведем математическую операцию в консоль с текстом:</p>
+							<div class="jsgreyfone">
+								<xmp>
+let number1 = 45;
+let number2 = 23;
+console.log("Вычитание: " + number1 - number2);
+								</xmp>
+							</div>
+							<p>Если мы попробуем ввести это и обновить страницу, вы увидите странное слово NaN. Оно значит, что число не определено. Потому что мы написали строку, потом добавили ему число, потом отняли число, и браузер не понимает что происходит в этом участке кода. Поэтому чтобы это исправить, нужно добавить скобки:</p>
+							<div class="jsgreyfone">
+								<xmp>
+let number1 = 45;
+let number2 = 23;
+console.log("Вычитание: " + (number1 - number2));
+								</xmp>
+							</div><br>
+							<p>То есть сперва выполнится то что в скобках, а уже потом то что снаружи.</p>
+							<p>Или же можно вместо скобок добавить запятую:</p>
+							<div class="jsgreyfone">
+								<xmp>
+let number1 = 45;
+let number2 = 23;
+console.log("Вычитание:", number1 - number2);
+								</xmp>
+							</div>
+							<div class="console">
+								<div style="padding-bottom: 5px;"><span>Консоль</span></div>
+								<div style="overflow: auto;">
+									<p>Вычитание: <span style="font-weight: 300; color: blue; font-size: 16px;">22</span></p>
+								</div>
+							</div>
+							<p>Так наверно даже лучше, ибо число 22 не строка. Об этом прочитайте в примечании:</p>
+							<div class="divfact">
+								<div style="display: flex;">
+									<div class="factscircle">i</div>
+									<h4 class="factsquestion">Примечание</h4>
+								</div>
+								<p class="factstext">Когда мы объединяем например строку и число, то число преобразуется в строку. Все строки объединяются с друг-другом.</p>
+							</div>
+							<p>Пример с объединением строк:</p>
+							<div class="jsgreyfone">
+								<xmp>
+let numstr1 = "5";
+let numstr2 = "5";
+console.log(numstr1 + numstr2);
+								</xmp>
+							</div>
+							<div class="console">
+								<div style="padding-bottom: 5px;"><span>Консоль</span></div>
+								<div style="overflow: auto;">
+									<p>55</p>
+								</div>
+							</div>
+							<p>Чтобы это исправить, надо добавить объект Number(). Оно превращает строку в число. Вот:</p>
+							<div class="jsgreyfone">
+								<xmp>
+let numstr1 = Number("5");
+let numstr2 = Number("5");
+console.log(numstr1 + numstr2);
+								</xmp>
+							</div>
+							<div class="console">
+								<div style="padding-bottom: 5px;"><span>Консоль</span></div>
+								<div style="overflow: auto;">
+									<p style="font-weight: 300; color: blue; font-size: 16px;">10</p>
+								</div>
+							</div>
+							<h3>Объект Math</h3>
+							<p>Встроенный объект Math определяет свойства и методы для работы с математическими константами и функциями. С помощью него мы может высчитывать синусы, косинусы углов, находить значения числа пи, e и т.д.</p><br>
+							<span>Например давайте выведем число пи и e:</span>
+							<div class="jsgreyfone">
+								<xmp>
+console.log("Число пи: " + Math.PI);
+console.log("Число e: " + Math.E);
+								</xmp>
+							</div>
+							<div class="console">
+								<div style="padding-bottom: 5px;"><span>Консоль</span></div>
+								<div style="overflow: auto;">
+									<p>Число пи: 3.141592653589793</p>
+									<p>Число e: 2.718281828459045</p>
+								</div>
+							</div><br>
+							<p>Можно писать тригонометрию из 9-го класса такие как нахождение синус, косинус, тангенс, котангенс угла(в радианах) и т.д. Вот:</p>
+							<div class="jsgreyfone">
+								<xmp>
+console.log("Синус 90 градусов: " + Math.sin(90) + " радиан");
+								</xmp>
+							</div>
+							<div class="console">
+								<div style="padding-bottom: 5px;"><span>Консоль</span></div>
+								<div style="overflow: auto;">
+									<p>Синус 90 градусов: 0.8939966636005579 радиан</p>
+								</div>
+							</div>
+							<p>Также у него есть куча методов но мы рассмотрим только два, это методы max() и min().</p><br>
+							<p>Метод max() позволяет определить самое большое число из списка. Например:</p>
+							<div class="jsgreyfone">
+								<xmp>
+console.log("Самое большое число: " + Math.max(6, 1, 9, 0, 30, 41, 12));
+								</xmp>
+							</div>
+							<div class="console">
+								<div style="padding-bottom: 5px;"><span>Консоль</span></div>
+								<div style="overflow: auto;">
+									<p>Самое большое число: 41</p>
+								</div>
+							</div>
+							<p>А метод min() позволяет определить самое маленькое число из списка. Например:</p>
+							<div class="jsgreyfone">
+								<xmp>
+console.log("Самое минимальное число: " + Math.min(6, 1, 9, 0, 30, 41, 12));
+								</xmp>
+							</div>
+							<div class="console">
+								<div style="padding-bottom: 5px;"><span>Консоль</span></div>
+								<div style="overflow: auto;">
+									<p>Самое минимальное число: 0</p>
+								</div>
+							</div>
+							<h3>Условные операторы</h3>
+							<br>
+							<h4>Операторы if, else</h4>
+							<p>Условные операторы делают проверки разных условий и уже потом выполняют определенные действия. Есть операторы if, else if, else. Структура выглядит вот так:</p>
+							<div class="jsgreyfone">
+								<xmp>
+if(Условие) {
+	...
+} else if(Дополнительное условие) {
+	...
+} else { // else это в крайнем случае
+	...
+}
+								</xmp>
+							</div>
+							<p>Внутри круглых скобок if мы пишем условие, если оно не верное, его действие внутри фигурных скобок не выполнится и будет проверяться следующее условие в else if. Оператор else срабатывает в любом случае, если предыдущии операторы были неверны. Если бы предыдущие операторы были бы верными, то оператор else был бы просто проигнорирован. if и else if это соответственно проверки и дополнительные проверки, а else это не проверка а действие в крайнем случае. Оператор else не обязателен.</p><br>
+							<p>Операторы сравнения:</p>
+							<p>Равно - ==</p>
+							<p>Равно(с учетом тип данных) - ===</p>
+							<p>Больше - ></p>
+							<p>Меньше - <</p>
+							<p>Больше или равно - >=</p>
+							<p>Меньше или равно - <=</p>
+							<p>Не равно - !=</p><br>
+							<p>Давайте пропишем условия:</p>
+							<div class="jsgreyfone">
+								<xmp>
+let num = 56;
+if(num != 10) {
+	let num2 = "56 не равен 10"
+	console.log(num2);
+}
+else if(num === 60)
+	console.log(56 + " равен " + 60);
+else
+	console.log("Ни одно условие не удовлетворено");
+								</xmp>
+							</div>
+							<div class="console">
+								<div style="padding-bottom: 5px;"><span>Консоль</span></div>
+								<div style="overflow: auto;">
+									<p>56 больше чем 10</p>
+								</div>
+							</div>
+							<p>Если у нас одна строчка кода в условии, можно не прописывать фигурные скобки {}, а если несколько, то фигурные скобки обязательны.</p><br>
+							<p>Если мы хотим проверить переменную на правдивость(на значение true), то можно просто написать само название переменной в условие.</p>
+							<div class="jsgreyfone">
+								<xmp>
+let bool = true;
+if(bool) {
+	console.log("Это правда");
+}
+								</xmp>
+							</div>
+							<div class="console">
+								<div style="padding-bottom: 5px;"><span>Консоль</span></div>
+								<div style="overflow: auto;">
+									<p>Это правда</p>
+								</div>
+							</div>
+							<p>Если мы хотим проверить переменную на false, то можно перед названием переменной поставить восклицательный знак !.</p>
+							переменной в условие.</p>
+							<div class="jsgreyfone">
+								<xmp>
+let bool = false;
+if(!bool) {
+	console.log("Это действительно ложь");
+}
+								</xmp>
+							</div>
+							<div class="console">
+								<div style="padding-bottom: 5px;"><span>Консоль</span></div>
+								<div style="overflow: auto;">
+									<p>Это действительно ложь</p>
+								</div>
+							</div>
+							<p>Можно проверить несколько условии словами И/ИЛИ.</p><br>
+							<p>И - &&</p><br>
+							<p>ИЛИ - ||</p><br>
+							<span>Например:</span>
+							<div class="jsgreyfone">
+								<xmp>
+let num = 10;
+if(num != 10 || num >= 11) {	// Если первое ИЛИ второе условие будет верным
+	console.log("Не 10 и больше или равен 11");
+} else if(num === 10 && num < 11) { // Если первое И второе условие будет верным
+	console.log("Равно 10-ти и меньше 11-ти");
+} else {
+	console.log("Err");
+}
+								</xmp>
+							</div>
+							<div class="console">
+								<div style="padding-bottom: 5px;"><span>Консоль</span></div>
+								<div style="overflow: auto;">
+									<p>Равно 10-ти и меньше 11-ти</p>
+								</div>
+							</div>
+							<h4>Оператор switch</h4>
+							<p>Оператор switch проверяет равны ли значения случаям, а уже потом выполняет действия.</p><br>
+							<p>Сами случаи это слово case. Можно писать несколько case. Структура проверки значений выглядит вот так:</p>
+							<div class="jsgreyfone">
+								<xmp>
+switch(Какую переменную будем проверять) {
+	case проверка на значение:
+		Действия;
+		break;
+	default:
+		...;
+		// break
+}
+								</xmp>
+							</div>
+							<p>Рядом с case мы пишем значение без скобок которое хотим проверить на равность. Слово break это закрывающий элемент который обязательно нужно писать в конце case.</p><br>
+							<p>default это аналогия с else. Если все предыдущие проверки не были верны, срабатывает действие в default. Для default слово break не обязательное, можно прописывать, можно нет.</p><br>
+							<span>Давайте напишем пример:</span>
+							<div class="jsgreyfone">
+								<xmp>
+let str = "Hello";
+switch(str) {
+	case "World":
+		console.log("Это слово World");
+		break;
+	case 10:
+		console.log("Это число 10");
+		break;
+	case "Hello":
+		console.log("Это слово Hello");
+		break;
+	default:
+		console.log("Err");
+}
+								</xmp>
+							</div>
+							<div class="console">
+								<div style="padding-bottom: 5px;"><span>Консоль</span></div>
+								<div style="overflow: auto;">
+									<p>Это слово Hello</p>
+								</div>
+							</div>
+							<div class="fromlesson2nextback">
+								<a href="jslesson.html"><div class="btnbackpage"><span>Предыдущее</span></div></a>
+								<a href="jslesson3.html"><div class="btnnextpage"><span>Следующее</span></div></a>
+							</div>
+						</div>
+						<aside>
+							<div class="asidedivfirst">
+								<a href="jslesson.html">
+									<div class="asidenav" title="Перейти к уроку 1">
+										<span>#1 - Что такое JavaScript | Переменные</span>
+									</div>
+								</a>
+								<div style="background: #ebebeb;" class="asidenav" title="Урок 2">
+									<span style="font-weight: 500;">#2 - Математические действия, Условные операторы</span>
+								</div>
+								<a href="jslesson3.html">
+									<div class="asidenav" title="Перейти к уроку 3">
+										<span>#3 - Массивы, Циклы</span>
+									</div>
+								</a>
+								<a href="jslesson4.html">
+									<div class="asidenav" title="Перейти к уроку 4">
+										<span>#4 - Всплывающие окна, Функции</span>
+									</div>
+								</a>
+								<a href="jslesson5.html">
+									<div class="asidenav" title="Перейти к уроку 5">
+										<span>#5 - Обработчики события, this, Выбор объектов, Стили</span>
+									</div>
+								</a>
+								<a href="jslesson6.html">
+									<div class="asidenav" title="Перейти к уроку 6">
+										<span>#6 - Отслеживание объектов в JS, Формы, Таймеры, Интервалы</span>
+									</div>
+								</a>
+								<a href="jslesson7.html">
+									<div class="asidenav" title="Перейти к уроку 7">
+										<span>#7 - Скролл страницы, Работа с классами</span>
+									</div>
+								</a>
+								<a href="jslesson8.html">
+									<div class="asidenav" title="Перейти к уроку 8">
+										<span>#8 - Заключение</span>
+									</div>
+								</a>
+							</div>
+						</aside>
+					</div>
+				</div>
+			</section>
+			<!-- "Подвал" страницы -->
+			<footer class="footer">
+				<div class="container">
+					<div class="footerstyle">
+						<div class="footerfirstcolumn">
+							<a href="../index.html" class="footerbaseword" title="На главную страницу">ProgEasy</a>
+							<span class="footerafterbaseword">Обучение по</span><br><span class="footerafterbaseparagraph">программированию</span>
+						</div>
+						<ul class="footersecondcolumn">
+							<li class="footerlessons"><a href="../Lessons/lessons.html">Уроки</a></li>
+							<li class="footercontacts"><a href="../Contacts/contacts.html">Контакты</a></li>
+							<li class="footerabout"><a href="../Aboutus/aboutus.html">О создателе/сайте</a></li>
+						</ul>
+						<div class="footerthirdcolumn">
+							<div class="footerimages">
+								<div class="footerinstagram" title="Инстаграм" onclick="Insta()">
+									<img src="../images/instagram.png" alt="Instagram">
+								</div>
+								<div class="footervk"  title="Вк" onclick="Vk()">
+									<img src="../images/vk.png" alt="Vk">
+								</div>
+								<div class="footerwhatsapp" title="WhatsApp" onclick="WhatsApp()">
+									<img src="../images/whatsapp.png" alt="WhatsApp">
+								</div>
+							</div>
+							<div class="footeremailnumber">
+								<span class="footeremailnumbertexts">+7 (707) 200 35-83</span><br>
+								<span class="footeremailnumbertexts">Email: anuarzholdybaev2006@gmail.com</span>
+								<div class="footermadeby">
+									<span class="footermadebytext">© Created by Anuar Name ProgEasy, 2021</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<div class="windowfixed"></div>
+		</div>
+		<!-- Закончился wrapper -->
+		<script src="../HTML/jslesson.js"></script>
+	</body>
+</html>

@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="keywords" content="Программирование, сайт, HTML, CSS, JavaScript, бесплатное обучение, курсы программирования, бесплатные курсы по программированию, как создать сайт, Frontend, Frontend разработка, CSS урок, ProgEasy CSS урок 7">
+		<meta name="description" content="Урок №7 CSS от ProgEasy. Flexbox, флекс элементы. Бесплатное обучение Frontend разработке.">
+		<meta name="format-detection" content="telephone=no">
+		<title>Урок 7 CSS</title>
+		<link rel="shortcut icon" href="../images/iconweb.png" type="image/png">
+		<link href="cssofcsslesson7.css" rel="stylesheet" type="text/css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<!-- Yandex.Metrika counter -->
+		<script type="text/javascript" >
+			(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+			m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+			(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+			ym(84034504, "init", {
+				clickmap:true,
+				trackLinks:true,
+				accurateTrackBounce:true,
+				webvisor:true
+			});
+		</script>
+		<noscript><div><img src="https://mc.yandex.ru/watch/84034504" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+		<!-- /Yandex.Metrika counter -->
+	</head>
+	<body>
+		<div class="wrapper">
+			<!-- header -->
+			<header class="header">
+				<div class="container">
+					<div class="headersectionstyles">
+						<div class="Basenameheader"><a href="../index.html" class="tothemainpage" title="На главную страницу">ProgEasy</a></div>
+						<div class="burger">
+							<span></span>
+						</div>
+						<div class="Baseultexts">
+							<span><a class="Basenav" href="../HTML/htmllesson.html" title="Перейти к HTML">HTML</a></span>
+							<span class="Basenav" title="Вы на этой странице">CSS</span>
+							<span><a class="Basenav" href="../JS/jslesson.html" title="Перейти к JS">JavaScript</a></span>
+							<span><a class="Basenav" href="../Contacts/contacts.html" title="Контакты">Контакты</a></span>
+							<span><a class="Basenav" href="../Aboutus/aboutus.html" title="О нас">О сайте</a></span>
+						</div>
+						<div class="Basenametitle">
+							<p class="headertitle">Понятные объяснения</p>
+						</div>
+					</div>
+				</div>
+			</header>
+			<!-- Закончился header -->
+			<section class="sectionhtml">
+				<div class="container">
+					<div class="Firstbasetextdiv">
+						<h1>Урок 7 CSS</h1>
+					</div>
+					<div class="sectionstyles2">
+						<div class="htmlexplalltextdiv">
+							<h2>Flexbox | Флекс элементы</h2>
+							<br>
+							<h3>Что такое Flexbox?</h3>
+							<p>Flexbox - это спецификация CSS в котором куча свойств позволяющие упростить некоторые задачи и проблемы при верстке сайта. Оно позволяет контролировать размер элементов, порядок и выравнивание элементов по вертикали и горизонтали, управлять свободным местом между элементами и т.п. Давайте рассмотрим его свойства.</p>
+							<br><br>
+							<h3>display: flex;</h3>
+							<p>Чтобы работать с Flexbox'ом, нужно сделать Flex-контейнер. Для этого нужно написать свойство display со значением flex. Такие элементы называются флексами. Оно выравнивает элементы по горизонтали:</p>
+							<div class="attention">
+								<br>
+								<p>Если код не виден, вы можете <span style="color: #68d66e;">скролить</span> серый блок с кодом.</p>
+								<br>
+							</div>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div style="display: flex;">
+		<div class="divs"></div>
+		<div class="divs"></div>
+		<div class="divs"></div>
+	</div>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+.divs {
+	width: 33.333%;
+	height: 150px;
+	border: 1px solid grey;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<div style="display: flex;">
+								<div class="divs"></div>
+								<div class="divs"></div>
+								<div class="divs"></div>
+							</div>
+							<style>
+								.divs {
+									width: 33.333%;
+									height: 150px;
+									border: 1px solid grey;
+								}
+							</style>
+							<br><br>
+							<h3>Свойство flex-direction</h3>
+							<p>Свойство flex-direction задает выравнивание элементов по горизонтали и вертикали. Свойство не наследуется. Применяется к Flex-контейнеру. Есть значения как:</p><br>
+							<p>column - элементы распологаются вертикально и направленs сверху вниз.</p><br>
+							<p>column-reverse - элементы распологаются вертикально и напрпавленs снизу вверх.</p><br>
+							<p>row - элементы распологаются горизонтально и направлены слева направо. Значение по умолчанию.</p><br>
+							<p>row-reverse - элементы распологаются горизонтально и направлены справа налево.</p>
+							<br>
+							<span>Например:</span>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div class="mainblock">
+		<div>Я первый блок</div>
+		<div>Я второй блок</div>
+		<div>Я третий блок</div>
+	</div>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+.mainblock {
+	display: flex;
+	flex-direction: row-reverse;
+}
+.mainblock div {
+	width: 33.333%;
+	height: 150px;
+	border: 1px solid grey;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<div class="mainblock">
+								<div>Я первый блок</div>
+								<div>Я второй блок</div>
+								<div>Я третий блок</div>
+							</div>
+							<style>
+								.mainblock {
+									display: flex;
+									flex-direction: row-reverse;
+								}
+								.mainblock div {
+									width: 33.333%;
+									height: 150px;
+									border: 1px solid grey;
+								}
+							</style>
+							<br><br>
+							<h3>Свойство flex-basis</h3>
+							<p>Свойство flex-basis определяет начальные размеры флекса. Похоже на свойство width. Лучше вместо него использовать flex-basis. Свойство не наслудется. Применяется к флекс элементам.</p>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div class="mainblock">
+		<div>Я первый блок</div>
+		<div>Я второй блок</div>
+		<div>Я третий блок</div>
+	</div>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+.mainblock {
+	display: flex;
+	flex-direction: row-reverse;
+}
+.mainblock div {
+	flex-basis: 33.333%;
+	height: 150px;
+	border: 1px solid grey;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<div class="mainblock1">
+								<div>Я первый блок</div>
+								<div>Я второй блок</div>
+								<div>Я третий блок</div>
+							</div>
+							<style>
+								.mainblock1 {
+									display: flex;
+									flex-direction: row-reverse;
+								}
+								.mainblock1 div {
+									flex-basis: 33.333%;
+									height: 150px;
+									border: 1px solid grey;
+								}
+							</style>
+							<br><br>
+							<h3>Свойство flex</h3>
+							<p>Свойство flex позволяет сделать флексы по ширине больше или меньше остальных относительно их Flex-контейнера. Значениями же принимаются натуральные числа. Чем больше число, тем флекс больше по ширине остальных. Если одному флексу задать свойство flex, то чтобы оно работало, надо остальным флексам задать это свойство. Свойство не наследуется. Применяется к флекс элементам.</p><br>
+							<span>Например:</span>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div class="mainblock">
+		<div>Я первый блок</div>
+		<div>Я второй блок</div>
+		<div>Я третий блок</div>
+	</div>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+.mainblock {
+	display: flex;
+	flex-direction: row-reverse;
+}
+.mainblock div {
+	flex-basis: 33.333%;
+	height: 150px;
+	border: 1px solid grey;
+}
+.mainblock div:nth-child(1) {
+	flex: 2;
+}
+.mainblock div:nth-child(2) {
+	flex: 1;
+}
+.mainblock div:nth-child(3) {
+	flex: 1;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<div class="mainblock2">
+								<div>Я первый блок</div>
+								<div>Я второй блок</div>
+								<div>Я третий блок</div>
+							</div>
+							<style>
+								.mainblock2 {
+									display: flex;
+									flex-direction: row-reverse;
+								}
+								.mainblock2 div {
+									flex-basis: 33.333%;
+									height: 150px;
+									border: 1px solid grey;
+								}
+								.mainblock2 div:nth-child(1) {
+									flex: 2;
+								}
+								.mainblock2 div:nth-child(2) {
+									flex: 1;
+								}
+								.mainblock2 div:nth-child(3) {
+									flex: 1;
+								}
+							</style>
+							<br><br>
+							<h3>Свойство order</h3>
+							<p>Свойство order позволяет изменить порядок флексов относительно их Flex-контейнера. Точно так же как свойство flex, значениями принимаются натуральные числа. Чем больше число, тем ближе оно расположено в конце. Если одному флексу задать свойство order, то чтобы оно работало, надо остальным флексам задать это свойство. Свойство не наследуется. Применяется к флекс элементам.</p><br>
+							<span>Например давайте чтобы это увидеть наглядно, уберем свойство flex-direction:</span>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div class="mainblock">
+		<div>Я первый блок</div>
+		<div>Я второй блок</div>
+		<div>Я третий блок</div>
+	</div>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+.mainblock {
+	display: flex;
+}
+.mainblock div {
+	flex-basis: 33.333%;
+	height: 150px;
+	border: 1px solid grey;
+}
+.mainblock div:nth-child(1) {
+	flex: 2;
+	order: 2;
+}
+.mainblock div:nth-child(2) {
+	flex: 1;
+	order: 3;
+}
+.mainblock div:nth-child(3) {
+	flex: 1;
+	order: 1;
+}									</xmp>
+								</div>
+							</div><br>
+							<div class="mainblock3">
+								<div>Я первый блок</div>
+								<div>Я второй блок</div>
+								<div>Я третий блок</div>
+							</div>
+							<style>
+								.mainblock3 {
+									display: flex;
+								}
+								.mainblock3 div {
+									flex-basis: 33.333%;
+									height: 150px;
+									border: 1px solid grey;
+								}
+								.mainblock3 div:nth-child(1) {
+									flex: 2;
+									order: 2;
+								}
+								.mainblock3 div:nth-child(2) {
+									flex: 1;
+									order: 3;
+								}
+								.mainblock3 div:nth-child(3) {
+									flex: 1;
+									order: 1;
+								}
+							</style>
+							<br><br>
+							<h3>Свойство align-items</h3>
+							<p>Свойство align-items позволяет сделать соответствующую высоту для блоков(убрать пустое пространство) и расположить их по вертикали в центр, вверх, вниз относительно боковых элементов. Свойство не наследуется. Применяется к Flex-контейнеру. Есть значения как:</p><br>
+							<p>flex-start - расположить флексы по вертикали в самый верх относительно самого большого элемента.</p><br>
+							<p>center - расположить флексы по вертикали в центр относительно всех элементов.</p><br>
+							<p>flex-end - расположить флексы по вертикали в самый низ относительно самого большого элемента.</p><br>
+							<p>stretch - значение по умолчанию.</p><br>
+							<p>Например:</p>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div class="mainblock">
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+.mainblock {
+	display: flex;
+	align-items: center;
+}
+.mainblock div {
+	width: 33.333%;
+	border: 2px solid grey;
+}
+.mainblock div:nth-child(1) {
+	height: 50px;
+}
+.mainblock div:nth-child(2) {
+	height: 100px;
+}
+.mainblock div:nth-child(3) {
+	height: 150px;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<div class="mainblock4">
+								<div></div>
+								<div></div>
+								<div></div>
+							</div>
+							<style>
+								.mainblock4 {
+									display: flex;
+									align-items: center;
+								}
+								.mainblock4 div {
+									width: 33.333%;
+									border: 2px solid grey;
+								}
+								.mainblock4 div:nth-child(1) {
+									height: 50px;
+								}
+								.mainblock4 div:nth-child(2) {
+									height: 100px;
+								}
+								.mainblock4 div:nth-child(3) {
+									height: 150px;
+								}
+							</style>
+							<br><br>
+							<h3>Свойство justify-content</h3>
+							<p>Свойство justify-content позволяет изменить положение флексов в ряду. Свойство не наследуется. Применяется к Flex-контейнеру. Есть значения как:</p><br>
+							<p>flex-start - флексы прижаты слева.</p><br>
+							<p>flex-end - флексы прижаты справа.</p><br>
+							<p>center - флексы по центру.</p><br>
+							<p>space-around - между флексов одинаковое расстояние.</p><br>
+							<p>space-between - флексы прижаты к левым и правым краям, между ними одинаковое расстояние.</p><br>
+							<span>Например:</span>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div class="mainblock">
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+.mainblock {
+	display: flex;
+	align-items: center;
+	justify-content: space-around
+}
+.mainblock div {
+	width: 20%;
+	border: 2px solid grey;
+}
+.mainblock div:nth-child(1) {
+	height: 50px;
+}
+.mainblock div:nth-child(2) {
+	height: 100px;
+}
+.mainblock div:nth-child(3) {
+	height: 150px;
+}
+									</xmp>
+								</div>
+							</div><br>
+							<div class="mainblock5">
+								<div></div>
+								<div></div>
+								<div></div>
+							</div>
+							<style>
+								.mainblock5 {
+									display: flex;
+									align-items: center;
+									justify-content: space-around;
+								}
+								.mainblock5 div {
+									width: 20%;
+									border: 2px solid grey;
+								}
+								.mainblock5 div:nth-child(1) {
+									height: 50px;
+								}
+								.mainblock5 div:nth-child(2) {
+									height: 100px;
+								}
+								.mainblock5 div:nth-child(3) {
+									height: 150px;
+								}
+							</style>
+							<br><br>
+							<h3>Свойство flex-wrap</h3>
+							<p>Свойство flex-wrap позволяет переместить флекс в нижний ряд при масштабировании. Свойство не наследуется. Применяется к Flex-контейнеру. Есть значения как:</p><br>
+							<p>nowrap - флексы выстраиваются в одну линию. Это значение по умолчанию.</p><br>
+							<p>wrap - флексы по правой стороне перемещаются в нижний ряд при масштабировании.</p><br>
+							<p>wrap-revese - флексы по левой стороне перемещаются в нижний ряд при масштабировании.</p>
+							<div class="fromlesson2nextback">
+								<a href="csslesson6.html"><div class="btnbackpage"><span>Предыдущее</span></div></a>
+								<a href="csslesson8.html"><div class="btnnextpage"><span>Следующее</span></div></a>
+							</div>
+						</div>
+						<aside>
+							<div class="asidedivfirst">
+								<a href="csslesson.html">
+									<div class="asidenav" title="Перейти к уроку 1">
+										<span>#1 - Что такое CSS | Селектор, свойства, значения | Текст</span>
+									</div>
+								</a>
+								<a href="csslesson2.html">
+									<div class="asidenav" title="Перейти к уроку 2">
+										<span>#2 - Свойства текстов</span>
+									</div>
+								</a>
+								<a href="csslesson3.html">
+									<div class="asidenav" title="Перейти к уроку 3">
+										<span>#3 - Ширина, высота, фон</span>
+									</div>
+								</a>
+								<a href="csslesson4.html">
+									<div class="asidenav" title="Перейти к уроку 4">
+										<span>#4 - Стили для блоков</span>
+									</div>
+								</a>
+								<a href="/csslesson5.html">
+									<div class="asidenav" title="Перейти к уроку 5">
+										<span>#5 - Стили для блоков 2</span>
+									</div>
+								</a>
+								<a href="csslesson6.html">
+									<div class="asidenav" title="Перейти к уроку 6">
+										<span>#6 - Псевдоклассы, псевдоэлементы</span>
+									</div>
+								</a>
+								<div style="background: #ebebeb;" class="asidenav" title="Урок 7">
+									<span style="font-weight: 500;">#7 - Flexbox | Флекс элементы</span>
+								</div>
+								<a href="csslesson8.html">
+									<div class="asidenav" title="Перейти к уроку 8">
+										<span>#8 - Префиксы, тени, эффект перехода, состояния элемента</span>
+									</div>
+								</a>
+								<a href="csslesson9.html">
+									<div class="asidenav" title="Перейти к уроку 9">
+										<span>#9 - Ключевые кадры, анимация, доп. материал</span>
+									</div>
+								</a>
+								<a href="csslesson10.html">
+									<div class="asidenav" title="Перейти к уроку 10">
+										<span>#10 - Заключение</span>
+									</div>
+								</a>
+							</div>
+						</aside>
+					</div>
+				</div>
+			</section>
+			<!-- "Подвал" страницы -->
+			<footer class="footer">
+				<div class="container">
+					<div class="footerstyle">
+						<div class="footerfirstcolumn">
+							<a href="../index.html" class="footerbaseword" title="На главную страницу">ProgEasy</a>
+							<span class="footerafterbaseword">Обучение по</span><br><span class="footerafterbaseparagraph">программированию</span>
+						</div>
+						<ul class="footersecondcolumn">
+							<li class="footerlessons"><a href="../Lessons/lessons.html">Уроки</a></li>
+							<li class="footercontacts"><a href="../Contacts/contacts.html">Контакты</a></li>
+							<li class="footerabout"><a href="../Aboutus/aboutus.html">О создателе/сайте</a></li>
+						</ul>
+						<div class="footerthirdcolumn">
+							<div class="footerimages">
+								<div class="footerinstagram" title="Инстаграм" onclick="Insta()">
+									<img src="../images/instagram.png" alt="Instagram">
+								</div>
+								<div class="footervk"  title="Вк" onclick="Vk()">
+									<img src="../images/vk.png" alt="Vk">
+								</div>
+								<div class="footerwhatsapp" title="WhatsApp" onclick="WhatsApp()">
+									<img src="../images/whatsapp.png" alt="WhatsApp">
+								</div>
+							</div>
+							<div class="footeremailnumber">
+								<span class="footeremailnumbertexts">+7 (707) 200 35-83</span><br>
+								<span class="footeremailnumbertexts">Email: anuarzholdybaev2006@gmail.com</span>
+								<div class="footermadeby">
+									<span class="footermadebytext">© Created by Anuar Name ProgEasy, 2021</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<div class="windowfixed"></div>
+		</div>
+		<!-- Закончился wrapper -->
+		<script src="../HTML/jslesson.js"></script>
+	</body>
+</html>

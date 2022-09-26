@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="keywords" content="Программирование, сайт, HTML, CSS, JavaScript, бесплатное обучение, курсы программирования, бесплатные курсы по программированию, как создать сайт, Frontend, Frontend разработка, JavaScript урок, ProgEasy JavaScript урок 7">
+		<meta name="description" content="Урок №7 JavaScript от ProgEasy. Скролл страницы, Работа с классами. Бесплатное обучение Frontend разработке.">
+		<meta name="format-detection" content="telephone=no">
+		<title>Урок 7 JS</title>
+		<link rel="shortcut icon" href="../images/iconweb.png" type="image/png">
+		<link href="cssofjslesson2.css" rel="stylesheet" type="text/css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<!-- Yandex.Metrika counter -->
+		<script type="text/javascript" >
+			(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+			m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+			(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+			ym(84034504, "init", {
+				clickmap:true,
+				trackLinks:true,
+				accurateTrackBounce:true,
+				webvisor:true
+			});
+		</script>
+		<noscript><div><img src="https://mc.yandex.ru/watch/84034504" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+		<!-- /Yandex.Metrika counter -->
+	</head>
+	<body>
+		<div class="wrapper">
+			<!-- header -->
+			<header class="header">
+				<div class="container">
+					<div class="headersectionstyles">
+						<div class="Basenameheader"><a href="../index.html" class="tothemainpage" title="На главную страницу">ProgEasy</a></div>
+						<div class="burger">
+							<span></span>
+						</div>
+						<div class="Baseultexts">
+							<span><a class="Basenav" href="../HTML/htmllesson.html" title="Перейти к HTML">HTML</a></span>
+							<span><a class="Basenav" href="../CSS/csslesson.html" title="Перейти к CSS">CSS</a></span>
+							<span class="Basenav" title="Вы на этой странице">JavaScript</span>
+							<span><a class="Basenav" href="../Contacts/contacts.html" title="Контакты">Контакты</a></span>
+							<span><a class="Basenav" href="../Aboutus/aboutus.html" title="О нас">О сайте</a></span>
+						</div>
+						<div class="Basenametitle">
+							<p class="headertitle">Понятные объяснения</p>
+						</div>
+					</div>
+				</div>
+			</header>
+			<!-- Закончился header -->
+			<section class="sectionhtml">
+				<div class="container">
+					<div class="Firstbasetextdiv">
+						<h1>Урок 7 JavaScript</h1>
+					</div>
+					<div class="sectionstyles2">
+						<div class="htmlexplalltextdiv">
+							<h2>Скролл страницы, работа с классами</h2>
+							<br>
+							<p>На прошлом уроке мы прошли глобальный объект window. Так вот для него можно весить обработчик события под названием <strong style="color: #002340;">scroll</strong>. Он позволяет делать операции при скроле страницы.</p><br>
+							<p>Чтобы узнать по оси Y, на какой высоте мы находимся, для window можно добавлять метод <strong style="color: #002340;">scrollY</strong> или же <strong style="color: #002340;">pageYOffset</strong>.</p><br>
+							<span>Например:</span>
+							<div class="attention">
+								<br>
+								<p>Если код не виден, вы можете <span style="color: #68d66e;">скролить</span> серый блок с кодом.</p>
+								<br>
+							</div>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<p id="posHeight"></p>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>JS код:</span>
+								<div class="jsgreyfone">
+									<xmp>
+let posHeight = document.querySelector("#posHeight");
+
+window.addEventListener("scroll", function() {
+	let posY = window.scrollY;
+	posHeight.innerHTML = posY;
+});
+									</xmp>
+								</div>
+							</div><br>
+							<p id="posHeight"></p>
+							<script>
+								let posHeight = document.querySelector("#posHeight");
+
+								window.addEventListener("scroll", function() {
+									let posY = window.scrollY;
+									posHeight.innerHTML = "Высота: "+ posY + " пикселей";
+								});
+							</script>
+							<br><br>
+							<h3>Работа с класами</h3>
+							<p>Чаще всего добавление или удаление классов через JavaScript используется когда мы работаем со скролом страницы. Например на главной странице сайта ProgEasy, шапка сайта на высоте в 0 пикселях - прозрачная, и если уже больше нуля пикселей, то она белая. Это реализовано при помощи классов и CSS.</p><br>
+							<p>Для того чтобы работать с классами, используется метод <strong style="color: #002340;">classList</strong>. После мы пишем добавлять или удалять классы соответственно при помощи методов <strong style="color: #002340;">add()</strong> и <strong style="color: #002340;">remove()</strong>.</p><br>
+							<p>Классы прописываются внутри скобок в кавычках.</p><br>
+							<span>Например:</span>
+							<div>
+								<span>HTML код:</span>
+								<div class="htmlgreyfone">
+									<xmp>
+<body>
+	<div class="box"></div>
+</body>
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>CSS код:</span>
+								<div class="cssgreyfone">
+									<xmp>
+.box {
+	width: 100%;
+	height: 150px;
+	background-color: #3a64d8;
+}
+.box.active { /* Класс box с классом active */
+	background-color: #fff;
+	border: 1px solid grey;
+}
+									</xmp>
+								</div>
+							</div>
+							<div>
+								<span>JS код:</span>
+								<div class="jsgreyfone">
+									<xmp>
+let box = document.querySelector(".box");
+
+window.addEventListener("scroll", function() {
+	let posY = window.scrollY;
+
+	if(posY > 1560) // Не нужно писать ключевое слово px
+		box.classList.add("active");
+	else if(posY <= 1560)
+		box.classList.remove("active");
+});
+									</xmp>
+								</div>
+							</div><br>
+							<div class="box"></div>
+								<script>
+								let box = document.querySelector(".box");
+
+								window.addEventListener("scroll", function() {
+									let posY = window.scrollY;
+
+									if(posY > 1560)
+										box.classList.add("active");
+									else if(posY <= 1560)
+										box.classList.remove("active");
+								});
+							</script>
+							<style>
+								.box {
+									width: 100%;
+									height: 150px;
+									background-color: #3a64d8;
+								}
+								.box.active {
+									background-color: #fff;
+									border: 1px solid grey;
+								}
+							</style><br>
+							<p>Проскрольте верх вниз чтобы увидеть результат блока сверху.</p><br>
+							<p>Про остальные виды скролов вы можете поискать в интернете, это был самый востребованный и часто употребляемый метод скрола.</p>
+							<div class="fromlesson2nextback">
+								<a href="jslesson6.html"><div class="btnbackpage"><span>Предыдущее</span></div></a>
+								<a href="jslesson8.html"><div class="btnnextpage"><span>Следующее</span></div></a>
+							</div>
+						</div>
+						<aside>
+							<div class="asidedivfirst">
+								<a href="jslesson.html">
+									<div class="asidenav" title="Перейти к уроку 1">
+										<span>#1 - Что такое JavaScript | Переменные</span>
+									</div>
+								</a>
+								<a href="jslesson2.html">
+									<div class="asidenav" title="Перейти к уроку 2">
+										<span>#2 - Математические действия, Условные операторы</span>
+									</div>
+								</a>
+								<a href="jslesson3.html">
+									<div class="asidenav" title=" Перейти к уроку 3">
+										<span>#3 - Массивы, Циклы</span>
+									</div>
+								</a>
+								<a href="jslesson4.html">
+									<div class="asidenav" title="Перейти к уроку 4">
+										<span>#4 - Всплывающие окна, Функции</span>
+									</div>
+								</a>
+								<a href="jslesson5.html">
+									<div class="asidenav" title="Перейти к уроку 5">
+										<span>#5 - Обработчики события, this, Выбор объектов, Стили</span>
+									</div>
+								</a>
+								<a href="jslesson6.html">
+									<div class="asidenav" title="Перейти к уроку 6">
+										<span>#6 - Отслеживание объектов в JS, Формы, Таймеры, Интервалы</span>
+									</div>
+								</a>
+								<div style="background: #ebebeb;" class="asidenav" title="Урок 7">
+									<span style="font-weight: 500;">#7 - Скролл страницы, Работа с классами</span>
+								</div>
+								<a href="jslesson8.html">
+									<div class="asidenav" title="Перейти к уроку 8">
+										<span>#8 - Заключение</span>
+									</div>
+								</a>
+							</div>
+						</aside>
+					</div>
+				</div>
+			</section>
+			<!-- "Подвал" страницы -->
+			<footer class="footer">
+				<div class="container">
+					<div class="footerstyle">
+						<div class="footerfirstcolumn">
+							<a href="../index.html" class="footerbaseword" title="На главную страницу">ProgEasy</a>
+							<span class="footerafterbaseword">Обучение по</span><br><span class="footerafterbaseparagraph">программированию</span>
+						</div>
+						<ul class="footersecondcolumn">
+							<li class="footerlessons"><a href="../Lessons/lessons.html">Уроки</a></li>
+							<li class="footercontacts"><a href="../Contacts/contacts.html">Контакты</a></li>
+							<li class="footerabout"><a href="../Aboutus/aboutus.html">О создателе/сайте</a></li>
+						</ul>
+						<div class="footerthirdcolumn">
+							<div class="footerimages">
+								<div class="footerinstagram" title="Инстаграм" onclick="Insta()">
+									<img src="../images/instagram.png" alt="Instagram">
+								</div>
+								<div class="footervk"  title="Вк" onclick="Vk()">
+									<img src="../images/vk.png" alt="Vk">
+								</div>
+								<div class="footerwhatsapp" title="WhatsApp" onclick="WhatsApp()">
+									<img src="../images/whatsapp.png" alt="WhatsApp">
+								</div>
+							</div>
+							<div class="footeremailnumber">
+								<span class="footeremailnumbertexts">+7 (707) 200 35-83</span><br>
+								<span class="footeremailnumbertexts">Email: anuarzholdybaev2006@gmail.com</span>
+								<div class="footermadeby">
+									<span class="footermadebytext">© Created by Anuar Name ProgEasy, 2021</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<div class="windowfixed"></div>
+		</div>
+		<!-- Закончился wrapper -->
+		<script src="../HTML/jslesson.js"></script>
+	</body>
+</html>
